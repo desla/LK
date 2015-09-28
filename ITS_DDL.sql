@@ -1,0 +1,464 @@
+Set define off; 
+
+--
+-- ODT  (User) 
+--
+CREATE USER ODT
+  IDENTIFIED BY VALUES '25C8879210F08D89'
+  DEFAULT TABLESPACE ODT
+  TEMPORARY TABLESPACE TEMP
+  PROFILE DEFAULT
+  ACCOUNT UNLOCK;
+  -- 1 Role for ODT 
+  GRANT CONNECT TO ODT;
+  ALTER USER ODT DEFAULT ROLE ALL;
+  -- 1 Tablespace Quota for ODT 
+  ALTER USER ODT QUOTA UNLIMITED ON ODT;
+
+
+--
+-- TYPE_INFO_SEQ  (Sequence) 
+--
+CREATE SEQUENCE ODT.TYPE_INFO_SEQ
+  START WITH 1
+  MAXVALUE 9999999999999999999999999999
+  MINVALUE 1
+  NOCYCLE
+  NOCACHE
+  NOORDER;
+
+--
+-- OBJECT_INFO_SEQ  (Sequence) 
+--
+CREATE SEQUENCE ODT.OBJECT_INFO_SEQ
+  START WITH 1
+  MAXVALUE 9999999999999999999999999999
+  MINVALUE 1
+  NOCYCLE
+  NOCACHE
+  NOORDER;
+
+
+--
+-- DATA_VALUE_SEQ  (Sequence) 
+--
+CREATE SEQUENCE ODT.DATA_VALUE_SEQ
+  START WITH 1
+  MAXVALUE 9999999999999999999999999999
+  MINVALUE 1
+  NOCYCLE
+  CACHE 20
+  NOORDER;
+
+
+--
+-- DATA_INFO_SEQ  (Sequence) 
+--
+CREATE SEQUENCE ODT.DATA_INFO_SEQ
+  START WITH 1
+  MAXVALUE 9999999999999999999999999999
+  MINVALUE 1
+  NOCYCLE
+  NOCACHE
+  NOORDER;
+
+--
+-- TYPE_INFO  (Table) 
+--
+CREATE TABLE ODT.TYPE_INFO
+(
+  ID           NUMBER(3)                        NOT NULL,
+  NAME         VARCHAR2(64 BYTE)                NOT NULL,
+  DESCRIPTION  VARCHAR2(200 BYTE)
+)
+TABLESPACE ODT
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           )
+NOCOMPRESS ;
+
+
+--
+-- DATA_INFO  (Table) 
+--
+CREATE TABLE ODT.DATA_INFO
+(
+  ID            NUMBER(5)                       NOT NULL,
+  NAME          VARCHAR2(64 BYTE)               NOT NULL,
+  DESCRIPTION   VARCHAR2(200 BYTE),
+  TYPE_INFO_ID  NUMBER(3)                       NOT NULL
+)
+TABLESPACE ODT
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           )
+NOCOMPRESS ;
+
+
+--
+-- OBJECT_INFO  (Table) 
+--
+CREATE TABLE ODT.OBJECT_INFO
+(
+  ID            NUMBER(5)                       NOT NULL,
+  TYPE_INFO_ID  NUMBER(3)                       NOT NULL,
+  NAME          VARCHAR2(64 BYTE)               NOT NULL,
+  DESCRIPTION   VARCHAR2(200 BYTE)
+)
+TABLESPACE ODT
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           )
+NOCOMPRESS ;
+
+--
+-- DATA_VALUE  (Table) 
+--
+CREATE TABLE ODT.DATA_VALUE
+(
+  ID              NUMBER(10)                    NOT NULL,
+  DATA_INFO_ID    NUMBER(5)                     NOT NULL,
+  OBJECT_INFO_ID  NUMBER(5)                     NOT NULL,
+  VALUE_TIME      TIMESTAMP(6)                  NOT NULL,
+  VALUE           NUMBER                        NOT NULL
+)
+TABLESPACE ODT
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           )
+NOCOMPRESS ;
+
+--
+-- TYPE_INFO_PK  (Index) 
+--
+CREATE UNIQUE INDEX ODT.TYPE_INFO_PK ON ODT.TYPE_INFO
+(ID)
+TABLESPACE ODT
+PCTFREE    10
+INITRANS   2
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+--
+-- TYPE_INFO_UN_NAME  (Index) 
+--
+CREATE UNIQUE INDEX ODT.TYPE_INFO_UN_NAME ON ODT.TYPE_INFO
+(NAME)
+TABLESPACE ODT
+PCTFREE    10
+INITRANS   2
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+--
+-- DATA_INFO_PK  (Index) 
+--
+CREATE UNIQUE INDEX ODT.DATA_INFO_PK ON ODT.DATA_INFO
+(ID)
+TABLESPACE ODT
+PCTFREE    10
+INITRANS   2
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+
+--
+-- DATA_INFO_UN_TYPE_INFO_NAME  (Index) 
+--
+CREATE UNIQUE INDEX ODT.DATA_INFO_UN_TYPE_INFO_NAME ON ODT.DATA_INFO
+(TYPE_INFO_ID, NAME)
+TABLESPACE ODT
+PCTFREE    10
+INITRANS   2
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+
+--
+-- OBJECT_INFO_PK  (Index) 
+--
+CREATE UNIQUE INDEX ODT.OBJECT_INFO_PK ON ODT.OBJECT_INFO
+(ID)
+TABLESPACE ODT
+PCTFREE    10
+INITRANS   2
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+
+--
+-- OBJECT_INFO_UN_TYPE_INFO_NAME  (Index) 
+--
+CREATE UNIQUE INDEX ODT.OBJECT_INFO_UN_TYPE_INFO_NAME ON ODT.OBJECT_INFO
+(TYPE_INFO_ID, NAME)
+TABLESPACE ODT
+PCTFREE    10
+INITRANS   2
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+--
+-- DATA_VALUE_PK  (Index) 
+--
+CREATE UNIQUE INDEX ODT.DATA_VALUE_PK ON ODT.DATA_VALUE
+(ID)
+TABLESPACE ODT
+PCTFREE    10
+INITRANS   2
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+--
+-- DATA_VALUE_UN_DI_OI_VT  (Index) 
+--
+CREATE UNIQUE INDEX ODT.DATA_VALUE_UN_DI_OI_VT ON ODT.DATA_VALUE
+(DATA_INFO_ID, OBJECT_INFO_ID, VALUE_TIME)
+TABLESPACE ODT
+PCTFREE    10
+INITRANS   2
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           );
+
+--
+-- TYPE_INFO_BI  (Trigger) 
+--
+CREATE OR REPLACE TRIGGER ODT.TYPE_INFO_BI 
+  before insert on ODT.Type_Info              
+  for each row
+begin  
+  if :new.ID is null then
+    select ODT.Type_Info_Seq.NextVal into :new.ID from dual;
+  end if;
+end;
+/
+
+
+--
+-- RECIPE_INFO_BI  (Trigger) 
+--
+CREATE OR REPLACE TRIGGER ODT.RECIPE_INFO_BI
+  before insert on ODT.RECIPE_INFO           
+  for each row
+begin  
+  if :new.ID is null then
+    select ODT.Recipe_Info_Seq.NextVal into :new.ID from dual;
+  end if;
+end;
+/
+
+--
+-- OBJECT_INFO_BI  (Trigger) 
+--
+CREATE OR REPLACE TRIGGER ODT.OBJECT_INFO_BI
+  before insert on ODT.OBJECT_INFO            
+  for each row
+begin  
+  if :new.ID is null then
+    select ODT.Object_Info_Seq.NextVal into :new.ID from dual;
+  end if;
+end;
+/
+
+--
+-- DATA_VALUE_BI  (Trigger) 
+--
+CREATE OR REPLACE TRIGGER ODT.DATA_VALUE_BI 
+  before insert on ODT.DATA_VALUE              
+  for each row
+begin  
+  if :new.ID is null then
+    select ODT.Data_Value_Seq.NextVal into :new.ID from dual;
+  end if;
+end;
+/
+
+--
+-- DATA_INFO_BI  (Trigger) 
+--
+CREATE OR REPLACE TRIGGER ODT.DATA_INFO_BI
+  before insert on ODT.DATA_INFO              
+  for each row
+begin  
+  if :new.ID is null then
+    select ODT.Data_Info_Seq.NextVal into :new.ID from dual;
+  end if;
+end;
+/
+
+-- 
+-- Non Foreign Key Constraints for Table TYPE_INFO 
+-- 
+ALTER TABLE ODT.TYPE_INFO ADD (
+  CONSTRAINT TYPE_INFO_PK
+  PRIMARY KEY
+  (ID)
+  USING INDEX ODT.TYPE_INFO_PK
+  ENABLE VALIDATE);
+
+ALTER TABLE ODT.TYPE_INFO ADD (
+  CONSTRAINT TYPE_INFO_UN_NAME
+  UNIQUE (NAME)
+  USING INDEX ODT.TYPE_INFO_UN_NAME
+  ENABLE VALIDATE);
+
+-- 
+-- Non Foreign Key Constraints for Table DATA_INFO 
+-- 
+ALTER TABLE ODT.DATA_INFO ADD (
+  CONSTRAINT DATA_INFO_PK
+  PRIMARY KEY
+  (ID)
+  USING INDEX ODT.DATA_INFO_PK
+  ENABLE VALIDATE);
+
+ALTER TABLE ODT.DATA_INFO ADD (
+  CONSTRAINT DATA_INFO_UN_TYPE_INFO_NAME
+  UNIQUE (TYPE_INFO_ID, NAME)
+  USING INDEX ODT.DATA_INFO_UN_TYPE_INFO_NAME
+  ENABLE VALIDATE);
+
+
+-- 
+-- Non Foreign Key Constraints for Table OBJECT_INFO 
+-- 
+ALTER TABLE ODT.OBJECT_INFO ADD (
+  CONSTRAINT OBJECT_INFO_PK
+  PRIMARY KEY
+  (ID)
+  USING INDEX ODT.OBJECT_INFO_PK
+  ENABLE VALIDATE);
+
+ALTER TABLE ODT.OBJECT_INFO ADD (
+  CONSTRAINT OBJECT_INFO_UN_TYPE_INFO_NAME
+  UNIQUE (TYPE_INFO_ID, NAME)
+  USING INDEX ODT.OBJECT_INFO_UN_TYPE_INFO_NAME
+  ENABLE VALIDATE);
+
+-- 
+-- Non Foreign Key Constraints for Table DATA_VALUE 
+-- 
+ALTER TABLE ODT.DATA_VALUE ADD (
+  CONSTRAINT DATA_VALUE_PK
+  PRIMARY KEY
+  (ID)
+  USING INDEX ODT.DATA_VALUE_PK
+  ENABLE VALIDATE);
+
+ALTER TABLE ODT.DATA_VALUE ADD (
+  CONSTRAINT DATA_VALUE_UN_DI_OI_VT
+  UNIQUE (DATA_INFO_ID, OBJECT_INFO_ID, VALUE_TIME)
+  USING INDEX ODT.DATA_VALUE_UN_DI_OI_VT
+  ENABLE VALIDATE);
+
+-- 
+-- Foreign Key Constraints for Table DATA_INFO 
+-- 
+ALTER TABLE ODT.DATA_INFO ADD (
+  CONSTRAINT DATA_INFO_FK_TYPE_INFO 
+  FOREIGN KEY (TYPE_INFO_ID) 
+  REFERENCES ODT.TYPE_INFO (ID)
+  ENABLE VALIDATE);
+
+-- 
+-- Foreign Key Constraints for Table OBJECT_INFO 
+-- 
+ALTER TABLE ODT.OBJECT_INFO ADD (
+  CONSTRAINT OBJECT_INFO_FK_TYPE_INFO 
+  FOREIGN KEY (TYPE_INFO_ID) 
+  REFERENCES ODT.TYPE_INFO (ID)
+  ENABLE VALIDATE);
+
+-- 
+-- Foreign Key Constraints for Table DATA_VALUE 
+-- 
+ALTER TABLE ODT.DATA_VALUE ADD (
+  CONSTRAINT DATA_VALUE_FK_DATA_INFO 
+  FOREIGN KEY (DATA_INFO_ID) 
+  REFERENCES ODT.DATA_INFO (ID)
+  ENABLE VALIDATE);
+
+ALTER TABLE ODT.DATA_VALUE ADD (
+  CONSTRAINT DATA_VALUE_FK_OBJECT_INFO 
+  FOREIGN KEY (OBJECT_INFO_ID) 
+  REFERENCES ODT.OBJECT_INFO (ID)
+  ENABLE VALIDATE);
