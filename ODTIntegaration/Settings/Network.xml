@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+  <ITS_Oracle>    
+    <Host>ARTALEX-94BF2C8</Host>
+    <User>ODT</User>
+    <Password>odt</Password>    
+    <ReconnectionInterval>10000</ReconnectionInterval>
+  </ITS_Oracle>  
+  <Cast_Lines_Opc>    
+    <Host>192.168.1.11</Host>
+    <Server>Kepware.KEPServerEX.V5</Server>    
+    <ReconnectionInterval>10000</ReconnectionInterval>
+  </Cast_Lines_Opc>  
+</configuration>

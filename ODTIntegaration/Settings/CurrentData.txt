@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>      
+    <!--Интервал времени, через который будет происходить считывание данных в миллисекундах-->
+    <ReadInterval>5000</ReadInterval>
+    <Items>
+      <Item>
+        <OpcItemName>[MOSSNER2]L3_Interface.IN.LiveBit</OpcItemName>
+        <TypeName>mixer</TypeName>
+        <ObjectName>mixer1</ObjectName>
+        <DataName>temperatura</DataName>
+      </Item>
+      <Item>
+        <OpcItemName>[MOSSNER2]L3_Interface.OUT.LiveBit</OpcItemName>
+        <TypeName>mixer</TypeName>
+        <ObjectName>mixer1</ObjectName>
+        <DataName>temperatura</DataName>
+      </Item>
+    </Data>
+</configuration>
