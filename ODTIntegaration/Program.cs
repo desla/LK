@@ -1,17 +1,15 @@
 ﻿namespace Alvasoft.ODTIntegaration
 {
+    using System;
     using System.IO;
-    using ODTIntegration.Configuration;
+    using ODTIntegration.CastLineIntegration;
     using log4net.Config;
 
     class Program
     {
         static void Main(string[] args)
         {
-            XmlConfigurator.Configure(new FileInfo("Settings/Logging.xml"));
-
-            var c = new ConnectionsConfiguration();
-            c.LoadFromFile("Settings/Network.xml");
+            XmlConfigurator.Configure(new FileInfo("Settings/Logging.xml"));           
         }
     }
 }

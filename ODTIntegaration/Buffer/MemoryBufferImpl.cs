@@ -2,12 +2,20 @@
 {
     using System.Collections.Generic;
     using ODTIntegaration.Structures;
+    using log4net;
 
     /// <summary>
     /// Буфер в оперативной памяти.
     /// </summary>
     public class MemoryBufferImpl : IDataBuffer
     {
+        private static readonly ILog logger = LogManager.GetLogger("MemoryBufferImpl");
+
+        /// <summary>
+        /// Ограничение на количество записей.
+        /// </summary>
+        private const int MAX_SIZE = 1000000;
+
         /// <summary>
         /// Набор для хранения данных.
         /// </summary>
@@ -16,7 +24,12 @@
         public void AddFinishedProduct(FinishedProduct aPocket)
         {
             lock (products) {
-                products.Add(aPocket);
+                if (products.Count < MAX_SIZE) {
+                    products.Add(aPocket);
+                }
+                else {
+                    logger.Warn("Превышено количество максимальных записей в буфере.");
+                }
             }            
         }
 

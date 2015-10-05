@@ -11,8 +11,8 @@
         /// Выполняет запрос на новую карту плавки.
         /// </summary>
         /// <param name="aConnector">Текущий коннектор к ЛК.</param>
-        /// <param name="aMixerNumber">Номер миксера.</param>
-        void OnCastRequest(ICastLineConnector aConnector, int aMixerNumber);
+        /// <param name="aFurnaceNumber">Номер миксера.</param>
+        void OnCastRequest(ICastLineConnector aConnector, int aFurnaceNumber);
 
         /// <summary>
         /// Оповещает о появлении нового пакета готовой продукции.

@@ -29,5 +29,19 @@
         /// Вес пакета (кг).
         /// </summary>
         public int Weight { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("ЕГП: Идентификатор плавки {0}; " +
+                                 "Номер плавки: {1}" +
+                                 "Миксер: {2}; " +
+                                 "порядковый номер пакета: {3}; " +
+                                 "Вес {4};",
+                                 MeltId,
+                                 CastNumber,
+                                 FurnaceNumber,
+                                 StackNumber,
+                                 Weight);
+        }
     }
 }

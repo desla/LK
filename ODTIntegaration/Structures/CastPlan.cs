@@ -1,4 +1,6 @@
-﻿namespace Alvasoft.ODTIntegaration.Structures
+﻿using Microsoft.SqlServer.Server;
+
+namespace Alvasoft.ODTIntegaration.Structures
 {
     /// <summary>
     /// Карта плавки, пересылаемая из ИТС в ЛК.
@@ -24,5 +26,16 @@
         /// Наименование продукции.
         /// </summary>
         public string ProductName { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format(
+                "Карта плавки: " +
+                "Идентификатор {0}; " +
+                "Номер {1}; " +
+                "Миксер {2}; " +
+                "Наименование '{3}';",
+                MeltId, CastNumber, FurnaceNumber, ProductName);
+        }
     }
 }

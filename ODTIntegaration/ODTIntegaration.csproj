@@ -50,8 +50,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Interop.OPCAutomation">
+      <HintPath>.\Interop.OPCAutomation.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>.\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="OpcTagAccessProvider">
+      <HintPath>.\OpcTagAccessProvider.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -65,12 +72,17 @@
   <ItemGroup>
     <Compile Include="Buffer\IDataBuffer.cs" />
     <Compile Include="Buffer\MemoryBufferImpl.cs" />
+    <Compile Include="CastLineConnector\CastLineConnectorImpl.cs" />
     <Compile Include="CastLineConnector\ICastLineCallback.cs" />
     <Compile Include="CastLineConnector\ICastLineConnector.cs" />
     <Compile Include="CastLineIntegration\CastLineIntegrator.cs" />
     <Compile Include="Configuration\CastLinesConfiguration.cs" />
     <Compile Include="Configuration\ConnectionConfiguration.cs" />
     <Compile Include="Configuration\ConnectionsConfiguration.cs" />
+    <Compile Include="ConnectionHolder\ConnectionHolderBase.cs" />
+    <Compile Include="ConnectionHolder\IConnectionHolderCallback.cs" />
+    <Compile Include="ConnectionHolder\OpcConnectionHolder.cs" />
+    <Compile Include="ConnectionHolder\OracleConnectionHolder.cs" />
     <Compile Include="ITS\IIts.cs" />
     <Compile Include="ITS\ItsEmulatorImpl.cs" />
     <Compile Include="Program.cs" />
@@ -81,6 +93,7 @@
     <Compile Include="Utils\Activity\InitializableImpl.cs" />
     <Compile Include="Utils\Activity\InitializedException.cs" />
     <Compile Include="Utils\Activity\NotInitializedException.cs" />
+    <Compile Include="Utils\Extensions\ArialCyrilicExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">

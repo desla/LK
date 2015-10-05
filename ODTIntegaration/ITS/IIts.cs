@@ -1,12 +1,21 @@
 ﻿namespace Alvasoft.ODTIntegaration.ITS
 {
     using Structures;
+    using Alvasoft.Utils.Activity;
+    using ConnectionHolder;
+
 
     /// <summary>
     /// Интерфейс обмена информацией с ИТС.
     /// </summary>
-    public interface IIts
-    {
+    public interface IIts : IInitializable
+    {        
+        /// <summary>
+        /// Устанавливает держатель соединения.
+        /// </summary>
+        /// <param name="aConnectionHolder">Держатель соединения.</param>
+        void SetConnectionHoder(OracleConnectionHolder aConnectionHolder);
+
         /// <summary>
         /// Возвращает карту плавки, готовую к выливки для указанного миксера или null.
         /// </summary>

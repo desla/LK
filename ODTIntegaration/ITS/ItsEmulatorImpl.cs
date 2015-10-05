@@ -1,12 +1,19 @@
-﻿namespace Alvasoft.ODTIntegration.ITS
+﻿using Alvasoft.ODTIntegaration.ConnectionHolder;
+using Alvasoft.Utils.Activity;
+
+namespace Alvasoft.ODTIntegration.ITS
 {
     using System;
     using ODTIntegaration.ITS;
     using ODTIntegaration.Structures;
 
-    class ItsEmulatorImpl : IIts
+    class ItsEmulatorImpl : InitializableImpl, IIts
     {
         private Random rnd = new Random();
+
+        public void SetConnectionHoder(OracleConnectionHolder aConnectionHolder)
+        {           
+        }
 
         public CastPlan GetCastPlat(int aFurnaceNumber)
         {
