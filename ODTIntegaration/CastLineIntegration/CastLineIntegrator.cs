@@ -61,7 +61,7 @@
                 opcConnectionHolder.SetCallback(this);
 
                 // Инициализация ИТС.
-                its = new ItsEmulatorImpl();
+                its = new ItsImpl();
                 its.SetConnectionHoder(oracleConnectionHolder);
                 its.Initialize();
 
@@ -83,8 +83,8 @@
                 dataBuffer = new MemoryBufferImpl();                
         
                 // Открытие соединений.
-                oracleConnectionHolder.OpenConnection();
                 opcConnectionHolder.OpenConnection();
+                oracleConnectionHolder.OpenConnection();                
                 logger.Info("Инициализация завершена.");
             }
             catch (Exception ex) {
@@ -125,6 +125,11 @@
             try {
                 logger.Info(string.Format("Выполняем запрос у ИТС карты плавки для ЛК №{0}.", castLineNumber));
                 castPlan = its.GetCastPlat(aFurnaceNumber);
+                if (castPlan == null) {
+                    logger.Info("Карта плавки не получена.");
+                    return;
+                }
+
                 logger.Info(string.Format("Карта плавки получена для ЛК №{0}.", castLineNumber.ToString()));
             }
             catch (Exception ex) {

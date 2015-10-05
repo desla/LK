@@ -1,7 +1,7 @@
 ﻿namespace Alvasoft.ODTIntegaration.ITS
 {
     using Structures;
-    using Alvasoft.Utils.Activity;
+    using Utils.Activity;
     using ConnectionHolder;
 
 

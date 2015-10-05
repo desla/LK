@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
   <ITS_Oracle>    
-    <Host>ARTALEX-94BF2C8</Host>
-    <User>ODT</User>
-    <Password>odt</Password>    
+    <Host>192.168.1.11</Host>
+    <User>areva</User>
+    <Password>areva</Password>    
     <ReconnectionInterval>10000</ReconnectionInterval>
   </ITS_Oracle>  
   <Cast_Lines_Opc>    

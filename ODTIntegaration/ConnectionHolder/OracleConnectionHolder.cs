@@ -2,7 +2,8 @@
 {
     using System;
     using System.Data;
-    using ODTIntegration.Configuration;
+    using Oracle.ManagedDataAccess.Client;
+    using ODTIntegration.Configuration;    
     using log4net;
 
     /// <summary>

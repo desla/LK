@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Alvasoft.ODTIntegration" GeneratedClassName="OracleCommands">
+  <Profiles />
+  <Settings>
+    <Setting Name="GettingCastPlan" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DATA_EXCHANGE.GET_MPU</Value>
+    </Setting>
+    <Setting Name="GettingCastPlan_p1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">o_cursor</Value>
+    </Setting>
+    <Setting Name="GettingCastPlan_p2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">i_furnace_number</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

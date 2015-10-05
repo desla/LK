@@ -95,6 +95,7 @@
 
                 logger.Info("Запись карты плавки завершена.");
 
+                connectionHolder.UpdateLastOperationTime();
                 return true;
             }
             catch (Exception ex) {
@@ -127,17 +128,24 @@
             tag[DB620_ITEM_NO] = new OpcValueImpl(opcServer, opcTagsList[DB620_ITEM_NO]);
             tag[DB620_CAST_NUM] = new OpcValueImpl(opcServer, opcTagsList[DB620_CAST_NUM]);
             tag[DB620_FURNACE_NUM] = new OpcValueImpl(opcServer, opcTagsList[DB620_FURNACE_NUM]);
-            tag[DB620_MELT_ID] = new OpcValueImpl(opcServer, opcTagsList[DB620_MELT_ID]);
+            tag[DB620_MELT_ID] = new OpcValueImpl(opcServer, opcTagsList[DB620_MELT_ID]);            
+            
+            foreach (var opcValueImpl in tag.Values) {
+                // два тега активируем после всех, чтобы не пропустить данные,
+                // так как будет ошибка, если они будут активированы впред всех.
+                if (!opcValueImpl.Name.Equals(opcTagsList[DB601_NEW_BATCH_REQUEST]) &&
+                    !opcValueImpl.Name.Equals(opcTagsList[DB620_DATA_READY])) {
+                        opcValueImpl.Activate();
+                }                
+            }
 
-            tag[DB601_NEW_BATCH_REQUEST].IsListenValueChanging = true;
+            tag[DB601_NEW_BATCH_REQUEST].IsListenValueChanging = true;            
             tag[DB601_NEW_BATCH_REQUEST].SubscribeToValueChange(this);
-
             tag[DB620_DATA_READY].IsListenValueChanging = true;
             tag[DB620_DATA_READY].SubscribeToValueChange(this);
 
-            foreach (var opcValueImpl in tag.Values) {
-                opcValueImpl.Activate();
-            }
+            tag[DB601_NEW_BATCH_REQUEST].Activate();
+            tag[DB620_DATA_READY].Activate();
 
             logger.Info("Инициализация завершена.");
         }
@@ -165,21 +173,21 @@
         /// <param name="aValueChangedEventArgs">Параметры.</param>
         public void OnValueChanged(IOpcValue aOpcValue, OpcValueChangedEventArgs aValueChangedEventArgs)
         {
-            switch (aOpcValue.Name) {
-                case DB601_NEW_BATCH_REQUEST:
-                    if (Convert.ToBoolean(aValueChangedEventArgs.Value)) {
-                        CastPlanRequest();
-                        TryResetCastPlanRequest();
-                    }
-                    break;
-                case DB620_DATA_READY:
-                    if (Convert.ToBoolean(aValueChangedEventArgs.Value)) {
-                        FinishedProductIsReady();
-                        TryResetFinishedProduct();
-                    }
-                    break;
-                default:
-                    throw new ArgumentException("Неизвестный ОРС-тег: " + aOpcValue.Name);
+            connectionHolder.UpdateLastOperationTime();
+            if (aOpcValue.Name.Equals(opcTagsList[DB601_NEW_BATCH_REQUEST])) {
+                if (Convert.ToBoolean(aValueChangedEventArgs.Value)) {
+                    CastPlanRequest();
+                    TryResetCastPlanRequest();
+                }
+            }
+            else if (aOpcValue.Name.Equals(opcTagsList[DB620_DATA_READY])) {
+                if (Convert.ToBoolean(aValueChangedEventArgs.Value)) {
+                    FinishedProductIsReady();
+                    TryResetFinishedProduct();
+                }
+            }
+            else {
+                logger.Error("Неизвестный ОРС-тег: " + aOpcValue.Name);
             }
         }
 
