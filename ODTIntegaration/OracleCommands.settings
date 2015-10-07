@@ -11,5 +11,26 @@
     <Setting Name="GettingCastPlan_p2" Type="System.String" Scope="User">
       <Value Profile="(Default)">i_furnace_number</Value>
     </Setting>
+    <Setting Name="InsertFinishedProduct" Type="System.String" Scope="User">
+      <Value Profile="(Default)">insert into FINISHED_PRODUCT(melt_id, furnace_number, melt_number, stack_number, weight, receipt_time) values(:melt_id, :furnace_number, :melt_number, :stack_number, :weight, :receipt_time)</Value>
+    </Setting>
+    <Setting Name="pMeltId" Type="System.String" Scope="User">
+      <Value Profile="(Default)">melt_id</Value>
+    </Setting>
+    <Setting Name="pFurnaceNumber" Type="System.String" Scope="User">
+      <Value Profile="(Default)">furnace_number</Value>
+    </Setting>
+    <Setting Name="pMeltNumber" Type="System.String" Scope="User">
+      <Value Profile="(Default)">melt_number</Value>
+    </Setting>
+    <Setting Name="pStackNumber" Type="System.String" Scope="User">
+      <Value Profile="(Default)">stack_number</Value>
+    </Setting>
+    <Setting Name="pWeight" Type="System.String" Scope="User">
+      <Value Profile="(Default)">weight</Value>
+    </Setting>
+    <Setting Name="pReceiptTime" Type="System.String" Scope="User">
+      <Value Profile="(Default)">receipt_time</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

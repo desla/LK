@@ -26,8 +26,15 @@
         /// <summary>
         /// Добавляет в ИТС информацию о единице готовой продукции.
         /// </summary>
-        /// <param name="aProductPocket">Единица готовой продукции.</param>
+        /// <param name="aPocket">Единица готовой продукции.</param>
         /// <returns>True, если добавление успешно, false - иначе.</returns>
-        bool TryAddFinishedProduct(FinishedProduct aProductPocket);
+        bool TryAddFinishedProduct(FinishedProduct aPocket);
+
+        /// <summary>
+        /// Добавляет в ИТС массив данных о ЕГП.
+        /// </summary>
+        /// <param name="aPockets">Данные ЕГП.</param>
+        /// <returns>True - если добавление успешно, false - иначе.</returns>
+        bool TryAddFinishedProducts(FinishedProduct[] aPockets);
     }
 }

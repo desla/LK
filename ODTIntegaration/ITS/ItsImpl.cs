@@ -68,9 +68,58 @@
             }
         }
 
-        public bool TryAddFinishedProduct(FinishedProduct aProductPocket)
+        public bool TryAddFinishedProduct(FinishedProduct aPocket)
         {
-            return true;
+            return TryAddFinishedProducts(new[] {aPocket});
+        }
+
+        public bool TryAddFinishedProducts(FinishedProduct[] aPockets)
+        {
+            logger.Info("Добавление информации о ЕГП.");
+            try {
+                connectionHolder.LockConnection();
+
+                if (!connectionHolder.IsConnected()) {
+                    logger.Info("Отсутствует подключение к БД ИТС.");
+                    return false;
+                }
+
+                var properties = OracleCommands.Default;
+                var connection = connectionHolder.GetOracleConnection();
+                using (var transaction = connection.BeginTransaction())
+                using (var command = new OracleCommand(properties.InsertFinishedProduct)) {
+                    command.Connection = connection;
+                    command.Transaction = transaction;                    
+                    command.Parameters.Add(properties.pMeltId, OracleDbType.Int32);
+                    command.Parameters.Add(properties.pFurnaceNumber, OracleDbType.Int32);
+                    command.Parameters.Add(properties.pMeltNumber, OracleDbType.Int32);
+                    command.Parameters.Add(properties.pStackNumber, OracleDbType.Int32);
+                    command.Parameters.Add(properties.pWeight, OracleDbType.Int32);
+                    command.Parameters.Add(properties.pReceiptTime, OracleDbType.Date);
+
+                    foreach (var aPocket in aPockets) {
+                        command.Parameters[properties.pMeltId].Value = aPocket.MeltId;
+                        command.Parameters[properties.pFurnaceNumber].Value = aPocket.FurnaceNumber;
+                        command.Parameters[properties.pMeltNumber].Value = aPocket.CastNumber;
+                        command.Parameters[properties.pStackNumber].Value = aPocket.StackNumber;
+                        command.Parameters[properties.pWeight].Value = aPocket.Weight;
+                        command.Parameters[properties.pReceiptTime].Value = aPocket.ReceiveTime;
+                        command.ExecuteNonQuery();
+                    }                    
+
+                    transaction.Commit();
+                    connectionHolder.UpdateLastOperationTime();
+                }
+
+                return true;
+            }
+            catch (Exception ex) {
+                logger.Error("Ошибка при добавлении ЕГП: " + ex.Message);
+                return false;
+            }
+            finally {
+                connectionHolder.ReleaseConnection();
+            }
         }
     }
 }

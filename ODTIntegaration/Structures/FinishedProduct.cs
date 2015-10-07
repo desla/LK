@@ -1,4 +1,6 @@
-﻿namespace Alvasoft.ODTIntegaration.Structures
+﻿using System;
+
+namespace Alvasoft.ODTIntegaration.Structures
 {
     /// <summary>
     /// Единица готовой продукции, пересылаемая из ЛК в ИТС.
@@ -29,6 +31,11 @@
         /// Вес пакета (кг).
         /// </summary>
         public int Weight { get; set; }
+
+        /// <summary>
+        /// Дата получения информации пакета.
+        /// </summary>
+        public DateTime ReceiveTime { get; set; }
 
         public override string ToString()
         {

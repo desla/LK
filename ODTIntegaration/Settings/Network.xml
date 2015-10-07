@@ -2,8 +2,8 @@
 <configuration>
   <ITS_Oracle>    
     <Host>192.168.1.11</Host>
-    <User>areva</User>
-    <Password>areva</Password>    
+    <User>ODT</User>
+    <Password>odt</Password>    
     <ReconnectionInterval>10000</ReconnectionInterval>
   </ITS_Oracle>  
   <Cast_Lines_Opc>    

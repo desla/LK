@@ -241,6 +241,7 @@
                 aPocket.MeltId = Convert.ToInt32(tag[DB620_MELT_ID].ReadCurrentValue());
                 aPocket.StackNumber = Convert.ToInt32(tag[DB620_ITEM_NO].ReadCurrentValue());
                 aPocket.Weight = Convert.ToInt32(tag[DB620_WEIGHT].ReadCurrentValue());
+                aPocket.ReceiveTime = DateTime.Now;
 
                 return true;
             }

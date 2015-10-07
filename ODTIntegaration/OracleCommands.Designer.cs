@@ -58,5 +58,91 @@ namespace Alvasoft.ODTIntegration {
                 this["GettingCastPlan_p2"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("insert into FINISHED_PRODUCT(melt_id, furnace_number, melt_number, stack_number, " +
+            "weight, receipt_time) values(:melt_id, :furnace_number, :melt_number, :stack_num" +
+            "ber, :weight, :receipt_time)")]
+        public string InsertFinishedProduct {
+            get {
+                return ((string)(this["InsertFinishedProduct"]));
+            }
+            set {
+                this["InsertFinishedProduct"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("melt_id")]
+        public string pMeltId {
+            get {
+                return ((string)(this["pMeltId"]));
+            }
+            set {
+                this["pMeltId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("furnace_number")]
+        public string pFurnaceNumber {
+            get {
+                return ((string)(this["pFurnaceNumber"]));
+            }
+            set {
+                this["pFurnaceNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("melt_number")]
+        public string pMeltNumber {
+            get {
+                return ((string)(this["pMeltNumber"]));
+            }
+            set {
+                this["pMeltNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("stack_number")]
+        public string pStackNumber {
+            get {
+                return ((string)(this["pStackNumber"]));
+            }
+            set {
+                this["pStackNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("weight")]
+        public string pWeight {
+            get {
+                return ((string)(this["pWeight"]));
+            }
+            set {
+                this["pWeight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("receipt_time")]
+        public string pReceiptTime {
+            get {
+                return ((string)(this["pReceiptTime"]));
+            }
+            set {
+                this["pReceiptTime"] = value;
+            }
+        }
     }
 }

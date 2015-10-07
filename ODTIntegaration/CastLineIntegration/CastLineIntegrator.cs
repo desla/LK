@@ -1,8 +1,9 @@
 ﻿namespace Alvasoft.ODTIntegration.CastLineIntegration
 {
-    using ODTIntegaration.ITS;
-    using Buffer;
     using System;
+    using System.Windows.Forms;
+    using ODTIntegaration.ITS;
+    using Buffer;    
     using ODTIntegaration.ConnectionHolder;
     using ODTIntegaration.Structures;
     using CastLineConnector;
@@ -47,10 +48,11 @@
             try {
                 logger.Info("Инициализация...");
                 // загрузка коонфигураций.
+                var appPath = Application.StartupPath + "/";
                 connectionsConfig = new ConnectionsConfiguration();
-                connectionsConfig.LoadFromFile("Settings/Network.xml");
+                connectionsConfig.LoadFromFile(appPath + "Settings/Network.xml");
                 castLinesConfig = new CastLinesConfiguration();
-                castLinesConfig.LoadConfiguration("Settings/CastLines.xml");
+                castLinesConfig.LoadConfiguration(appPath + "Settings/CastLines.xml");
 
                 // Инициализация ConnectionHolder'ов.
                 oracleConnectionHolder = new OracleConnectionHolder(connectionsConfig.Its);
@@ -106,7 +108,7 @@
                 logger.Error("Ошибка при деинициализации: " + ex.Message);
             }
             finally {
-                logger.Info("Деинициализация произведена.");
+                logger.Info("Деинициализация завершена.");
             }
         }
 
@@ -156,9 +158,13 @@
             logger.Info(string.Format("Получены данные о новой ЕГП от ЛК № {0}. {1}.",
                 castLineNumber, aPocket.ToString()));
             logger.Info("Передача данный ЕГП в ИТС...");
-            logger.Info(its.TryAddFinishedProduct(aPocket)
-                ? string.Format("Данные о ЕГП от ЛК №{0} успешно переданы в ИТС.", castLineNumber)
-                : string.Format("Не удалось переданные ЕГП от ЛК №{0} в ИТС.", castLineNumber));
+            if (its.TryAddFinishedProduct(aPocket)) {
+                logger.Info(string.Format("Данные о ЕГП от ЛК №{0} успешно переданы в ИТС.", castLineNumber));
+            }
+            else {
+                logger.Info(string.Format("Не удалось переданные ЕГП от ЛК №{0} в ИТС. Сохраняем в буфер.", castLineNumber));
+                dataBuffer.AddFinishedProduct(aPocket);
+            }            
         }
 
         /// <summary>
@@ -180,10 +186,13 @@
                 case ConnectionHolderBase.Oracleholder:
                     if (!its.IsInitialized()) {
                         its.Initialize();
-                    }                    
+                    }
+                    if (!dataBuffer.IsEmpty()) {
+                        TrySentBufferedData();
+                    }
                     break;
             }
-        }
+        }        
 
         /// <summary>
         /// Реализация IConnectionHolderCallback.
@@ -205,6 +214,24 @@
         {         
             logger.Info(string.Format("Ошибка в {0}: {1}.", aConnection.GetHolderName(), aError.Message));
             aConnection.TryCloseConnection();
+        }
+
+        private void TrySentBufferedData()
+        {
+            try {
+                var storedData = dataBuffer.GetStoredProductsOrDefault();
+                logger.Info("Передача данных из буфера в ИТС... Данных для передачи: " + storedData.Length);
+                if (its.TryAddFinishedProducts(storedData)) {
+                    logger.Info("Данные успешно переданы в ИТС.");
+                    dataBuffer.Clear();
+                }
+                else {
+                    logger.Info("Не удалось передать данные в ИТС.");
+                }
+            }
+            catch (Exception ex) {
+                logger.Error("Ошибка при сохранении в ИТС: " + ex.Message);
+            }
         }
     }
 }
