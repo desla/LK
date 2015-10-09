@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Timers;
 using OpcTagAccessProvider;
 using OPCAutomation;
+using Timer = System.Timers.Timer;
 
 namespace CastLineEmulator
 {
@@ -23,6 +25,9 @@ namespace CastLineEmulator
         private const string DB620_CAST_NUM = "Emulator.CAST_LINE_1.DB620.CastNum";
         private const string DB620_FURNACE_NUM = "Emulator.CAST_LINE_1.DB620.FurnaceNum";
         private const string DB620_MELT_ID = "Emulator.CAST_LINE_1.DB620.MeltId";
+
+        private const string DB001 = "Emulator.CAST_LINE_1.DB001.data1";
+        private Timer db601Timer;
 
         private OPCServer opcServer = new OPCServer();
         private const string HOST = "192.168.1.11";
@@ -52,6 +57,9 @@ namespace CastLineEmulator
             tag[DB620_FURNACE_NUM] = new OpcValueImpl(opcServer, DB620_FURNACE_NUM);
             tag[DB620_MELT_ID] = new OpcValueImpl(opcServer, DB620_MELT_ID);
 
+            tag[DB001] = new OpcValueImpl(opcServer, DB001);
+
+
             tag[DB601_NEW_BATCH_REQUEST].Activate();
             tag[DB601_FURNACE_NUMBER].Activate();
 
@@ -69,7 +77,14 @@ namespace CastLineEmulator
             tag[DB620_CAST_NUM].Activate();
             tag[DB620_FURNACE_NUM].Activate();
             tag[DB620_MELT_ID].Activate();
-        }
+
+            tag[DB001].Activate();
+
+            db601Timer = new Timer();
+            db601Timer.Elapsed += ChangeDb601Tags;
+            db601Timer.Interval = 2*1000;
+            db601Timer.Start();
+        }        
 
         public void Deactivate()
         {
@@ -89,6 +104,8 @@ namespace CastLineEmulator
             tag[DB620_CAST_NUM].Deactivate();
             tag[DB620_FURNACE_NUM].Deactivate();
             tag[DB620_MELT_ID].Deactivate();
+
+            db601Timer.Stop();
 
             opcServer.Disconnect();
         }
@@ -135,6 +152,11 @@ namespace CastLineEmulator
                     aOpcValue.WriteValue("false");
                 }
             }            
+        }
+
+        private void ChangeDb601Tags(object sender, ElapsedEventArgs e)
+        {
+            tag[DB001].WriteValue(rnd.Next() % 1000);
         }
     }
 }

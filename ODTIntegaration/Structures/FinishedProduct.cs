@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Alvasoft.ODTIntegaration.Structures
+﻿namespace Alvasoft.ODTIntegration.Structures
 {
+    using System;
+
     /// <summary>
     /// Единица готовой продукции, пересылаемая из ЛК в ИТС.
     /// </summary>

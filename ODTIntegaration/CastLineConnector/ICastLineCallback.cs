@@ -1,6 +1,6 @@
 ﻿namespace Alvasoft.ODTIntegration.CastLineConnector
 {
-    using ODTIntegaration.Structures;
+    using Structures;
 
     /// <summary>
     /// Обратная связь от ЛК.

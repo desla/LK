@@ -2,16 +2,16 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Alvasoft.ODTIntegration" GeneratedClassName="OracleCommands">
   <Profiles />
   <Settings>
-    <Setting Name="GettingCastPlan" Type="System.String" Scope="User">
+    <Setting Name="GetCastPlanProcedure" Type="System.String" Scope="User">
       <Value Profile="(Default)">DATA_EXCHANGE.GET_MPU</Value>
     </Setting>
-    <Setting Name="GettingCastPlan_p1" Type="System.String" Scope="User">
+    <Setting Name="aCursor" Type="System.String" Scope="User">
       <Value Profile="(Default)">o_cursor</Value>
     </Setting>
-    <Setting Name="GettingCastPlan_p2" Type="System.String" Scope="User">
+    <Setting Name="aFurnaceNumber" Type="System.String" Scope="User">
       <Value Profile="(Default)">i_furnace_number</Value>
     </Setting>
-    <Setting Name="InsertFinishedProduct" Type="System.String" Scope="User">
+    <Setting Name="InsertFinishedProductCommand" Type="System.String" Scope="User">
       <Value Profile="(Default)">insert into FINISHED_PRODUCT(melt_id, furnace_number, melt_number, stack_number, weight, receipt_time) values(:melt_id, :furnace_number, :melt_number, :stack_number, :weight, :receipt_time)</Value>
     </Setting>
     <Setting Name="pMeltId" Type="System.String" Scope="User">
@@ -31,6 +31,33 @@
     </Setting>
     <Setting Name="pReceiptTime" Type="System.String" Scope="User">
       <Value Profile="(Default)">receipt_time</Value>
+    </Setting>
+    <Setting Name="GetIdentifiersCommand" Type="System.String" Scope="User">
+      <Value Profile="(Default)">select t.ID, o.ID, d.ID from TYPE_INFO t, OBJECT_INFO o, DATA_INFO d where (d.TYPE_INFO_ID = t.ID) and (o.TYPE_INFO_ID = t.ID) and (t.NAME = :type_name) and (o.NAME = :object_name) and (d.NAME = :data_name)</Value>
+    </Setting>
+    <Setting Name="pTypeName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">type_name</Value>
+    </Setting>
+    <Setting Name="pObjectName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">object_name</Value>
+    </Setting>
+    <Setting Name="pDataName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">data_name</Value>
+    </Setting>
+    <Setting Name="InsertCurrentValueCommand" Type="System.String" Scope="User">
+      <Value Profile="(Default)">insert into DATA_VALUE(data_info_id, object_info_id, value_time, value) values(:data_info_id, :object_info_id, :value_time, :value)</Value>
+    </Setting>
+    <Setting Name="pDataInfoId" Type="System.String" Scope="User">
+      <Value Profile="(Default)">data_info_id</Value>
+    </Setting>
+    <Setting Name="pObjectInfoId" Type="System.String" Scope="User">
+      <Value Profile="(Default)">object_info_id</Value>
+    </Setting>
+    <Setting Name="pValueTime" Type="System.String" Scope="User">
+      <Value Profile="(Default)">value_time</Value>
+    </Setting>
+    <Setting Name="pValue" Type="System.String" Scope="User">
+      <Value Profile="(Default)">value</Value>
     </Setting>
   </Settings>
 </SettingsFile>

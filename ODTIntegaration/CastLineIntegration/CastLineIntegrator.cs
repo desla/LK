@@ -1,14 +1,15 @@
-﻿namespace Alvasoft.ODTIntegration.CastLineIntegration
+﻿using System.Runtime.InteropServices;
+
+namespace Alvasoft.ODTIntegration.CastLineIntegration
 {
     using System;
     using System.Windows.Forms;
-    using ODTIntegaration.ITS;
+    using ITS;
     using Buffer;    
-    using ODTIntegaration.ConnectionHolder;
-    using ODTIntegaration.Structures;
+    using ConnectionHolder;
+    using Structures;
     using CastLineConnector;
-    using Configuration;
-    using ITS;    
+    using Configuration;    
     using Alvasoft.Utils.Activity;
     using log4net;
 
@@ -18,6 +19,7 @@
     public class CastLineIntegrator : 
         InitializableImpl, 
         ICastLineCallback, 
+        ICurrentValueReaderCallback,
         IConnectionHolderCallback
     {
         private static readonly ILog logger = LogManager.GetLogger("CastLineIntegrator");
@@ -37,11 +39,19 @@
         /// </summary>
         private ICastLineConnector[] castLines;
 
+        /// <summary>
+        /// Для чтения текущих показателей.
+        /// </summary>
+        private ICurrentValueReader currentValuesReader;
+
+        private ICurrentValuesPreparer currentValuesPreparer;
+
         private OracleConnectionHolder oracleConnectionHolder;
         private OpcConnectionHolder opcConnectionHolder;
 
         private CastLinesConfiguration castLinesConfig;
         private ConnectionsConfiguration connectionsConfig;
+        private CurrentValuesConfiguration currentValuesConfig;
 
         protected override void DoInitialize()
         {
@@ -53,6 +63,8 @@
                 connectionsConfig.LoadFromFile(appPath + "Settings/Network.xml");
                 castLinesConfig = new CastLinesConfiguration();
                 castLinesConfig.LoadConfiguration(appPath + "Settings/CastLines.xml");
+                currentValuesConfig = new CurrentValuesConfiguration();
+                currentValuesConfig.LoadConfiguration(appPath + "Settings/CurrentValues.xml");
 
                 // Инициализация ConnectionHolder'ов.
                 oracleConnectionHolder = new OracleConnectionHolder(connectionsConfig.Its);
@@ -61,6 +73,17 @@
                 opcConnectionHolder = new OpcConnectionHolder(connectionsConfig.CastLine);
                 opcConnectionHolder.SetHolderName(ConnectionHolderBase.Opcholder);
                 opcConnectionHolder.SetCallback(this);
+
+                // Создание читателя текущих значений.
+                currentValuesReader = new CurrentValueReaderImpl();
+                currentValuesReader.SetCallback(this);
+                currentValuesReader.SetConfiguration(currentValuesConfig);
+                currentValuesReader.SetConnectionHolder(opcConnectionHolder);                
+
+                // Создание подготовителя текущих данных.
+                currentValuesPreparer = new CurrentValuesPreparerImpl();
+                currentValuesPreparer.SetConnectionHoder(oracleConnectionHolder);
+                currentValuesPreparer.SetCurrentValues(currentValuesConfig.GetCurrentValues());
 
                 // Инициализация ИТС.
                 its = new ItsImpl();
@@ -168,6 +191,29 @@
         }
 
         /// <summary>
+        /// Реализация ICurrentValueReaderCallback.
+        /// Возникает при появлении новых данных.
+        /// </summary>
+        /// <param name="aReader">Текущий читатель.</param>
+        /// <param name="aCurrentValues">Данные.</param>
+        public void OnCurrentValueReceived(ICurrentValueReader aReader, CurrentValue[] aCurrentValues)
+        {
+            logger.Info("Получены текущие параметры. Всего значений: " + aCurrentValues.Length);
+            logger.Info("Подготавливаем данные для передачи в ИТС...");
+            if (currentValuesPreparer.TryPrepareValues(aCurrentValues)) {
+                logger.Info("Данные подготовлены успешно.");
+                logger.Info("Передача данных в ИТС...");
+                if (its.TryAddCurrentValues(aCurrentValues)) {
+                    logger.Info("Данные успешно переданы в ИТС.");
+                }
+                else {
+                    logger.Info("Добавление данных в ИТС не удалось. Сохраняем в буфер.");
+                    dataBuffer.AddCurrentValues(aCurrentValues);
+                }
+            }
+        }
+
+        /// <summary>
         /// Реализация IConnectionHolderCallback.
         /// Возникает во время подключения.
         /// </summary>
@@ -182,14 +228,17 @@
                             castLines[i].Initialize();
                         }                        
                     }
+                    currentValuesReader.Initialize();
+                    currentValuesReader.Start();
                     break;
                 case ConnectionHolderBase.Oracleholder:
                     if (!its.IsInitialized()) {
                         its.Initialize();
                     }
-                    if (!dataBuffer.IsEmpty()) {
-                        TrySentBufferedData();
-                    }
+                    if (!currentValuesPreparer.IsInitialized()) {
+                        currentValuesPreparer.Initialize();
+                    }                    
+                    TrySentBufferedData();                    
                     break;
             }
         }        
@@ -202,6 +251,12 @@
         public void OnDisconnected(ConnectionHolderBase aConnection)
         {         
             logger.Info(string.Format("Отключен {0}", aConnection.GetHolderName()));
+            switch (aConnection.GetHolderName()) {                
+                case ConnectionHolderBase.Opcholder:
+                    currentValuesReader.Stop();
+                    currentValuesReader.Uninitialize();
+                    break;
+            }
         }
 
         /// <summary>
@@ -219,19 +274,37 @@
         private void TrySentBufferedData()
         {
             try {
-                var storedData = dataBuffer.GetStoredProductsOrDefault();
-                logger.Info("Передача данных из буфера в ИТС... Данных для передачи: " + storedData.Length);
-                if (its.TryAddFinishedProducts(storedData)) {
-                    logger.Info("Данные успешно переданы в ИТС.");
-                    dataBuffer.Clear();
+                if (dataBuffer.IsEmpty()) {
+                    return;
                 }
-                else {
-                    logger.Info("Не удалось передать данные в ИТС.");
+
+                var finishedProducts = dataBuffer.GetStoredProductsOrDefault();
+                if (finishedProducts != null) {
+                    logger.Info("Передача данных ЕГП из буфера в ИТС... Данных для передачи: " + finishedProducts.Length);
+                    if (its.TryAddFinishedProducts(finishedProducts)) {
+                        logger.Info("Данные успешно переданы в ИТС.");
+                        dataBuffer.ClearFinishedProducts();
+                    }
+                    else {
+                        logger.Info("Не удалось передать данные в ИТС.");
+                    }
+                }
+
+                var currentValues = dataBuffer.GetStoredCurrentValuesOrDefault();
+                if (currentValues != null) {
+                    logger.Info("Передача данных теущих параметров из буфера в ИТС... Данных для передачи: " + currentValues.Length);
+                    if (its.TryAddCurrentValues(currentValues)) {
+                        logger.Info("Данные успешно переданы в ИТС.");
+                        dataBuffer.ClearCurrentValues();
+                    }
+                    else {
+                        logger.Info("Не удалось передать данные в ИТС.");
+                    }
                 }
             }
             catch (Exception ex) {
                 logger.Error("Ошибка при сохранении в ИТС: " + ex.Message);
             }
-        }
+        }        
     }
 }

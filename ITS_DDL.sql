@@ -73,10 +73,10 @@ NOCOMPRESS ;
 --
 CREATE TABLE DATA_INFO
 (
-  ID            NUMBER(5)                       NOT NULL,
-  NAME          VARCHAR2(64 BYTE)               NOT NULL,
-  DESCRIPTION   VARCHAR2(200 BYTE),
-  TYPE_INFO_ID  NUMBER(3)                       NOT NULL
+  ID              NUMBER(5)                       NOT NULL,
+  TYPE_INFO_ID    NUMBER(3)                       NOT NULL,  
+  NAME            VARCHAR2(64 BYTE)               NOT NULL,
+  DESCRIPTION     VARCHAR2(200 BYTE)  
 )
 
 PCTUSED    0

@@ -1,9 +1,8 @@
-﻿namespace Alvasoft.ODTIntegaration.ITS
+﻿namespace Alvasoft.ODTIntegration.ITS
 {
-    using Structures;
-    using Utils.Activity;
+    using Alvasoft.Utils.Activity;
+    using Structures;    
     using ConnectionHolder;
-
 
     /// <summary>
     /// Интерфейс обмена информацией с ИТС.
@@ -36,5 +35,19 @@
         /// <param name="aPockets">Данные ЕГП.</param>
         /// <returns>True - если добавление успешно, false - иначе.</returns>
         bool TryAddFinishedProducts(FinishedProduct[] aPockets);
+
+        /// <summary>
+        /// Добавляет в ИТС информацию о текущих значениях ЛК.
+        /// </summary>
+        /// <param name="aCurrentValue">Текущее значение.</param>
+        /// <returns>True - если все прошло успешно, false - иначе.</returns>
+        bool TryAddCurrentValue(CurrentValue aCurrentValue);
+
+        /// <summary>
+        /// Добавляет в ИТС информацию о текущих значениях ЛК.
+        /// </summary>
+        /// <param name="aCurrentValues">Текущее значение.</param>
+        /// <returns>True - если все прошло успешно, false - иначе.</returns>
+        bool TryAddCurrentValues(CurrentValue[] aCurrentValues);
     }
 }

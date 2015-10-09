@@ -1,11 +1,11 @@
-﻿namespace Alvasoft.ODTIntegaration
+﻿namespace Alvasoft.ODTIntegration
 {    
     using System;
     using System.IO;
     using System.ServiceProcess;
     using System.Windows.Forms;
     using log4net.Config;
-    using ODTIntegration.CastLineIntegration;
+    using CastLineIntegration;
 
 
     class CastLineIntegrationApp : ServiceBase

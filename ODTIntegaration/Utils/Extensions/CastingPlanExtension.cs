@@ -2,7 +2,7 @@
 {
     using System;
     using Oracle.ManagedDataAccess.Client;
-    using ODTIntegaration.Structures;
+    using Structures;
 
     public static class CastingPlanExtensions
     {

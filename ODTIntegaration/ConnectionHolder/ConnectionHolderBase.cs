@@ -1,4 +1,4 @@
-﻿namespace Alvasoft.ODTIntegaration.ConnectionHolder
+﻿namespace Alvasoft.ODTIntegration.ConnectionHolder
 {
     using System;
     using System.Threading;

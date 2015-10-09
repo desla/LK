@@ -1,6 +1,6 @@
 ﻿namespace Alvasoft.ODTIntegration.Buffer
 {
-    using ODTIntegaration.Structures;
+    using Structures;
 
     /// <summary>
     /// Интерфейс буфера для временного хранения данных при возникновении обрывов связи.
@@ -20,14 +20,31 @@
         FinishedProduct[] GetStoredProductsOrDefault();
 
         /// <summary>
-        /// Очищает буфер от данных.
+        /// Очищает буфер от данных ЕГП.
         /// </summary>
-        void Clear();
+        void ClearFinishedProducts();
 
         /// <summary>
         /// Возвращает результат проверки на отсутствие данных.
         /// </summary>
         /// <returns>True - если данных нет, false - иначе.</returns>
         bool IsEmpty();
+
+        /// <summary>
+        /// Добавляет текущие значения в буфер.
+        /// </summary>
+        /// <param name="aCurrentValues">Текущие значения.</param>
+        void AddCurrentValues(CurrentValue[] aCurrentValues);
+
+        /// <summary>
+        /// Возвращает сохраненные текущие параметры.
+        /// </summary>
+        /// <returns>Текущие параметры в буфере.</returns>
+        CurrentValue[] GetStoredCurrentValuesOrDefault();
+
+        /// <summary>
+        /// Очищает буфер от текущих значений.
+        /// </summary>
+        void ClearCurrentValues();
     }
 }

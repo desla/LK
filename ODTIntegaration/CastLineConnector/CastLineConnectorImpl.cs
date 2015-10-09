@@ -2,8 +2,8 @@
 {
     using System;    
     using System.Collections.Generic;
-    using ODTIntegaration.ConnectionHolder;
-    using ODTIntegaration.Structures;
+    using ConnectionHolder;
+    using Structures;
     using OpcTagAccessProvider;
     using Alvasoft.Utils.Activity;
     using Utils.Extensions;    

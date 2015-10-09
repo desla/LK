@@ -1,7 +1,7 @@
 ﻿namespace Alvasoft.ODTIntegration.Buffer
 {
     using System.Collections.Generic;
-    using ODTIntegaration.Structures;
+    using Structures;
     using log4net;
 
     /// <summary>
@@ -20,6 +20,8 @@
         /// Набор для хранения данных.
         /// </summary>
         private List<FinishedProduct> products = new List<FinishedProduct>();
+
+        private List<CurrentValue> currentValues = new List<CurrentValue>(); 
         
         public void AddFinishedProduct(FinishedProduct aPocket)
         {
@@ -44,7 +46,7 @@
             }
         }
 
-        public void Clear()
+        public void ClearFinishedProducts()
         {
             lock (products) {
                 products.Clear();
@@ -55,6 +57,31 @@
         {
             lock (products) {
                 return products.Count == 0;
+            }
+        }
+
+        public void AddCurrentValues(CurrentValue[] aCurrentValues)
+        {
+            lock (currentValues) {
+                currentValues.AddRange(aCurrentValues);
+            }
+        }
+
+        public CurrentValue[] GetStoredCurrentValuesOrDefault()
+        {
+            lock (currentValues) {
+                if (currentValues.Count == 0) {
+                    return null;
+                }
+
+                return currentValues.ToArray();
+            }
+        }
+
+        public void ClearCurrentValues()
+        {
+            lock (currentValues) {
+                currentValues.Clear();
             }
         }
     }

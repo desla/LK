@@ -1,4 +1,4 @@
-﻿namespace Alvasoft.ODTIntegaration.ConnectionHolder
+﻿namespace Alvasoft.ODTIntegration.ConnectionHolder
 {
     using System;
     using System.Data;
@@ -13,7 +13,7 @@
     {
         private static readonly ILog Logger = LogManager.GetLogger("OracleConnectionHolder");
 
-        private readonly OracleConnection connection = new OracleConnection();
+        private OracleConnection connection = new OracleConnection();
         private string serverHost;        
         private string userName;
         private string password;        
@@ -70,12 +70,13 @@
         /// Закрыть подключение.
         /// </summary>
         public override bool TryCloseConnection()
-        {
+        {            
             checkConnectionTimer.Stop();
             try {
                 connection.Close();
+                connection = new OracleConnection(CreateConnectionString());
             }
-            catch {
+            catch {                
                 return false;
             }            
 

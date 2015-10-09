@@ -3,13 +3,15 @@
     using System;
     using System.Data;
     using Oracle.ManagedDataAccess.Client; 
-    using ODTIntegaration.ConnectionHolder;
-    using ODTIntegaration.Structures;
-    using ODTIntegaration.ITS;
+    using ConnectionHolder;
+    using Structures;
     using Utils.Extensions;
     using Alvasoft.Utils.Activity;    
     using log4net;
 
+    /// <summary>
+    /// Реализация ИТС через БД Oracle.
+    /// </summary>
     public class ItsImpl : 
         InitializableImpl, 
         IIts
@@ -40,11 +42,11 @@
 
                 var properties = OracleCommands.Default;
                 using (var command = 
-                    new OracleCommand(properties.GettingCastPlan, connectionHolder.GetOracleConnection())) {
+                    new OracleCommand(properties.GetCastPlanProcedure, connectionHolder.GetOracleConnection())) {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Add(properties.GettingCastPlan_p1, OracleDbType.RefCursor, ParameterDirection.Output);
-                    command.Parameters.Add(properties.GettingCastPlan_p2, OracleDbType.Int32, ParameterDirection.Input);
-                    command.Parameters[properties.GettingCastPlan_p2].Value = aFurnaceNumber;
+                    command.Parameters.Add(properties.aCursor, OracleDbType.RefCursor, ParameterDirection.Output);
+                    command.Parameters.Add(properties.aFurnaceNumber, OracleDbType.Int32, ParameterDirection.Input);
+                    command.Parameters[properties.aFurnaceNumber].Value = aFurnaceNumber;
 
                     using (var reader = command.ExecuteReader()) {
                         connectionHolder.UpdateLastOperationTime();
@@ -87,7 +89,7 @@
                 var properties = OracleCommands.Default;
                 var connection = connectionHolder.GetOracleConnection();
                 using (var transaction = connection.BeginTransaction())
-                using (var command = new OracleCommand(properties.InsertFinishedProduct)) {
+                using (var command = new OracleCommand(properties.InsertFinishedProductCommand)) {
                     command.Connection = connection;
                     command.Transaction = transaction;                    
                     command.Parameters.Add(properties.pMeltId, OracleDbType.Int32);
@@ -115,6 +117,59 @@
             }
             catch (Exception ex) {
                 logger.Error("Ошибка при добавлении ЕГП: " + ex.Message);
+                connectionHolder.ProcessError(ex);
+                return false;
+            }
+            finally {
+                connectionHolder.ReleaseConnection();
+            }
+        }
+
+        public bool TryAddCurrentValue(CurrentValue aCurrentValue)
+        {
+            return TryAddCurrentValues(new [] { aCurrentValue });
+        }
+
+        public bool TryAddCurrentValues(CurrentValue[] aCurrentValues)
+        {
+            logger.Info("Добавление информации текущих параметров...");
+            try {
+                connectionHolder.LockConnection();
+
+                if (!connectionHolder.IsConnected()) {
+                    logger.Info("Отсутствует подключение к БД ИТС.");
+                    return false;
+                }
+
+                var properties = OracleCommands.Default;
+                var connection = connectionHolder.GetOracleConnection();
+                using (var transaction = connection.BeginTransaction())
+                using (var command = new OracleCommand(properties.InsertCurrentValueCommand)) {
+                    command.Connection = connection;
+                    command.Transaction = transaction;
+                    command.Parameters.Add(properties.pDataInfoId, OracleDbType.Int32);
+                    command.Parameters.Add(properties.pObjectInfoId, OracleDbType.Int32);
+                    command.Parameters.Add(properties.pValueTime, OracleDbType.Date);
+                    command.Parameters.Add(properties.pValue, OracleDbType.Double);
+
+                    foreach (var currentValue in aCurrentValues) {
+                        command.Parameters[properties.pDataInfoId].Value = currentValue.Ids.DataId;
+                        command.Parameters[properties.pObjectInfoId].Value = currentValue.Ids.ObjectId;
+                        command.Parameters[properties.pValueTime].Value = currentValue.ValueTime;
+                        command.Parameters[properties.pValue].Value = currentValue.Value;
+                        command.ExecuteNonQuery();
+                    }
+
+                    transaction.Commit();
+                    connectionHolder.UpdateLastOperationTime();
+                }
+
+                logger.Info("Текущие параметры успешно добавлены в ИТС.");
+                return true;
+            }
+            catch (Exception ex) {
+                logger.Error("Ошибка при добавлении текущих параметров: " + ex.Message);
+                connectionHolder.ProcessError(ex);
                 return false;
             }
             finally {

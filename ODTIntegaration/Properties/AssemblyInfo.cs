@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Управление общими сведениями о сборке осуществляется с помощью 
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("ODTIntegaration")]
+[assembly: AssemblyTitle("ODTIntegration")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Alvasoft")]
-[assembly: AssemblyProduct("ODTIntegaration")]
+[assembly: AssemblyProduct("ODTIntegration")]
 [assembly: AssemblyCopyright("Copyright © Alvasoft 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

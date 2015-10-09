@@ -1,6 +1,4 @@
-﻿using Microsoft.SqlServer.Server;
-
-namespace Alvasoft.ODTIntegaration.Structures
+﻿namespace Alvasoft.ODTIntegration.Structures
 {
     /// <summary>
     /// Карта плавки, пересылаемая из ИТС в ЛК.

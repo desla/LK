@@ -26,36 +26,36 @@ namespace Alvasoft.ODTIntegration {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("DATA_EXCHANGE.GET_MPU")]
-        public string GettingCastPlan {
+        public string GetCastPlanProcedure {
             get {
-                return ((string)(this["GettingCastPlan"]));
+                return ((string)(this["GetCastPlanProcedure"]));
             }
             set {
-                this["GettingCastPlan"] = value;
+                this["GetCastPlanProcedure"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("o_cursor")]
-        public string GettingCastPlan_p1 {
+        public string aCursor {
             get {
-                return ((string)(this["GettingCastPlan_p1"]));
+                return ((string)(this["aCursor"]));
             }
             set {
-                this["GettingCastPlan_p1"] = value;
+                this["aCursor"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("i_furnace_number")]
-        public string GettingCastPlan_p2 {
+        public string aFurnaceNumber {
             get {
-                return ((string)(this["GettingCastPlan_p2"]));
+                return ((string)(this["aFurnaceNumber"]));
             }
             set {
-                this["GettingCastPlan_p2"] = value;
+                this["aFurnaceNumber"] = value;
             }
         }
         
@@ -64,12 +64,12 @@ namespace Alvasoft.ODTIntegration {
         [global::System.Configuration.DefaultSettingValueAttribute("insert into FINISHED_PRODUCT(melt_id, furnace_number, melt_number, stack_number, " +
             "weight, receipt_time) values(:melt_id, :furnace_number, :melt_number, :stack_num" +
             "ber, :weight, :receipt_time)")]
-        public string InsertFinishedProduct {
+        public string InsertFinishedProductCommand {
             get {
-                return ((string)(this["InsertFinishedProduct"]));
+                return ((string)(this["InsertFinishedProductCommand"]));
             }
             set {
-                this["InsertFinishedProduct"] = value;
+                this["InsertFinishedProductCommand"] = value;
             }
         }
         
@@ -142,6 +142,117 @@ namespace Alvasoft.ODTIntegration {
             }
             set {
                 this["pReceiptTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("select t.ID, o.ID, d.ID from TYPE_INFO t, OBJECT_INFO o, DATA_INFO d where (d.TYP" +
+            "E_INFO_ID = t.ID) and (o.TYPE_INFO_ID = t.ID) and (t.NAME = :type_name) and (o.N" +
+            "AME = :object_name) and (d.NAME = :data_name)")]
+        public string GetIdentifiersCommand {
+            get {
+                return ((string)(this["GetIdentifiersCommand"]));
+            }
+            set {
+                this["GetIdentifiersCommand"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("type_name")]
+        public string pTypeName {
+            get {
+                return ((string)(this["pTypeName"]));
+            }
+            set {
+                this["pTypeName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("object_name")]
+        public string pObjectName {
+            get {
+                return ((string)(this["pObjectName"]));
+            }
+            set {
+                this["pObjectName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("data_name")]
+        public string pDataName {
+            get {
+                return ((string)(this["pDataName"]));
+            }
+            set {
+                this["pDataName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("insert into DATA_VALUE(data_info_id, object_info_id, value_time, value) values(:d" +
+            "ata_info_id, :object_info_id, :value_time, :value)")]
+        public string InsertCurrentValueCommand {
+            get {
+                return ((string)(this["InsertCurrentValueCommand"]));
+            }
+            set {
+                this["InsertCurrentValueCommand"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("data_info_id")]
+        public string pDataInfoId {
+            get {
+                return ((string)(this["pDataInfoId"]));
+            }
+            set {
+                this["pDataInfoId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("object_info_id")]
+        public string pObjectInfoId {
+            get {
+                return ((string)(this["pObjectInfoId"]));
+            }
+            set {
+                this["pObjectInfoId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("value_time")]
+        public string pValueTime {
+            get {
+                return ((string)(this["pValueTime"]));
+            }
+            set {
+                this["pValueTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("value")]
+        public string pValue {
+            get {
+                return ((string)(this["pValue"]));
+            }
+            set {
+                this["pValue"] = value;
             }
         }
     }
