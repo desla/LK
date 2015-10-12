@@ -51,9 +51,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ConnectionHolders">
+      <HintPath>..\..\ConnectionHolder\ConnectionHolders\bin\Debug\ConnectionHolders.dll</HintPath>
+    </Reference>
     <Reference Include="Interop.OPCAutomation">
       <HintPath>.\Interop.OPCAutomation.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="log4net">
       <HintPath>.\log4net.dll</HintPath>
@@ -93,10 +96,6 @@
     <Compile Include="Configuration\ConnectionConfiguration.cs" />
     <Compile Include="Configuration\ConnectionsConfiguration.cs" />
     <Compile Include="Configuration\CurrentValuesConfiguration.cs" />
-    <Compile Include="ConnectionHolder\ConnectionHolderBase.cs" />
-    <Compile Include="ConnectionHolder\IConnectionHolderCallback.cs" />
-    <Compile Include="ConnectionHolder\OpcConnectionHolder.cs" />
-    <Compile Include="ConnectionHolder\OracleConnectionHolder.cs" />
     <Compile Include="ITS\CurrentValuesPreparerImpl.cs" />
     <Compile Include="ITS\ICurrentValuesPreparer.cs" />
     <Compile Include="ITS\IIts.cs" />

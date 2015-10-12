@@ -2,7 +2,7 @@
 {
     using Alvasoft.Utils.Activity;
     using Structures;
-    using ConnectionHolder;    
+    using ConnectionHolders;    
     using System.Collections.Generic;
 
     /// <summary>

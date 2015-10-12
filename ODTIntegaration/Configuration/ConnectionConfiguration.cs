@@ -1,5 +1,6 @@
 ﻿namespace Alvasoft.ODTIntegration.Configuration
 {
+    using System;
     using System.Xml;
 
     /// <summary>
@@ -19,7 +20,7 @@
         public string Password { get; set; }
         public string Database { get; set; }
         public string ServerName { get; set; }
-        public double ReconnectionInterval { get; set; }
+        public TimeSpan ReconnectionInterval { get; set; }
 
         /// <summary>
         /// Загрузить из XmlNode'а.
@@ -46,7 +47,7 @@
                         ServerName = nodes[fieldIndex].InnerText;
                         break;
                     case NODE_RECONNECTION_INTERVAL:
-                        ReconnectionInterval = double.Parse(nodes[fieldIndex].InnerText);
+                        ReconnectionInterval = TimeSpan.FromSeconds(double.Parse(nodes[fieldIndex].InnerText));
                         break;
                 }
             }

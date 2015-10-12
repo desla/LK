@@ -1,17 +1,17 @@
-﻿using System.Runtime.InteropServices;
-
-namespace Alvasoft.ODTIntegration.CastLineIntegration
+﻿namespace Alvasoft.ODTIntegration.CastLineIntegration
 {
     using System;
     using System.Windows.Forms;
     using ITS;
     using Buffer;    
-    using ConnectionHolder;
+    using ConnectionHolders;
     using Structures;
     using CastLineConnector;
     using Configuration;    
     using Alvasoft.Utils.Activity;
     using log4net;
+    using OPCAutomation;
+    using Oracle.ManagedDataAccess.Client;
 
     /// <summary>
     /// Мост для взаимодействия между заводской ИТС и ЛК.
@@ -20,7 +20,8 @@ namespace Alvasoft.ODTIntegration.CastLineIntegration
         InitializableImpl, 
         ICastLineCallback, 
         ICurrentValueReaderCallback,
-        IConnectionHolderCallback
+        IConnectionHolderCallback<OracleConnection>,
+        IConnectionHolderCallback<OPCServer>
     {
         private static readonly ILog logger = LogManager.GetLogger("CastLineIntegrator");
 
@@ -67,12 +68,20 @@ namespace Alvasoft.ODTIntegration.CastLineIntegration
                 currentValuesConfig.LoadConfiguration(appPath + "Settings/CurrentValues.xml");
 
                 // Инициализация ConnectionHolder'ов.
-                oracleConnectionHolder = new OracleConnectionHolder(connectionsConfig.Its);
-                oracleConnectionHolder.SetHolderName(ConnectionHolderBase.Oracleholder);
-                oracleConnectionHolder.SetCallback(this);
-                opcConnectionHolder = new OpcConnectionHolder(connectionsConfig.CastLine);
-                opcConnectionHolder.SetHolderName(ConnectionHolderBase.Opcholder);
-                opcConnectionHolder.SetCallback(this);
+                oracleConnectionHolder = new OracleConnectionHolder(
+                    connectionsConfig.Its.Host,
+                    connectionsConfig.Its.User, 
+                    connectionsConfig.Its.Password);
+                oracleConnectionHolder.SetReconnectionInterval(connectionsConfig.Its.ReconnectionInterval);
+                oracleConnectionHolder.SetHolderName("Oracle");
+                oracleConnectionHolder.Subscribe(this);
+
+                opcConnectionHolder = new OpcConnectionHolder(
+                    connectionsConfig.CastLine.ServerName, 
+                    connectionsConfig.CastLine.Host);
+                opcConnectionHolder.SetHolderName("OPC");
+                opcConnectionHolder.Subscribe(this);
+                opcConnectionHolder.SetReconnectionInterval(connectionsConfig.CastLine.ReconnectionInterval);                
 
                 // Создание читателя текущих значений.
                 currentValuesReader = new CurrentValueReaderImpl();
@@ -108,8 +117,10 @@ namespace Alvasoft.ODTIntegration.CastLineIntegration
                 dataBuffer = new MemoryBufferImpl();                
         
                 // Открытие соединений.
-                opcConnectionHolder.OpenConnection();
-                oracleConnectionHolder.OpenConnection();                
+                opcConnectionHolder.TryConnect();
+                oracleConnectionHolder.TryConnect();
+                opcConnectionHolder.Start();
+                oracleConnectionHolder.Start();                
                 logger.Info("Инициализация завершена.");
             }
             catch (Exception ex) {
@@ -121,8 +132,10 @@ namespace Alvasoft.ODTIntegration.CastLineIntegration
         {
             logger.Info("Деинициализация...");
             try {
-                opcConnectionHolder.TryCloseConnection();
-                oracleConnectionHolder.TryCloseConnection();
+                opcConnectionHolder.Stop();
+                oracleConnectionHolder.Stop();
+                opcConnectionHolder.Dispose();
+                oracleConnectionHolder.Dispose();
                 foreach (var castLine in castLines) {
                     castLine.Uninitialize();
                 }
@@ -211,64 +224,79 @@ namespace Alvasoft.ODTIntegration.CastLineIntegration
                     dataBuffer.AddCurrentValues(aCurrentValues);
                 }
             }
-        }
+        }  
 
         /// <summary>
-        /// Реализация IConnectionHolderCallback.
-        /// Возникает во время подключения.
+        /// Реализует интерфейс IConnectionHolderCallback.
+        /// Возникает при подключении к БД ИТС.
         /// </summary>
-        /// <param name="aConnection">ConnectinHolder.</param>
-        public void OnConnected(ConnectionHolderBase aConnection)
+        /// <param name="aConnectionHolder"></param>
+        public void OnConnected(IConnectionHolder<OracleConnection> aConnectionHolder)
         {
-            logger.Info(string.Format("Подключен {0}", aConnection.GetHolderName()));
-            switch (aConnection.GetHolderName()) {
-                case ConnectionHolderBase.Opcholder:
-                    for (var i = 0; i < castLines.Length; ++i) {
-                        if (!castLines[i].IsInitialized()) {
-                            castLines[i].Initialize();
-                        }                        
-                    }
-                    currentValuesReader.Initialize();
-                    currentValuesReader.Start();
-                    break;
-                case ConnectionHolderBase.Oracleholder:
-                    if (!its.IsInitialized()) {
-                        its.Initialize();
-                    }
-                    if (!currentValuesPreparer.IsInitialized()) {
-                        currentValuesPreparer.Initialize();
-                    }                    
-                    TrySentBufferedData();                    
-                    break;
+            logger.Info(string.Format("Подключен {0}", aConnectionHolder.GetHolderName()));
+            if (!its.IsInitialized()) {
+                its.Initialize();
             }
-        }        
+            if (!currentValuesPreparer.IsInitialized()) {
+                currentValuesPreparer.Initialize();
+            }
+            TrySentBufferedData();
+        }
 
         /// <summary>
-        /// Реализация IConnectionHolderCallback.
-        /// Возникает во время отключения.
+        /// Реализует интерфейс IConnectionHolderCallback.
+        /// Возникает при отключении от БД ИТС.
         /// </summary>
-        /// <param name="aConnection">ConnectionHolder.</param>
-        public void OnDisconnected(ConnectionHolderBase aConnection)
-        {         
-            logger.Info(string.Format("Отключен {0}", aConnection.GetHolderName()));
-            switch (aConnection.GetHolderName()) {                
-                case ConnectionHolderBase.Opcholder:
-                    currentValuesReader.Stop();
-                    currentValuesReader.Uninitialize();
-                    break;
+        /// <param name="aConnectionHolder"></param>
+        public void OnDisconnected(IConnectionHolder<OracleConnection> aConnectionHolder)
+        {
+            logger.Info(string.Format("Отключен {0}", aConnectionHolder.GetHolderName()));
+        }
+
+        /// <summary>
+        /// Реализует интерфейс IConnectionHolderCallback.
+        /// Возникает при подключении к ЛК.
+        /// </summary>
+        /// <param name="aConnectionHolder"></param>
+        public void OnConnected(IConnectionHolder<OPCServer> aConnectionHolder)
+        {
+            logger.Info(string.Format("Подключен {0}", aConnectionHolder.GetHolderName()));
+            try {
+                for (var i = 0; i < castLines.Length; ++i) {
+                    if (!castLines[i].IsInitialized()) {
+                        castLines[i].Initialize();
+                    }
+                }
+                if (!currentValuesReader.IsInitialized()) {
+                    currentValuesReader.Initialize();
+                }                
+                currentValuesReader.Start();
+            }
+            catch (Exception ex) {
+                logger.Error("Ошибка opc onConnected: " + ex.Message);
             }
         }
 
         /// <summary>
-        /// Реализация IConnectionHolderCallback.
-        /// Возникает во время ошибка.
+        /// Реализует интерфейс IConnectionHolderCallback.
+        /// Возникает при отключении от ЛК.
         /// </summary>
-        /// <param name="aConnection">ConnectionHolder.</param>
-        /// <param name="aError">Ошибка.</param>
-        public void OnError(ConnectionHolderBase aConnection, Exception aError)
-        {         
-            logger.Info(string.Format("Ошибка в {0}: {1}.", aConnection.GetHolderName(), aError.Message));
-            aConnection.TryCloseConnection();
+        /// <param name="aConnectionHolder"></param>
+        public void OnDisconnected(IConnectionHolder<OPCServer> aConnectionHolder)
+        {
+            logger.Info(string.Format("Отключен {0}", aConnectionHolder.GetHolderName()));
+            try {
+                currentValuesReader.Stop();
+                //currentValuesReader.Uninitialize();
+                //foreach (var castLine in castLines) {
+                //    castLine.Uninitialize();
+                //}
+                //var server = opcConnectionHolder.WaitConnection();
+                //server.Disconnect();
+            }
+            catch (Exception ex) {
+                logger.Error("Ошибка opc onDisconnected: " + ex.Message);
+            }
         }
 
         private void TrySentBufferedData()
@@ -305,6 +333,6 @@ namespace Alvasoft.ODTIntegration.CastLineIntegration
             catch (Exception ex) {
                 logger.Error("Ошибка при сохранении в ИТС: " + ex.Message);
             }
-        }        
+        }
     }
 }

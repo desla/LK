@@ -2,7 +2,7 @@
 {
     using System;    
     using System.Collections.Generic;
-    using ConnectionHolder;
+    using ConnectionHolders;
     using Structures;
     using OpcTagAccessProvider;
     using Alvasoft.Utils.Activity;
@@ -94,8 +94,7 @@
                 tag[DB600_NEW_BATCH_RECEIVED].WriteValue(true);
 
                 logger.Info("Запись карты плавки завершена.");
-
-                connectionHolder.UpdateLastOperationTime();
+                
                 return true;
             }
             catch (Exception ex) {
@@ -107,63 +106,66 @@
         
         protected override void DoInitialize()
         {
-            logger.Info("Инициализация...");
-            if (!connectionHolder.IsConnected()) {
-                throw new ArgumentException("ОРС соединение еще не установлено.");
-            }
+            try {
+                logger.Info("Инициализация...");
+                var opcServer = connectionHolder.WaitConnection();
 
-            var opcServer = connectionHolder.GetOpcServer();
+                tag[DB601_NEW_BATCH_REQUEST] = new OpcValueImpl(opcServer, opcTagsList[DB601_NEW_BATCH_REQUEST]);
+                tag[DB601_FURNACE_NUMBER] = new OpcValueImpl(opcServer, opcTagsList[DB601_FURNACE_NUMBER]);
 
-            tag[DB601_NEW_BATCH_REQUEST] = new OpcValueImpl(opcServer, opcTagsList[DB601_NEW_BATCH_REQUEST]);
-            tag[DB601_FURNACE_NUMBER] = new OpcValueImpl(opcServer, opcTagsList[DB601_FURNACE_NUMBER]);
+                tag[DB600_NEW_BATCH_RECEIVED] = new OpcValueImpl(opcServer, opcTagsList[DB600_NEW_BATCH_RECEIVED]);
+                tag[DB600_FURNACE_NUM] = new OpcValueImpl(opcServer, opcTagsList[DB600_FURNACE_NUM]);
+                tag[DB600_CAST_NUM] = new OpcValueImpl(opcServer, opcTagsList[DB600_CAST_NUM]);
+                tag[DB600_MELT_ID] = new OpcValueImpl(opcServer, opcTagsList[DB600_MELT_ID]);
+                tag[DB600_PRODUCT_NAME] = new OpcValueImpl(opcServer, opcTagsList[DB600_PRODUCT_NAME]);
 
-            tag[DB600_NEW_BATCH_RECEIVED] = new OpcValueImpl(opcServer, opcTagsList[DB600_NEW_BATCH_RECEIVED]);
-            tag[DB600_FURNACE_NUM] = new OpcValueImpl(opcServer, opcTagsList[DB600_FURNACE_NUM]);
-            tag[DB600_CAST_NUM] = new OpcValueImpl(opcServer, opcTagsList[DB600_CAST_NUM]);
-            tag[DB600_MELT_ID] = new OpcValueImpl(opcServer, opcTagsList[DB600_MELT_ID]);
-            tag[DB600_PRODUCT_NAME] = new OpcValueImpl(opcServer, opcTagsList[DB600_PRODUCT_NAME]);
+                tag[DB620_DATA_READY] = new OpcValueImpl(opcServer, opcTagsList[DB620_DATA_READY]);
+                tag[DB620_WEIGHT] = new OpcValueImpl(opcServer, opcTagsList[DB620_WEIGHT]);
+                tag[DB620_ITEM_NO] = new OpcValueImpl(opcServer, opcTagsList[DB620_ITEM_NO]);
+                tag[DB620_CAST_NUM] = new OpcValueImpl(opcServer, opcTagsList[DB620_CAST_NUM]);
+                tag[DB620_FURNACE_NUM] = new OpcValueImpl(opcServer, opcTagsList[DB620_FURNACE_NUM]);
+                tag[DB620_MELT_ID] = new OpcValueImpl(opcServer, opcTagsList[DB620_MELT_ID]);
 
-            tag[DB620_DATA_READY] = new OpcValueImpl(opcServer, opcTagsList[DB620_DATA_READY]);
-            tag[DB620_WEIGHT] = new OpcValueImpl(opcServer, opcTagsList[DB620_WEIGHT]);
-            tag[DB620_ITEM_NO] = new OpcValueImpl(opcServer, opcTagsList[DB620_ITEM_NO]);
-            tag[DB620_CAST_NUM] = new OpcValueImpl(opcServer, opcTagsList[DB620_CAST_NUM]);
-            tag[DB620_FURNACE_NUM] = new OpcValueImpl(opcServer, opcTagsList[DB620_FURNACE_NUM]);
-            tag[DB620_MELT_ID] = new OpcValueImpl(opcServer, opcTagsList[DB620_MELT_ID]);            
-            
-            foreach (var opcValueImpl in tag.Values) {
-                // два тега активируем после всех, чтобы не пропустить данные,
-                // так как будет ошибка, если они будут активированы впред всех.
-                if (!opcValueImpl.Name.Equals(opcTagsList[DB601_NEW_BATCH_REQUEST]) &&
-                    !opcValueImpl.Name.Equals(opcTagsList[DB620_DATA_READY])) {
+                foreach (var opcValueImpl in tag.Values) {
+                    // два тега активируем после всех, чтобы не пропустить данные,
+                    // так как будет ошибка, если они будут активированы впред всех.
+                    if (!opcValueImpl.Name.Equals(opcTagsList[DB601_NEW_BATCH_REQUEST]) &&
+                        !opcValueImpl.Name.Equals(opcTagsList[DB620_DATA_READY])) {
                         opcValueImpl.Activate();
-                }                
+                    }
+                }
+
+                tag[DB601_NEW_BATCH_REQUEST].IsListenValueChanging = true;
+                tag[DB601_NEW_BATCH_REQUEST].SubscribeToValueChange(this);
+                tag[DB620_DATA_READY].IsListenValueChanging = true;
+                tag[DB620_DATA_READY].SubscribeToValueChange(this);
+
+                tag[DB601_NEW_BATCH_REQUEST].Activate();
+                tag[DB620_DATA_READY].Activate();
+
+                logger.Info("Инициализация завершена.");
+            }
+            finally {
+                connectionHolder.ReleaseConnection();
             }
 
-            tag[DB601_NEW_BATCH_REQUEST].IsListenValueChanging = true;            
-            tag[DB601_NEW_BATCH_REQUEST].SubscribeToValueChange(this);
-            tag[DB620_DATA_READY].IsListenValueChanging = true;
-            tag[DB620_DATA_READY].SubscribeToValueChange(this);
-
-            tag[DB601_NEW_BATCH_REQUEST].Activate();
-            tag[DB620_DATA_READY].Activate();
-
-            logger.Info("Инициализация завершена.");
         }
 
         protected override void DoUninitialize()
         {
             logger.Info("Деинициализация...");
-            try {
-                foreach (var opcTag in tag.Values) {
+            tag[DB601_NEW_BATCH_REQUEST].UnSubscribeToValueChange(this);
+            tag[DB620_DATA_READY].UnSubscribeToValueChange(this);
+            foreach (var opcTag in tag.Values) {
+                try {
                     opcTag.Deactivate();
                 }
+                catch (Exception ex) {
+                    logger.Error("Ошибка при деинициализации: " + ex.Message);
+                }
             }
-            catch (Exception ex) {
-                logger.Error("Ошибка при деинициализации: " + ex.Message);
-            }
-            finally {
-                logger.Info("Деинициализация завершена.");
-            }
+            tag.Clear();
+            logger.Info("Деинициализация завершена.");
         }
 
         /// <summary>
@@ -172,8 +174,7 @@
         /// <param name="aOpcValue">Тег ОРС.</param>
         /// <param name="aValueChangedEventArgs">Параметры.</param>
         public void OnValueChanged(IOpcValue aOpcValue, OpcValueChangedEventArgs aValueChangedEventArgs)
-        {
-            connectionHolder.UpdateLastOperationTime();
+        {            
             if (aOpcValue.Name.Equals(opcTagsList[DB601_NEW_BATCH_REQUEST])) {
                 if (Convert.ToBoolean(aValueChangedEventArgs.Value)) {
                     CastPlanRequest();

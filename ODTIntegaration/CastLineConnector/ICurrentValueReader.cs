@@ -1,7 +1,7 @@
 ﻿namespace Alvasoft.ODTIntegration.CastLineConnector
 {
     using Configuration;
-    using ConnectionHolder;
+    using ConnectionHolders;
     using Alvasoft.Utils.Activity;
 
     /// <summary>

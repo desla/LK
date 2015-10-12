@@ -7,7 +7,7 @@
     using System.Timers;
     using log4net;
     using Configuration;
-    using ConnectionHolder;
+    using ConnectionHolders;
     using Alvasoft.Utils.Activity;
 
     /// <summary>
@@ -65,33 +65,36 @@
 
         protected override void DoInitialize()
         {
-            var opcServer = connectionHolder.GetOpcServer();
-            var currentValues = configuration.GetCurrentValues();
-            foreach (var currentValue in currentValues) {
-                opcTag[currentValue] = new OpcValueImpl(opcServer, currentValue.OpcItemName);
-                opcTag[currentValue].Activate();
+            try {
+                var opcServer = connectionHolder.WaitConnection();
+                var currentValues = configuration.GetCurrentValues();
+                foreach (var currentValue in currentValues) {
+                    opcTag[currentValue] = new OpcValueImpl(opcServer, currentValue.OpcItemName);
+                    opcTag[currentValue].Activate();
+                }
+
+                readerTimer = new Timer();
+                readerTimer.Elapsed += ReadCurrentValues;
+                readerTimer.Interval = configuration.ReadInterval*1000;
+            } 
+            finally {
+                connectionHolder.ReleaseConnection();
             }
-            
-            readerTimer = new Timer();
-            readerTimer.Elapsed += ReadCurrentValues;
-            readerTimer.Interval = configuration.ReadInterval*1000;            
         }        
 
         protected override void DoUninitialize()
-        {
-            try {
-                logger.Info("Деинициализация...");
-                foreach (var opcValue in opcTag.Values) {
+        {            
+            logger.Info("Деинициализация...");
+            foreach (var opcValue in opcTag.Values) {
+                try {
                     opcValue.Deactivate();
-                }                
-            }
-            catch (Exception ex) {
-                logger.Error("Ошибка при деинициализации: " + ex.Message);
-            }
-            finally {
-                opcTag.Clear();
-                logger.Info("Деинициализация произведена.");
-            }
+                }
+                catch (Exception ex) {
+                    logger.Error("Ошибка при деинициализации: " + ex.Message);
+                }
+            }                
+            opcTag.Clear();
+            logger.Info("Деинициализация произведена.");
         }
 
         private void ReadCurrentValues(object sender, ElapsedEventArgs e)

@@ -2,11 +2,11 @@
 {
     using System;
     using System.Data;
-    using Oracle.ManagedDataAccess.Client; 
-    using ConnectionHolder;
+    using Oracle.ManagedDataAccess.Client;     
     using Structures;
     using Utils.Extensions;
-    using Alvasoft.Utils.Activity;    
+    using Alvasoft.Utils.Activity;
+    using ConnectionHolders;
     using log4net;
 
     /// <summary>
@@ -33,23 +33,17 @@
             logger.Info("Запрос карты плавки для для миксера №" + aFurnaceNumber);
 
             try {
-                connectionHolder.LockConnection();
-
-                if (!connectionHolder.IsConnected()) {
-                    logger.Info("Отсутствует подключение к БД ИТС.");
-                    return null;
-                }
+                var connection = connectionHolder.WaitConnection();                
 
                 var properties = OracleCommands.Default;
                 using (var command = 
-                    new OracleCommand(properties.GetCastPlanProcedure, connectionHolder.GetOracleConnection())) {
+                    new OracleCommand(properties.GetCastPlanProcedure, connection)) {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.Add(properties.aCursor, OracleDbType.RefCursor, ParameterDirection.Output);
                     command.Parameters.Add(properties.aFurnaceNumber, OracleDbType.Int32, ParameterDirection.Input);
                     command.Parameters[properties.aFurnaceNumber].Value = aFurnaceNumber;
 
-                    using (var reader = command.ExecuteReader()) {
-                        connectionHolder.UpdateLastOperationTime();
+                    using (var reader = command.ExecuteReader()) {                        
                         if (reader.Read()) {
                             var castPlan = reader.ReadCastPlan();
                             return castPlan;
@@ -61,8 +55,7 @@
 
             }
             catch (Exception ex) {
-                logger.Error("Ошибка при обращении к БД ИТС: " + ex.Message);
-                connectionHolder.ProcessError(ex);
+                logger.Error("Ошибка при обращении к БД ИТС: " + ex.Message);                
                 return null;
             }
             finally {
@@ -79,15 +72,9 @@
         {
             logger.Info("Добавление информации о ЕГП.");
             try {
-                connectionHolder.LockConnection();
+                var connection = connectionHolder.WaitConnection();
 
-                if (!connectionHolder.IsConnected()) {
-                    logger.Info("Отсутствует подключение к БД ИТС.");
-                    return false;
-                }
-
-                var properties = OracleCommands.Default;
-                var connection = connectionHolder.GetOracleConnection();
+                var properties = OracleCommands.Default;                
                 using (var transaction = connection.BeginTransaction())
                 using (var command = new OracleCommand(properties.InsertFinishedProductCommand)) {
                     command.Connection = connection;
@@ -109,15 +96,13 @@
                         command.ExecuteNonQuery();
                     }                    
 
-                    transaction.Commit();
-                    connectionHolder.UpdateLastOperationTime();
+                    transaction.Commit();                    
                 }
 
                 return true;
             }
             catch (Exception ex) {
-                logger.Error("Ошибка при добавлении ЕГП: " + ex.Message);
-                connectionHolder.ProcessError(ex);
+                logger.Error("Ошибка при добавлении ЕГП: " + ex.Message);                
                 return false;
             }
             finally {
@@ -134,15 +119,9 @@
         {
             logger.Info("Добавление информации текущих параметров...");
             try {
-                connectionHolder.LockConnection();
+                var connection = connectionHolder.WaitConnection();
 
-                if (!connectionHolder.IsConnected()) {
-                    logger.Info("Отсутствует подключение к БД ИТС.");
-                    return false;
-                }
-
-                var properties = OracleCommands.Default;
-                var connection = connectionHolder.GetOracleConnection();
+                var properties = OracleCommands.Default;                
                 using (var transaction = connection.BeginTransaction())
                 using (var command = new OracleCommand(properties.InsertCurrentValueCommand)) {
                     command.Connection = connection;
@@ -151,25 +130,24 @@
                     command.Parameters.Add(properties.pObjectInfoId, OracleDbType.Int32);
                     command.Parameters.Add(properties.pValueTime, OracleDbType.Date);
                     command.Parameters.Add(properties.pValue, OracleDbType.Double);
+                    if (aCurrentValues != null) {
+                        foreach (var currentValue in aCurrentValues) {
+                            command.Parameters[properties.pDataInfoId].Value = currentValue.Ids.DataId;
+                            command.Parameters[properties.pObjectInfoId].Value = currentValue.Ids.ObjectId;
+                            command.Parameters[properties.pValueTime].Value = currentValue.ValueTime;
+                            command.Parameters[properties.pValue].Value = currentValue.Value;
+                            command.ExecuteNonQuery();
+                        }
+                    }                    
 
-                    foreach (var currentValue in aCurrentValues) {
-                        command.Parameters[properties.pDataInfoId].Value = currentValue.Ids.DataId;
-                        command.Parameters[properties.pObjectInfoId].Value = currentValue.Ids.ObjectId;
-                        command.Parameters[properties.pValueTime].Value = currentValue.ValueTime;
-                        command.Parameters[properties.pValue].Value = currentValue.Value;
-                        command.ExecuteNonQuery();
-                    }
-
-                    transaction.Commit();
-                    connectionHolder.UpdateLastOperationTime();
+                    transaction.Commit();                 
                 }
 
                 logger.Info("Текущие параметры успешно добавлены в ИТС.");
                 return true;
             }
             catch (Exception ex) {
-                logger.Error("Ошибка при добавлении текущих параметров: " + ex.Message);
-                connectionHolder.ProcessError(ex);
+                logger.Error("Ошибка при добавлении текущих параметров: " + ex.Message);                
                 return false;
             }
             finally {

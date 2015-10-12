@@ -2,7 +2,7 @@
 {
     using Alvasoft.Utils.Activity;
     using Structures;    
-    using ConnectionHolder;
+    using ConnectionHolders;
 
     /// <summary>
     /// Интерфейс обмена информацией с ИТС.

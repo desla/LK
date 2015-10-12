@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Oracle.ManagedDataAccess.Client;
     using log4net;
-    using ConnectionHolder;
+    using ConnectionHolders;
     using Structures;
     using Alvasoft.Utils.Activity;
 
@@ -72,15 +72,8 @@
         {
             logger.Info("Инициализация...");
             try {
-                connectionHolder.LockConnection();
-
-                if (!connectionHolder.IsConnected()) {
-                    logger.Info("Отсутствует подключение к БД ИТС.");
-                    return;
-                }
-
                 var properties = OracleCommands.Default;
-                var connection = connectionHolder.GetOracleConnection();
+                var connection = connectionHolder.WaitConnection();
                 using (var command = new OracleCommand(properties.GetIdentifiersCommand, connection)) {
                     command.Parameters.Add(properties.pTypeName, OracleDbType.Varchar2);
                     command.Parameters.Add(properties.pObjectName, OracleDbType.Varchar2);
@@ -108,15 +101,12 @@
                             }
                         }
                     }
+
+                    logger.Info("Инициализация завершена.");
                 }
             }
-            catch (Exception ex) {
-                logger.Error("Ошибка при инициализации: " + ex.Message);
-                connectionHolder.ProcessError(ex);
-            }
             finally {
-                connectionHolder.ReleaseConnection();
-                logger.Info("Инициализация завершена.");
+                connectionHolder.ReleaseConnection();                
             }            
         }
 
