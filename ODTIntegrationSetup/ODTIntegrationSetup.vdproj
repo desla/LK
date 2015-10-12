@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_464ABBC706074A769076DFC82A79B238"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8C6BD362B66AF20210B1DE670984A9B4"
         "OwnerKey" = "8:_9A56EDC94D2206CE6DCEAEA59E96FF36"
         "MsmSig" = "8:_UNDEFINED"
@@ -88,13 +94,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A374D3E02A0E45749ABAACA7C437B43A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CDF8D3D40880A3FE0FF2D5F358E7196C"
+        "OwnerKey" = "8:_9A56EDC94D2206CE6DCEAEA59E96FF36"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -106,7 +106,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9A56EDC94D2206CE6DCEAEA59E96FF36"
+        "OwnerKey" = "8:_CDF8D3D40880A3FE0FF2D5F358E7196C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A374D3E02A0E45749ABAACA7C437B43A"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -127,6 +133,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -143,6 +157,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -288,6 +310,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_464ABBC706074A769076DFC82A79B238"
+            {
+            "SourcePath" = "8:..\\ODTIntegaration\\Settings\\CurrentValues.xml"
+            "TargetName" = "8:CurrentValues.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_332D951A8F59403DAFB52A141DAEBA8B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8C6BD362B66AF20210B1DE670984A9B4"
             {
             "SourcePath" = "8:OPCDAAuto.dll"
@@ -315,11 +357,6 @@
             "AssemblyAsmDisplayName" = "8:Interop.OPCAutomation, Version=1.0.0.0, Culture=neutral"
                 "ScatterAssemblies"
                 {
-                    "_9A56EDC94D2206CE6DCEAEA59E96FF36"
-                    {
-                    "Name" = "8:Interop.OPCAutomation.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Interop.OPCAutomation.dll"
             "TargetName" = "8:"
@@ -366,11 +403,6 @@
             "AssemblyAsmDisplayName" = "8:OpcTagAccessProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_CDF8D3D40880A3FE0FF2D5F358E7196C"
-                    {
-                    "Name" = "8:OpcTagAccessProvider.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:OpcTagAccessProvider.dll"
             "TargetName" = "8:"
@@ -397,11 +429,6 @@
             "AssemblyAsmDisplayName" = "8:Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_DD887AFB58B7C6501A2C5CAB2359DD81"
-                    {
-                    "Name" = "8:Oracle.ManagedDataAccess.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Oracle.ManagedDataAccess.dll"
             "TargetName" = "8:"
@@ -428,11 +455,6 @@
             "AssemblyAsmDisplayName" = "8:log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_DE563F2CF01A88413CA0F55C205E74A4"
-                    {
-                    "Name" = "8:log4net.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:log4net.dll"
             "TargetName" = "8:"

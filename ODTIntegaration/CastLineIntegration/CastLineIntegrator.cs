@@ -290,9 +290,14 @@
                 //currentValuesReader.Uninitialize();
                 //foreach (var castLine in castLines) {
                 //    castLine.Uninitialize();
-                //}
-                //var server = opcConnectionHolder.WaitConnection();
-                //server.Disconnect();
+                //}                
+                try {
+                    var server = opcConnectionHolder.WaitConnection();
+                    server.Disconnect();
+                }
+                finally {
+                    opcConnectionHolder.ReleaseConnection();
+                }
             }
             catch (Exception ex) {
                 logger.Error("Ошибка opc onDisconnected: " + ex.Message);

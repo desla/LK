@@ -56,7 +56,7 @@
         public bool IsEmpty()
         {
             lock (products) {
-                return products.Count == 0;
+                return products.Count == 0 && currentValues.Count == 0;
             }
         }
 
