@@ -132,13 +132,13 @@
         {
             logger.Info("Деинициализация...");
             try {
-                opcConnectionHolder.Stop();
-                oracleConnectionHolder.Stop();
-                opcConnectionHolder.Dispose();
-                oracleConnectionHolder.Dispose();
                 foreach (var castLine in castLines) {
                     castLine.Uninitialize();
                 }
+                opcConnectionHolder.Stop();
+                oracleConnectionHolder.Stop();
+                opcConnectionHolder.Dispose();
+                oracleConnectionHolder.Dispose();                
             }
             catch (Exception ex) {
                 logger.Error("Ошибка при деинициализации: " + ex.Message);
