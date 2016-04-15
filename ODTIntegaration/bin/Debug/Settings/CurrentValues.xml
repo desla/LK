@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <!--Интервал времени между чтениями данных-->
+  <readInterval>20</readInterval>
+  <!--Набор данных для передачи в ИТС-->
+  <item>
+    <opcItemName>Emulator.CAST_LINE_1.DB001.data1</opcItemName>
+    <typeName>type1</typeName>
+    <objectName>object1</objectName>
+    <dataName>data1</dataName>
+  </item>
+</configuration>

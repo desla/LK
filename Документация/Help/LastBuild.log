@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder" version="2015.1.12.0" projectFile="D:\repositories\Литейный конвейер\Документация\CastingLine.shfbproj" started="08.10.2015 12:13:19">
+<buildStep step="Initializing">
+Finding tools...
+The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
+Searching for HTML Help 1 compiler...
+Found HTML Help 1 compiler in &#39;C:\Program Files (x86)\HTML Help Workshop\&#39;
+Locating components in the following folder(s):
+   D:\repositories\Литейный конвейер\Документация
+Using presentation style &#39;VS2010&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010&#39;
+</buildStep>
+<buildStep step="ClearWorkFolder">
+Clearing working folder...
+</buildStep>
+<buildStep step="ValidatingDocumentationSources">
+Validating and copying documentation source information
+Source: D:\repositories\Литейный конвейер\ODTIntegaration\ODTIntegaration.csproj
+    Found project &#39;D:\repositories\Литейный конвейер\ODTIntegaration\ODTIntegaration.csproj&#39;
+
+Parsing project files
+    Found assembly &#39;D:\repositories\Литейный конвейер\ODTIntegaration\bin\Debug\ODTIntegaration.exe&#39;
+
+References to include (excluding framework assemblies):
+    Interop.OPCAutomation
+    log4net
+    OpcTagAccessProvider
+    Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL
+
+Copying XML comments files
+    D:\repositories\Литейный конвейер\ODTIntegaration\bin\Debug\ODTIntegaration.XML -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\ODTIntegaration.XML
+</buildStep>
+<buildStep step="GenerateSharedContent">
+Generating shared content files (ru-RU, Русский (Россия))...
+    Last step completed in 00:00:00,0000
+</buildStep>
+<buildStep step="GenerateApiFilter">
+Generating API filter for MRefBuilder...
+    Last step completed in 00:00:00,0000
+</buildStep>
+<buildStep step="GenerateReflectionInfo">
+Generating reflection information...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Џ&#174;бва&#174;Ґ&#173;ЁҐ &#173;&#160;з&#160;в&#174; 08.10.2015 12:13:20.
+Џа&#174;ҐЄв &quot;D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\GenerateRefInfo.proj&quot; ў г&#167;&#171;Ґ 1 (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+PrepareForBuild:
+  ‘&#174;&#167;&#164;&#160;&#173;ЁҐ Є&#160;в&#160;&#171;&#174;Ј&#160; &quot;obj\Debug\&quot;.
+GenerateRefInfo:
+  MRefBuilder (v2015.1.12.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Loaded 1 assemblies for reflection and 5 dependency assemblies.
+  Wrote information on 11 namespaces, 24 types, and 132 members
+  Љ&#174;ЇЁа&#174;ў&#160;&#173;ЁҐ д&#160;&#169;&#171;&#160; Ё&#167; &quot;reflection.org&quot; ў &quot;reflection.all&quot;.
+  XslTransform (v2015.1.12.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\MergeDuplicates.xsl&#39;.
+Џ&#174;бва&#174;Ґ&#173;ЁҐ Їа&#174;ҐЄв&#160; &quot;D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\GenerateRefInfo.proj&quot; &#167;&#160;ўҐаиҐ&#173;&#174; (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+
+Џ&#174;бва&#174;Ґ&#173;ЁҐ гбЇҐи&#173;&#174; &#167;&#160;ўҐаиҐ&#173;&#174;.
+
+‡&#160;ва&#160;зҐ&#173;&#173;&#174;Ґ ўаҐ&#172;п: 00:00:01.26
+    Last step completed in 00:00:01,3572
+</buildStep>
+<buildStep step="TransformReflectionInfo">
+Transforming reflection output...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Џ&#174;бва&#174;Ґ&#173;ЁҐ &#173;&#160;з&#160;в&#174; 08.10.2015 12:13:21.
+Џа&#174;ҐЄв &quot;D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\TransformManifest.proj&quot; ў г&#167;&#171;Ґ 1 (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+TransformManifest:
+  XslTransform (v2015.1.12.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\ApplyVSDocModel.xsl&#39;.
+  Љ&#174;ЇЁа&#174;ў&#160;&#173;ЁҐ д&#160;&#169;&#171;&#160; Ё&#167; &quot;reflection.xml&quot; ў &quot;reflection.nofilenames&quot;.
+  XslTransform (v2015.1.12.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\AddFilenames.xsl&#39;.
+    Unique name M_Alvasoft_ODTIntegaration_ConnectionHolder_OpcConnectionHolder__ctor_1 generated for M:Alvasoft.ODTIntegaration.ConnectionHolder.OpcConnectionHolder.#ctor(System.String,System.String)
+    Unique name M_Alvasoft_ODTIntegaration_ConnectionHolder_OracleConnectionHolder__ctor_1 generated for M:Alvasoft.ODTIntegaration.ConnectionHolder.OracleConnectionHolder.#ctor(System.String,System.String,System.String)
+  XslTransform (v2015.1.12.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\ReflectionToManifest.xsl&#39;.
+Џ&#174;бва&#174;Ґ&#173;ЁҐ Їа&#174;ҐЄв&#160; &quot;D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\TransformManifest.proj&quot; &#167;&#160;ўҐаиҐ&#173;&#174; (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+
+Џ&#174;бва&#174;Ґ&#173;ЁҐ гбЇҐи&#173;&#174; &#167;&#160;ўҐаиҐ&#173;&#174;.
+
+‡&#160;ва&#160;зҐ&#173;&#173;&#174;Ґ ўаҐ&#172;п: 00:00:00.95
+    Last step completed in 00:00:01,0336
+</buildStep>
+<buildStep step="GenerateNamespaceSummaries">
+Generating namespace summary information...
+    Last step completed in 00:00:00,0000
+</buildStep>
+<buildStep step="GenerateInheritedDocumentation">
+Generating inherited documentation...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Sandcastle Help File Builder, version 2015.1.12.0
+Copyright c 2006-2015, Eric Woodruff, All Rights Reserved
+E-Mail: Eric@EWoodruff.us
+
+Reflection information will be retrieved from &#39;reflection.xml&#39;
+Inherited documentation will be written to &#39;_InheritedDocs_.xml&#39;
+Indexing C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\ru\*.xml
+Indexing C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\2.0\Runtime\v4.0\ru\*.xml
+Indexing D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\ODTIntegaration.XML
+Indexed 144490 members in 127 file(s).  1 file(s) to scan for &lt;inheritdoc /&gt; tags.
+Merging inherited documentation...
+
+
+Documentation merged successfully
+    Last step completed in 00:00:02,0682
+</buildStep>
+<buildStep step="CopyAdditionalContent">
+Copying additional content files...
+No additional content to copy
+    Last step completed in 00:00:00,0000
+</buildStep>
+<buildStep step="MergeTablesOfContents">
+Merging conceptual and additional tables of contents...
+    Last step completed in 00:00:00,0156
+</buildStep>
+<buildStep step="GenerateIntermediateTableOfContents">
+Generating intermediate table of contents file...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Џ&#174;бва&#174;Ґ&#173;ЁҐ &#173;&#160;з&#160;в&#174; 08.10.2015 12:13:24.
+Џа&#174;ҐЄв &quot;D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\GenerateIntermediateTOC.proj&quot; ў г&#167;&#171;Ґ 1 (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+GenerateIntermediateTOC:
+  XslTransform (v2015.1.12.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\CreateVSToc.xsl&#39;.
+Џ&#174;бва&#174;Ґ&#173;ЁҐ Їа&#174;ҐЄв&#160; &quot;D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\GenerateIntermediateTOC.proj&quot; &#167;&#160;ўҐаиҐ&#173;&#174; (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+
+Џ&#174;бва&#174;Ґ&#173;ЁҐ гбЇҐи&#173;&#174; &#167;&#160;ўҐаиҐ&#173;&#174;.
+
+‡&#160;ва&#160;зҐ&#173;&#173;&#174;Ґ ўаҐ&#172;п: 00:00:00.21
+Generating conceptual content intermediate TOC file...
+    Last step completed in 00:00:00,3120
+</buildStep>
+<buildStep step="CreateBuildAssemblerConfigs">
+Creating Sandcastle configuration files...
+    sandcastle.config
+    Last step completed in 00:00:00,2184
+</buildStep>
+<buildStep step="MergeCustomConfigs">
+Merging custom build component configurations
+D:\repositories\Литейный конвейер\Документация\Help\Working\sandcastle.config
+    Last step completed in 00:00:00,0468
+</buildStep>
+<buildStep step="BuildReferenceTopics">
+Building reference help topics...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Џ&#174;бва&#174;Ґ&#173;ЁҐ &#173;&#160;з&#160;в&#174; 08.10.2015 12:13:25.
+Џа&#174;ҐЄв &quot;D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\BuildReferenceTopics.proj&quot; ў г&#167;&#171;Ґ 1 (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+BuildReferenceTopics:
+  BuildAssembler (v2015.1.12.0)
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
+  Loading configuration...
+  Processing topics...
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Alvasoft.ODTIntegaration.ConnectionHolder.OpcConnectionHolder.GetOpcServer] Unknown reference link target &#39;T:OPCAutomation.OPCServer&#39;. [D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Alvasoft.ODTIntegaration.ConnectionHolder.OracleConnectionHolder.GetOracleConnection] Unknown reference link target &#39;T:Oracle.ManagedDataAccess.Client.OracleConnection&#39;. [D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.OnValueChanged(OpcTagAccessProvider.IOpcValue,OpcTagAccessProvider.OpcValueChangedEventArgs)] Unknown reference link target &#39;T:OpcTagAccessProvider.IOpcValue&#39;. [D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.OnValueChanged(OpcTagAccessProvider.IOpcValue,OpcTagAccessProvider.OpcValueChangedEventArgs)] Unknown reference link target &#39;T:OpcTagAccessProvider.OpcValueChangedEventArgs&#39;. [D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.OnValueChanged(OpcTagAccessProvider.IOpcValue,OpcTagAccessProvider.OpcValueChangedEventArgs)] Unknown reference link target &#39;M:OpcTagAccessProvider.IOpcValueListener.OnValueChanged(OpcTagAccessProvider.IOpcValue,OpcTagAccessProvider.OpcValueChangedEventArgs)&#39;. [D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveConceptualLinksComponent: [M:Alvasoft.ODTIntegration.Utils.Extensions.ArialCyrilicExtension.ToArialCyrilic(System.String)] Unknown conceptual link target &#39;b8020aae-374d-46a9-bcb7-8cc2390b93b6&#39;. [D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveConceptualLinksComponent: [M:Alvasoft.ODTIntegration.Utils.Extensions.ArialCyrilicExtension.ToArialCyrilic(System.String)] Unknown conceptual link target &#39;175ce3ff-9bbf-4e64-8421-faeb81a0bb51&#39;. [D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveConceptualLinksComponent: [M:Alvasoft.ODTIntegration.Utils.Extensions.CastingPlanExtensions.ReadCastPlan(Oracle.ManagedDataAccess.Client.OracleDataReader)] Unknown conceptual link target &#39;b8020aae-374d-46a9-bcb7-8cc2390b93b6&#39;. [D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveConceptualLinksComponent: [M:Alvasoft.ODTIntegration.Utils.Extensions.CastingPlanExtensions.ReadCastPlan(Oracle.ManagedDataAccess.Client.OracleDataReader)] Unknown conceptual link target &#39;175ce3ff-9bbf-4e64-8421-faeb81a0bb51&#39;. [D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Alvasoft.ODTIntegration.Utils.Extensions.CastingPlanExtensions.ReadCastPlan(Oracle.ManagedDataAccess.Client.OracleDataReader)] Unknown reference link target &#39;T:Oracle.ManagedDataAccess.Client.OracleDataReader&#39;. [D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:Alvasoft.ODTIntegration.Utils.Extensions.CastingPlanExtensions.ReadCastPlan(Oracle.ManagedDataAccess.Client.OracleDataReader)] Unknown reference link target &#39;T:Oracle.ManagedDataAccess.Client.OracleDataReader&#39;. [D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\BuildReferenceTopics.proj]
+  Processed 211 topic(s)
+  11 warning(s)
+  CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 5 of 15.
+  CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 5 of 30.
+Џ&#174;бва&#174;Ґ&#173;ЁҐ Їа&#174;ҐЄв&#160; &quot;D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\BuildReferenceTopics.proj&quot; &#167;&#160;ўҐаиҐ&#173;&#174; (жҐ&#171;ҐўлҐ &#174;ЎкҐЄвл Ї&#174; г&#172;&#174;&#171;з&#160;&#173;Ёо).
+
+Џ&#174;бва&#174;Ґ&#173;ЁҐ гбЇҐи&#173;&#174; &#167;&#160;ўҐаиҐ&#173;&#174;.
+
+‡&#160;ва&#160;зҐ&#173;&#173;&#174;Ґ ўаҐ&#172;п: 00:00:14.64
+    Last step completed in 00:00:14,7576
+</buildStep>
+<buildStep step="CombiningIntermediateTocFiles">
+Combining conceptual and API intermediate TOC files...
+    Last step completed in 00:00:00,0000
+</buildStep>
+<buildStep step="ExtractingHtmlInfo">
+Extracting HTML info for HTML Help 1 and/or website...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+Sandcastle Help File Builder, version 2015.1.12.0
+Copyright c 2006-2015, Eric Woodruff, All Rights Reserved
+E-Mail: Eric@EWoodruff.us
+
+Using LCID &#39;1049&#39;, code page &#39;1251&#39;, encoding charset &#39;Windows-1251&#39;.
+
+Processing Help 1 files in D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\Output\HtmlHelp1
+Processed 211 HTML files
+Sorting keywords and generating See Also indices
+Saving HTML Help 1 keyword index to D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\Documentation.hhk
+Saving HTML Help 1 table of contents to D:\repositories\‹ЁвҐ&#169;&#173;л&#169; Є&#174;&#173;ўҐ&#169;Ґа\„&#174;Єг&#172;Ґ&#173;в&#160;жЁп\Help\Working\Documentation.hhc
+    Last step completed in 00:00:00,6708
+</buildStep>
+<buildStep step="CopyStandardHelpContent">
+Copying standard help content...
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\alert_caution.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\alert_caution.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\alert_note.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\alert_note.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\alert_security.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\alert_security.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\CFW.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\CFW.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\CodeExample.png -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\CodeExample.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\favicon.ico -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\favicon.ico
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\footer_slice.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\footer_slice.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\privclass.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\privclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\privdelegate.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\privdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\privenumeration.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\privenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\privevent.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\privevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\privextension.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\privextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\privfield.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\privfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\privinterface.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\privinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\privmethod.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\privmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\privproperty.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\privproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\privstructure.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\privstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\protclass.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\protclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\protdelegate.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\protdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\protenumeration.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\protenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\protevent.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\protevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\protextension.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\protextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\protfield.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\protfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\protinterface.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\protinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\protmethod.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\protmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\protoperator.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\protoperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\protproperty.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\protproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\protstructure.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\protstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\pubclass.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\pubclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\pubdelegate.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\pubdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\pubenumeration.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\pubenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\pubevent.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\pubevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\pubextension.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\pubextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\pubfield.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\pubfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\pubinterface.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\pubinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\pubmethod.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\pubmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\puboperator.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\puboperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\pubproperty.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\pubproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\pubstructure.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\pubstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\slMobile.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\slMobile.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\static.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\static.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\tabLeftBG.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\tabLeftBG.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\tabRightBG.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\tabRightBG.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\icons\xna.gif -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\icons\xna.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\scripts\branding.js -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\scripts\branding.js
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-cs-CZ.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-cs-CZ.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-de-DE.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-de-DE.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-en-US.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-en-US.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-es-ES.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-es-ES.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-fr-FR.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-fr-FR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-Help1.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-Help1.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-Help2.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-Help2.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-HelpViewer.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-HelpViewer.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-it-IT.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-it-IT.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-ja-JP.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-ja-JP.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-ko-KR.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-ko-KR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-pl-PL.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-pl-PL.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-pt-BR.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-pt-BR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-ru-RU.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-ru-RU.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-tr-TR.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-tr-TR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-zh-CN.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-zh-CN.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding-zh-TW.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding-zh-TW.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2010\styles\branding.css -&gt; D:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\styles\branding.css
+    Last step completed in 00:00:00,2184
+</buildStep>
+<buildStep step="GenerateHelpFormatTableOfContents">
+Generating HTML Help 1 table of contents file...
+    Last step completed in 00:00:00,0000
+</buildStep>
+<buildStep step="GenerateHelpFileIndex">
+Generating HTML Help 1 index file...
+    Last step completed in 00:00:00,0000
+</buildStep>
+<buildStep step="GenerateHelpProject">
+Generating HTML Help 1 project file...
+    Last step completed in 00:00:00,0000
+</buildStep>
+<buildStep step="CompilingHelpFile">
+Compiling HTML Help 1 file...
+[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe]
+  Microsoft HTML Help Compiler 4.74.8702
+  
+  
+  
+  Compiling d:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\Documentation.chm
+  
+  
+  
+  
+  
+  Compile time: 0 minutes, 3 seconds
+  
+  213	Topics
+  
+  2,366	Local links
+  
+  1,034	Internet links
+  
+  0	Graphics
+  
+  
+  
+  
+  
+  Created d:\repositories\Литейный конвейер\Документация\Help\Working\Output\HtmlHelp1\Documentation.chm, 223,059 bytes
+  
+  Compression decreased file by 1,544,320 bytes.
+  
+    Last step completed in 00:00:04,5572
+</buildStep>
+<buildStep step="CleanIntermediates">
+Removing intermediate files...
+    Last step completed in 00:00:00,0624
+</buildStep>
+<buildStep step="Completed">
+
+Build completed successfully at 08.10.2015 12:13:45.  Total time: 00:00:26,0982
+
+</buildStep>
+</shfbBuild>

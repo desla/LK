@@ -1,0 +1,8 @@
+D:\repositories\Литейный конвейер\CastLineEmulator\bin\Debug\CastLineEmulator.exe
+D:\repositories\Литейный конвейер\CastLineEmulator\bin\Debug\CastLineEmulator.pdb
+D:\repositories\Литейный конвейер\CastLineEmulator\obj\x86\Debug\CastLineEmulator.exe
+D:\repositories\Литейный конвейер\CastLineEmulator\obj\x86\Debug\CastLineEmulator.pdb
+D:\repositories\Литейный конвейер\CastLineEmulator\bin\Debug\OpcTagAccessProvider.dll
+D:\repositories\Литейный конвейер\CastLineEmulator\bin\Debug\OpcTagAccessProvider.pdb
+D:\repositories\Литейный конвейер\CastLineEmulator\obj\x86\Debug\CastLineEmulator.csprojResolveAssemblyReference.cache
+D:\repositories\Литейный конвейер\CastLineEmulator\bin\Debug\Interop.OPCAutomation.dll
