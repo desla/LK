@@ -1,13 +1,14 @@
 ﻿namespace Alvasoft.ODTIntegration.CastLineConnector
 {
-    using System;    
+    using System;
     using System.Collections.Generic;
     using ConnectionHolders;
     using Structures;
     using OpcTagAccessProvider;
     using Alvasoft.Utils.Activity;
-    using Utils.Extensions;    
+    using Utils.Extensions;
     using log4net;
+    using System.Timers;
 
     /// <summary>
     /// Реализация конектора к ЛК.
@@ -34,6 +35,11 @@
         private const string DB620_CAST_NUM = "DB620_CAST_NUM";
         private const string DB620_FURNACE_NUM = "DB620_FURNACE_NUM";
         private const string DB620_MELT_ID = "DB620_MELT_ID";
+
+        // Последний полученный пакет ЕГП.
+        FinishedProduct lastReceivedPacket = null;
+        // Проверяет появление новых данных о ЕГП.
+        Timer packetChecker;
 
         private Dictionary<string, OpcValueImpl> tag = new Dictionary<string, OpcValueImpl>();
 
@@ -137,11 +143,16 @@
 
                 tag[DB601_NEW_BATCH_REQUEST].IsListenValueChanging = true;
                 tag[DB601_NEW_BATCH_REQUEST].SubscribeToValueChange(this);
-                tag[DB620_DATA_READY].IsListenValueChanging = true;
-                tag[DB620_DATA_READY].SubscribeToValueChange(this);
+                //tag[DB620_DATA_READY].IsListenValueChanging = true;
+                //tag[DB620_DATA_READY].SubscribeToValueChange(this);
 
                 tag[DB601_NEW_BATCH_REQUEST].Activate();
                 tag[DB620_DATA_READY].Activate();
+
+                packetChecker = new Timer();
+                packetChecker.Elapsed += CheckNewPacket;
+                packetChecker.Interval = 10 * 1000;
+                packetChecker.Start();
 
                 logger.Info("Инициализация завершена.");
             }
@@ -149,11 +160,12 @@
                 connectionHolder.ReleaseConnection();
             }
 
-        }
+        }        
 
         protected override void DoUninitialize()
         {
             logger.Info("Деинициализация...");
+            packetChecker.Stop();
             tag[DB601_NEW_BATCH_REQUEST].UnSubscribeToValueChange(this);
             tag[DB620_DATA_READY].UnSubscribeToValueChange(this);
             foreach (var opcTag in tag.Values) {
@@ -164,8 +176,47 @@
                     logger.Error("Ошибка при деинициализации: " + ex.Message);
                 }
             }
-            tag.Clear();
+            tag.Clear();            
             logger.Info("Деинициализация завершена.");
+        }
+
+        /// <summary>
+        /// Проверяет появление новых данных о ЕГП.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckNewPacket(object sender, ElapsedEventArgs e) {
+            var timer = (Timer)sender;
+            timer.Enabled = false;
+
+            if (IsNewPacketAvailable()) {
+                FinishedProductIsReady();
+                TryResetFinishedProduct();
+            }
+
+            timer.Enabled = true;
+        }
+
+        /// <summary>
+        /// Проверяет записаны ли данные о новой ЕГП.
+        /// </summary>
+        /// <returns>True - если данные обновлены, false - иначе.</returns>
+        private bool IsNewPacketAvailable() {
+            logger.Info("Проверка новых данных ЕГП...");
+            var isDataReady = Convert.ToBoolean(tag[DB620_DATA_READY].ReadCurrentValue());
+            if (isDataReady) {
+                FinishedProduct currentPacket = null;
+                if (TryGetFinishedProduct(out currentPacket)) {
+                    // Если записанные в контроллере данные не соответствуют последнему ЕГП.
+                    if (currentPacket.Equals(lastReceivedPacket) == false) {
+                        lastReceivedPacket = currentPacket;
+                        return true;
+                    }
+                }
+            }
+
+            logger.Info("Данные ЕГП не обновлены в контроллере.");
+            return false;
         }
 
         /// <summary>
@@ -181,12 +232,12 @@
                     TryResetCastPlanRequest();
                 }
             }
-            else if (aOpcValue.Name.Equals(opcTagsList[DB620_DATA_READY])) {
-                if (Convert.ToBoolean(aValueChangedEventArgs.Value)) {
-                    FinishedProductIsReady();
-                    TryResetFinishedProduct();
-                }
-            }
+            //else if (aOpcValue.Name.Equals(opcTagsList[DB620_DATA_READY])) {
+            //    if (Convert.ToBoolean(aValueChangedEventArgs.Value)) {
+            //        FinishedProductIsReady();
+            //        TryResetFinishedProduct();
+            //    }
+            //}
             else {
                 logger.Error("Неизвестный ОРС-тег: " + aOpcValue.Name);
             }

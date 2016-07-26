@@ -1,139 +1,16 @@
-2015-10-12 13:17:13,889 [CurrentValueReaderImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:17:13,895 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:17:13,896 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:17:13,898 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:17:13,900 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:17:13,901 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:17:13,903 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:17:13,905 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:17:13,907 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:17:13,908 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:17:13,909 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:17:13,910 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:17:13,912 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:17:13,913 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:17:13,949 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: ORA-03135: Connection lost contact
-2015-10-12 13:17:13,973 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 13:17:19,436 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 13:17:23,892 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 13:17:23,965 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:17:23,970 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 13:17:24,072 [CurrentValueReaderImpl] ERROR - Ошибка при чтении текущего значения: Ошибка при чтении значения тега Emulator.CAST_LINE_1.DB001.data1: Сбой при удаленном вызове процедуры. (Исключение из HRESULT: 0x800706BE)
-2015-10-12 13:17:33,892 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 13:17:33,965 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:17:33,971 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 13:17:43,983 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:17:54,053 [CastLineIntegrator] ERROR - Ошибка opc onConnected: Исключение из HRESULT: 0x80040202
-2015-10-12 13:18:21,446 [CastLineIntegrator] ERROR - Ошибка opc onDisconnected: Не инициализован.
-2015-10-12 13:18:21,450 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: OPC тег не активирован, но поступил запрос на деактивацию: Emulator.CAST_LINE_1.DB601.NewBatchRequest
-2015-10-12 13:18:21,451 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: OPC тег не активирован, но поступил запрос на деактивацию: Emulator.CAST_LINE_1.DB620.DataReady
-2015-10-12 13:32:31,204 [CurrentValueReaderImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:32:31,206 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:32:31,207 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:32:31,207 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:32:31,208 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:32:31,208 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:32:31,209 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:32:31,209 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:32:31,210 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:32:31,210 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:32:31,211 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:32:31,211 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:32:31,212 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:32:31,212 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:32:31,286 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: ORA-03135: Connection lost contact
-2015-10-12 13:32:31,310 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 13:32:36,754 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 13:32:41,192 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 13:32:41,282 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:32:41,287 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 13:32:46,388 [CurrentValueReaderImpl] ERROR - Ошибка при чтении текущего значения: Ошибка при чтении значения тега Emulator.CAST_LINE_1.DB001.data1: Сбой при удаленном вызове процедуры. (Исключение из HRESULT: 0x800706BE)
-2015-10-12 13:32:51,280 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:32:53,490 [OpcConnectionHolder] ERROR - Ошибка во время подключения: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:34:16,423 [CastLineIntegrator] ERROR - Ошибка opc onConnected: Ожидание закончилось вследствие освобождения семафора.
-2015-10-12 13:34:16,427 [CastLineIntegrator] ERROR - Ошибка opc onDisconnected: Не инициализован.
-2015-10-12 13:34:16,437 [CastLineIntegrator] ERROR - Ошибка при деинициализации: Данный ключ отсутствует в словаре.
-2015-10-12 13:38:01,239 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: ORA-03135: Connection lost contact
-2015-10-12 13:38:01,263 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 13:38:11,241 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:38:11,244 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 13:38:16,375 [CurrentValueReaderImpl] ERROR - Ошибка при чтении текущего значения: Ошибка при чтении значения тега Emulator.CAST_LINE_1.DB001.data1: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:38:21,241 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:38:21,244 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 13:38:21,903 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 13:38:26,377 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 13:38:31,254 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:38:31,257 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 13:38:38,648 [OpcConnectionHolder] ERROR - Ошибка во время подключения: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:38:41,269 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:39:46,431 [CurrentValueReaderImpl] ERROR - Ошибка при чтении текущего значения: Ошибка при чтении значения тега Emulator.CAST_LINE_1.DB001.data1: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 13:39:55,245 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: ORA-03135: Connection lost contact
-2015-10-12 13:39:55,248 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 13:40:00,896 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 13:40:05,260 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:40:05,263 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 13:40:05,358 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 13:40:15,261 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:41:44,269 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: ORA-03135: Connection lost contact
-2015-10-12 13:41:46,467 [CurrentValueReaderImpl] ERROR - Ошибка при чтении текущего значения: Ошибка при чтении значения тега Emulator.CAST_LINE_1.DB001.data1: Сбой при удаленном вызове процедуры. (Исключение из HRESULT: 0x800706BE)
-2015-10-12 13:41:59,278 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Connection request timed out
-2015-10-12 13:42:04,290 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:42:19,296 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Connection request timed out
-2015-10-12 13:42:24,304 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:42:39,311 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Connection request timed out
-2015-10-12 13:42:44,319 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:42:59,329 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Connection request timed out
-2015-10-12 13:43:04,334 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:43:19,341 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Connection request timed out
-2015-10-12 13:43:24,364 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:43:39,369 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Connection request timed out
-2015-10-12 13:43:44,379 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:43:59,385 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Connection request timed out
-2015-10-12 13:43:59,515 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 13:44:04,394 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:44:19,403 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Connection request timed out
-2015-10-12 13:44:24,409 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:44:39,421 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Connection request timed out
-2015-10-12 13:44:44,424 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:44:59,430 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Connection request timed out
-2015-10-12 13:45:04,439 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 13:45:06,144 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 14:08:15,148 [CurrentValueReaderImpl] ERROR - Ошибка при чтении текущего значения: Ошибка при чтении значения тега Emulator.CAST_LINE_1.DB001.data1: Сбой при удаленном вызове процедуры. Вызов не произведен. (Исключение из HRESULT: 0x800706BF)
-2015-10-12 14:08:18,896 [CurrentValueReaderImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:18,913 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:18,919 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:18,924 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:18,934 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:18,941 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:18,946 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:18,949 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: ORA-03135: Connection lost contact
-2015-10-12 14:08:18,953 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:18,961 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:18,970 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:18,977 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:18,982 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:18,988 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:18,994 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:19,002 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 14:08:24,531 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 14:08:28,899 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 14:08:28,969 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 14:08:28,989 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 14:08:38,978 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 14:08:41,189 [OpcConnectionHolder] ERROR - Ошибка во время подключения: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:08:49,104 [CastLineIntegrator] ERROR - Ошибка opc onConnected: Исключение из HRESULT: 0x80040202
-2015-10-12 14:09:21,861 [CastLineIntegrator] ERROR - Ошибка opc onDisconnected: Не инициализован.
-2015-10-12 14:09:21,870 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: OPC тег не активирован, но поступил запрос на деактивацию: Emulator.CAST_LINE_1.DB601.NewBatchRequest
-2015-10-12 14:09:21,873 [CastLineConnectorImpl] ERROR - Ошибка при деинициализации: OPC тег не активирован, но поступил запрос на деактивацию: Emulator.CAST_LINE_1.DB620.DataReady
-2015-10-12 14:13:40,295 [CurrentValueReaderImpl] ERROR - Ошибка при чтении текущего значения: Ошибка при чтении значения тега Emulator.CAST_LINE_1.DB001.data1: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
-2015-10-12 14:13:49,102 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: ORA-03135: Connection lost contact
-2015-10-12 14:13:49,127 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 14:13:54,563 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 14:13:59,049 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 14:13:59,092 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 14:13:59,095 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 14:14:09,049 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
-2015-10-12 14:14:09,107 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 14:14:09,111 [OracleConnectionHolder] ERROR - Ошибка во время подключения: Network Transport: TCP transport address connect failure
-2015-10-12 14:14:19,108 [OracleConnectionHolder] ERROR - Ошибка во время проверки подключения: Connection must be open for this operation
-2015-10-12 14:14:21,350 [OpcConnectionHolder] ERROR - Ошибка во время подключения: Сервер RPC недоступен. (Исключение из HRESULT: 0x800706BA)
+2016-07-26 11:03:12,346 [OpcConnectionHolder] ERROR - Ошибка во время подключения: В результате вызова компонента COM возвращена ошибка в формате HRESULT E_FAIL.
+2016-07-26 11:08:16,094 [OpcConnectionHolder] ERROR - Ошибка во время подключения: Исключение из HRESULT: 0x80040202
+2016-07-26 11:08:21,504 [CastLineIntegrator] ERROR - Ошибка opc onConnected: Исключение из HRESULT: 0x80040202
+2016-07-26 11:08:24,111 [CastLineIntegrator] ERROR - Ошибка при деинициализации: Ссылка на объект не указывает на экземпляр объекта.
+2016-07-26 11:08:25,959 [OpcConnectionHolder] ERROR - Ошибка во время подключения: Исключение из HRESULT: 0x80040202
+2016-07-26 11:08:31,369 [CastLineIntegrator] ERROR - Ошибка opc onConnected: Исключение из HRESULT: 0x80040202
+2016-07-26 11:09:16,046 [CastLineIntegrator] ERROR - Ошибка при деинициализации: Ссылка на объект не указывает на экземпляр объекта.
+2016-07-26 11:09:21,942 [OpcConnectionHolder] ERROR - Ошибка во время подключения: Исключение из HRESULT: 0x80040202
+2016-07-26 11:09:27,346 [CastLineIntegrator] ERROR - Ошибка opc onConnected: Исключение из HRESULT: 0x80040202
+2016-07-26 11:09:33,359 [CastLineIntegrator] ERROR - Ошибка при деинициализации: Ссылка на объект не указывает на экземпляр объекта.
+2016-07-26 11:09:51,933 [OpcConnectionHolder] ERROR - Ошибка во время подключения: Исключение из HRESULT: 0x80040202
+2016-07-26 11:09:57,356 [CastLineIntegrator] ERROR - Ошибка opc onConnected: Исключение из HRESULT: 0x80040202
+2016-07-26 11:10:01,243 [CastLineIntegrator] ERROR - Ошибка при деинициализации: Ссылка на объект не указывает на экземпляр объекта.
+2016-07-26 11:11:55,198 [OpcConnectionHolder] ERROR - Ошибка во время подключения: Исключение из HRESULT: 0x80040202
+2016-07-26 11:12:00,605 [CastLineIntegrator] ERROR - Ошибка opc onConnected: Исключение из HRESULT: 0x80040202
+2016-07-26 11:12:11,172 [CastLineIntegrator] ERROR - Ошибка при деинициализации: Ссылка на объект не указывает на экземпляр объекта.

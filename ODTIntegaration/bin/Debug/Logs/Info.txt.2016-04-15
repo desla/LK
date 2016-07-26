@@ -1,0 +1,720 @@
+2015-10-12 13:16:39,128 [CastLineIntegrator] INFO  - Инициализация...
+2015-10-12 13:16:39,957 [OracleConnectionBase] INFO  - OPC - запуск держателя подключения.
+2015-10-12 13:16:39,957 [OracleConnectionBase] INFO  - Oracle - запуск держателя подключения.
+2015-10-12 13:16:39,958 [CastLineIntegrator] INFO  - Инициализация завершена.
+2015-10-12 13:16:44,970 [OracleConnectionBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:16:44,972 [CastLineIntegrator] INFO  - Подключен OPC
+2015-10-12 13:16:44,976 [CastLineConnectorImpl] INFO  - Инициализация...
+2015-10-12 13:16:45,017 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:16:45,018 [CastLineIntegrator] INFO  - Подключен Oracle
+2015-10-12 13:16:45,020 [CurrentValuesPreparerImpl] INFO  - Инициализация...
+2015-10-12 13:16:45,062 [CurrentValuesPreparerImpl] INFO  - Инициализация завершена.
+2015-10-12 13:16:45,139 [CastLineConnectorImpl] INFO  - Инициализация завершена.
+2015-10-12 13:16:45,140 [CastLineConnectorImpl] INFO  - Появились данные ЕГП.
+2015-10-12 13:16:45,150 [CastLineConnectorImpl] INFO  - Конечный продукт: ЕГП: Идентификатор плавки 53; Номер плавки: 29; Миксер: 8; порядковый номер пакета: 28; Вес 697;
+2015-10-12 13:16:45,151 [CastLineIntegrator] INFO  - Получены данные о новой ЕГП от ЛК № 1. ЕГП: Идентификатор плавки 53; Номер плавки: 29; Миксер: 8; порядковый номер пакета: 28; Вес 697;.
+2015-10-12 13:16:45,152 [CastLineIntegrator] INFO  - Передача данный ЕГП в ИТС...
+2015-10-12 13:16:45,155 [ItsImpl] INFO  - Добавление информации о ЕГП.
+2015-10-12 13:16:45,188 [CastLineIntegrator] INFO  - Данные о ЕГП от ЛК №1 успешно переданы в ИТС.
+2015-10-12 13:16:49,978 [OracleConnectionBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:16:50,040 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:17:13,882 [OracleConnectionBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:17:13,884 [CastLineIntegrator] INFO  - Отключен OPC
+2015-10-12 13:17:13,887 [CurrentValueReaderImpl] INFO  - Деинициализация...
+2015-10-12 13:17:13,891 [CurrentValueReaderImpl] INFO  - Деинициализация произведена.
+2015-10-12 13:17:13,893 [CastLineConnectorImpl] INFO  - Деинициализация...
+2015-10-12 13:17:13,914 [CastLineConnectorImpl] INFO  - Деинициализация завершена.
+2015-10-12 13:17:13,950 [OracleConnectionBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:17:13,951 [CastLineIntegrator] INFO  - Отключен Oracle
+2015-10-12 13:17:23,886 [OracleConnectionBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:17:23,966 [OracleConnectionBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:17:33,887 [OracleConnectionBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:17:33,967 [OracleConnectionBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:17:43,901 [OracleConnectionBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:17:43,984 [OracleConnectionBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:17:53,903 [OracleConnectionBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:17:53,904 [CastLineIntegrator] INFO  - Подключен OPC
+2015-10-12 13:17:53,904 [CastLineConnectorImpl] INFO  - Инициализация...
+2015-10-12 13:17:53,981 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:17:53,981 [CastLineIntegrator] INFO  - Подключен Oracle
+2015-10-12 13:17:58,911 [OracleConnectionBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:17:58,990 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:18:03,920 [OracleConnectionBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:18:03,999 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:18:08,929 [OracleConnectionBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:18:09,007 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:18:13,937 [OracleConnectionBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:18:14,016 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:18:18,946 [OracleConnectionBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:18:19,025 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:18:21,424 [CastLineIntegrator] INFO  - Деинициализация...
+2015-10-12 13:18:21,425 [OracleConnectionBase] INFO  - OPC - остановка держателя подключения.
+2015-10-12 13:18:21,425 [OracleConnectionBase] INFO  - Oracle - остановка держателя подключения.
+2015-10-12 13:18:21,426 [OracleConnectionBase] INFO  - OPC - остановка держателя подключения.
+2015-10-12 13:18:21,445 [CastLineIntegrator] INFO  - Отключен OPC
+2015-10-12 13:18:21,446 [OracleConnectionBase] INFO  - Oracle - остановка держателя подключения.
+2015-10-12 13:18:21,449 [CastLineIntegrator] INFO  - Отключен Oracle
+2015-10-12 13:18:21,450 [CastLineConnectorImpl] INFO  - Деинициализация...
+2015-10-12 13:18:21,451 [CastLineConnectorImpl] INFO  - Деинициализация завершена.
+2015-10-12 13:18:21,453 [CastLineIntegrator] INFO  - Деинициализация завершена.
+2015-10-12 13:31:41,435 [CastLineIntegrator] INFO  - Инициализация...
+2015-10-12 13:31:42,254 [OracleConnectionBase] INFO  - OPC - запуск держателя подключения.
+2015-10-12 13:31:42,255 [OracleConnectionBase] INFO  - Oracle - запуск держателя подключения.
+2015-10-12 13:31:42,255 [CastLineIntegrator] INFO  - Инициализация завершена.
+2015-10-12 13:31:47,268 [OracleConnectionBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:31:47,270 [CastLineIntegrator] INFO  - Подключен OPC
+2015-10-12 13:31:47,273 [CastLineConnectorImpl] INFO  - Инициализация...
+2015-10-12 13:31:47,321 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:31:47,322 [CastLineIntegrator] INFO  - Подключен Oracle
+2015-10-12 13:31:47,323 [CurrentValuesPreparerImpl] INFO  - Инициализация...
+2015-10-12 13:31:47,365 [CurrentValuesPreparerImpl] INFO  - Инициализация завершена.
+2015-10-12 13:31:47,464 [CastLineConnectorImpl] INFO  - Инициализация завершена.
+2015-10-12 13:31:47,464 [CastLineConnectorImpl] INFO  - Появились данные ЕГП.
+2015-10-12 13:31:47,477 [CastLineConnectorImpl] INFO  - Конечный продукт: ЕГП: Идентификатор плавки 90; Номер плавки: 6; Миксер: 61; порядковый номер пакета: 78; Вес 184;
+2015-10-12 13:31:47,478 [CastLineIntegrator] INFO  - Получены данные о новой ЕГП от ЛК № 1. ЕГП: Идентификатор плавки 90; Номер плавки: 6; Миксер: 61; порядковый номер пакета: 78; Вес 184;.
+2015-10-12 13:31:47,479 [CastLineIntegrator] INFO  - Передача данный ЕГП в ИТС...
+2015-10-12 13:31:47,482 [ItsImpl] INFO  - Добавление информации о ЕГП.
+2015-10-12 13:31:47,515 [CastLineIntegrator] INFO  - Данные о ЕГП от ЛК №1 успешно переданы в ИТС.
+2015-10-12 13:31:52,272 [OracleConnectionBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:31:52,350 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:31:55,096 [CastLineConnectorImpl] INFO  - Запрос на новую карту плавки.
+2015-10-12 13:31:55,099 [CastLineConnectorImpl] INFO  - Номер миксера 1
+2015-10-12 13:31:55,101 [CastLineIntegrator] INFO  - Получен запрос от ЛК №1 на карту плавки.
+2015-10-12 13:31:55,102 [CastLineIntegrator] INFO  - Выполняем запрос у ИТС карты плавки для ЛК №1.
+2015-10-12 13:31:55,105 [ItsImpl] INFO  - Запрос карты плавки для для миксера №1
+2015-10-12 13:31:55,133 [CastLineIntegrator] INFO  - Карта плавки получена для ЛК №1.
+2015-10-12 13:31:55,134 [CastLineIntegrator] INFO  - Записываем карту плавки в ЛК №1...
+2015-10-12 13:31:55,136 [CastLineConnectorImpl] INFO  - Запись карты плавки в контроллер ЛК №1: Карта плавки: Идентификатор 123456789; Номер 1234; Миксер 1; Наименование 'Чушка мелкая А7Э';...
+2015-10-12 13:31:55,185 [CastLineConnectorImpl] INFO  - Запись карты плавки завершена.
+2015-10-12 13:31:55,186 [CastLineIntegrator] INFO  - Карта плавки записана успешно в ЛК №1.
+2015-10-12 13:31:57,286 [OracleConnectionBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:31:57,345 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:32:01,242 [CastLineConnectorImpl] INFO  - Появились данные ЕГП.
+2015-10-12 13:32:01,247 [CastLineConnectorImpl] INFO  - Конечный продукт: ЕГП: Идентификатор плавки 90; Номер плавки: 6; Миксер: 61; порядковый номер пакета: 78; Вес 184;
+2015-10-12 13:32:01,249 [CastLineIntegrator] INFO  - Получены данные о новой ЕГП от ЛК № 1. ЕГП: Идентификатор плавки 90; Номер плавки: 6; Миксер: 61; порядковый номер пакета: 78; Вес 184;.
+2015-10-12 13:32:01,250 [CastLineIntegrator] INFO  - Передача данный ЕГП в ИТС...
+2015-10-12 13:32:01,251 [ItsImpl] INFO  - Добавление информации о ЕГП.
+2015-10-12 13:32:01,257 [CastLineIntegrator] INFO  - Данные о ЕГП от ЛК №1 успешно переданы в ИТС.
+2015-10-12 13:32:02,289 [OracleConnectionBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:32:02,351 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:32:07,290 [OracleConnectionBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:32:07,359 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:32:07,488 [CastLineIntegrator] INFO  - Получены текущие параметры. Всего значений: 1
+2015-10-12 13:32:07,488 [CastLineIntegrator] INFO  - Подготавливаем данные для передачи в ИТС...
+2015-10-12 13:32:07,489 [CurrentValuesPreparerImpl] INFO  - Подготовка данных...
+2015-10-12 13:32:07,490 [CurrentValuesPreparerImpl] INFO  - Данные подготовлены успешно.
+2015-10-12 13:32:07,491 [CastLineIntegrator] INFO  - Данные подготовлены успешно.
+2015-10-12 13:32:07,491 [CastLineIntegrator] INFO  - Передача данных в ИТС...
+2015-10-12 13:32:07,493 [ItsImpl] INFO  - Добавление информации текущих параметров...
+2015-10-12 13:32:07,503 [ItsImpl] INFO  - Текущие параметры успешно добавлены в ИТС.
+2015-10-12 13:32:07,504 [CastLineIntegrator] INFO  - Данные успешно переданы в ИТС.
+2015-10-12 13:32:31,199 [OracleConnectionBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:32:31,200 [CastLineIntegrator] INFO  - Отключен OPC
+2015-10-12 13:32:31,202 [CurrentValueReaderImpl] INFO  - Деинициализация...
+2015-10-12 13:32:31,204 [CurrentValueReaderImpl] INFO  - Деинициализация произведена.
+2015-10-12 13:32:31,205 [CastLineConnectorImpl] INFO  - Деинициализация...
+2015-10-12 13:32:31,213 [CastLineConnectorImpl] INFO  - Деинициализация завершена.
+2015-10-12 13:32:31,286 [OracleConnectionBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:32:31,286 [CastLineIntegrator] INFO  - Отключен Oracle
+2015-10-12 13:32:41,188 [OracleConnectionBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:32:41,282 [OracleConnectionBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:32:51,202 [OracleConnectionBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:32:51,282 [OracleConnectionBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:33:01,220 [OracleConnectionBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:33:01,222 [CastLineIntegrator] INFO  - Подключен OPC
+2015-10-12 13:33:01,223 [CastLineConnectorImpl] INFO  - Инициализация...
+2015-10-12 13:33:01,298 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:33:01,300 [CastLineIntegrator] INFO  - Подключен Oracle
+2015-10-12 13:33:06,305 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:33:11,314 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:33:16,323 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:33:21,331 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:33:26,340 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:33:31,348 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:33:36,356 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:33:41,365 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:33:46,373 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:33:51,374 [OracleConnectionBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:33:51,381 [CastLineIntegrator] INFO  - Деинициализация...
+2015-10-12 13:33:51,383 [OracleConnectionBase] INFO  - OPC - остановка держателя подключения.
+2015-10-12 13:33:51,385 [OracleConnectionBase] INFO  - Oracle - остановка держателя подключения.
+2015-10-12 13:33:51,387 [OracleConnectionBase] INFO  - OPC - остановка держателя подключения.
+2015-10-12 13:34:16,425 [CastLineIntegrator] INFO  - Отключен OPC
+2015-10-12 13:34:16,429 [OracleConnectionBase] INFO  - Oracle - остановка держателя подключения.
+2015-10-12 13:34:16,434 [CastLineIntegrator] INFO  - Отключен Oracle
+2015-10-12 13:34:16,436 [CastLineConnectorImpl] INFO  - Деинициализация...
+2015-10-12 13:34:16,439 [CastLineIntegrator] INFO  - Деинициализация завершена.
+2015-10-12 13:37:31,421 [CastLineIntegrator] INFO  - Инициализация...
+2015-10-12 13:37:32,237 [ConnectionHolderBase] INFO  - OPC - запуск держателя подключения.
+2015-10-12 13:37:32,237 [ConnectionHolderBase] INFO  - Oracle - запуск держателя подключения.
+2015-10-12 13:37:32,237 [CastLineIntegrator] INFO  - Инициализация завершена.
+2015-10-12 13:37:37,242 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:37:37,245 [CastLineIntegrator] INFO  - Подключен OPC
+2015-10-12 13:37:37,248 [CastLineConnectorImpl] INFO  - Инициализация...
+2015-10-12 13:37:37,302 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:37:37,303 [CastLineIntegrator] INFO  - Подключен Oracle
+2015-10-12 13:37:37,304 [CurrentValuesPreparerImpl] INFO  - Инициализация...
+2015-10-12 13:37:37,347 [CurrentValuesPreparerImpl] INFO  - Инициализация завершена.
+2015-10-12 13:37:37,438 [CastLineConnectorImpl] INFO  - Инициализация завершена.
+2015-10-12 13:37:37,439 [CastLineConnectorImpl] INFO  - Появились данные ЕГП.
+2015-10-12 13:37:37,449 [CastLineConnectorImpl] INFO  - Конечный продукт: ЕГП: Идентификатор плавки 45; Номер плавки: 2; Миксер: 98; порядковый номер пакета: 40; Вес 554;
+2015-10-12 13:37:37,450 [CastLineIntegrator] INFO  - Получены данные о новой ЕГП от ЛК № 1. ЕГП: Идентификатор плавки 45; Номер плавки: 2; Миксер: 98; порядковый номер пакета: 40; Вес 554;.
+2015-10-12 13:37:37,451 [CastLineIntegrator] INFO  - Передача данный ЕГП в ИТС...
+2015-10-12 13:37:37,454 [ItsImpl] INFO  - Добавление информации о ЕГП.
+2015-10-12 13:37:37,487 [CastLineIntegrator] INFO  - Данные о ЕГП от ЛК №1 успешно переданы в ИТС.
+2015-10-12 13:38:01,240 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:38:01,241 [CastLineIntegrator] INFO  - Отключен Oracle
+2015-10-12 13:38:11,242 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:38:16,373 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:38:16,374 [CastLineIntegrator] INFO  - Отключен OPC
+2015-10-12 13:38:21,241 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:38:26,373 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:38:31,255 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:38:36,371 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:38:41,270 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:38:46,388 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:38:46,388 [CastLineIntegrator] INFO  - Подключен OPC
+2015-10-12 13:38:51,271 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:38:51,272 [CastLineIntegrator] INFO  - Подключен Oracle
+2015-10-12 13:38:51,396 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:38:56,279 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:38:56,405 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:39:01,288 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:39:01,413 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:39:02,746 [CastLineConnectorImpl] INFO  - Запрос на новую карту плавки.
+2015-10-12 13:39:02,749 [CastLineConnectorImpl] INFO  - Номер миксера 1
+2015-10-12 13:39:02,751 [CastLineIntegrator] INFO  - Получен запрос от ЛК №1 на карту плавки.
+2015-10-12 13:39:02,751 [CastLineIntegrator] INFO  - Выполняем запрос у ИТС карты плавки для ЛК №1.
+2015-10-12 13:39:02,752 [ItsImpl] INFO  - Запрос карты плавки для для миксера №1
+2015-10-12 13:39:02,781 [CastLineIntegrator] INFO  - Карта плавки получена для ЛК №1.
+2015-10-12 13:39:02,781 [CastLineIntegrator] INFO  - Записываем карту плавки в ЛК №1...
+2015-10-12 13:39:02,785 [CastLineConnectorImpl] INFO  - Запись карты плавки в контроллер ЛК №1: Карта плавки: Идентификатор 123456789; Номер 1234; Миксер 1; Наименование 'Чушка мелкая А7Э';...
+2015-10-12 13:39:02,840 [CastLineConnectorImpl] INFO  - Запись карты плавки завершена.
+2015-10-12 13:39:02,842 [CastLineIntegrator] INFO  - Карта плавки записана успешно в ЛК №1.
+2015-10-12 13:39:06,297 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:39:06,403 [CastLineIntegrator] INFO  - Получены текущие параметры. Всего значений: 1
+2015-10-12 13:39:06,405 [CastLineIntegrator] INFO  - Подготавливаем данные для передачи в ИТС...
+2015-10-12 13:39:06,409 [CurrentValuesPreparerImpl] INFO  - Подготовка данных...
+2015-10-12 13:39:06,412 [CurrentValuesPreparerImpl] INFO  - Данные подготовлены успешно.
+2015-10-12 13:39:06,414 [CastLineIntegrator] INFO  - Данные подготовлены успешно.
+2015-10-12 13:39:06,417 [CastLineIntegrator] INFO  - Передача данных в ИТС...
+2015-10-12 13:39:06,419 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:39:06,423 [ItsImpl] INFO  - Добавление информации текущих параметров...
+2015-10-12 13:39:06,440 [ItsImpl] INFO  - Текущие параметры успешно добавлены в ИТС.
+2015-10-12 13:39:06,442 [CastLineIntegrator] INFO  - Данные успешно переданы в ИТС.
+2015-10-12 13:39:09,895 [CastLineConnectorImpl] INFO  - Запрос на новую карту плавки.
+2015-10-12 13:39:09,899 [CastLineConnectorImpl] INFO  - Номер миксера 1
+2015-10-12 13:39:09,901 [CastLineIntegrator] INFO  - Получен запрос от ЛК №1 на карту плавки.
+2015-10-12 13:39:09,903 [CastLineIntegrator] INFO  - Выполняем запрос у ИТС карты плавки для ЛК №1.
+2015-10-12 13:39:09,906 [ItsImpl] INFO  - Запрос карты плавки для для миксера №1
+2015-10-12 13:39:09,913 [CastLineIntegrator] INFO  - Карта плавки получена для ЛК №1.
+2015-10-12 13:39:09,915 [CastLineIntegrator] INFO  - Записываем карту плавки в ЛК №1...
+2015-10-12 13:39:09,918 [CastLineConnectorImpl] INFO  - Запись карты плавки в контроллер ЛК №1: Карта плавки: Идентификатор 123456789; Номер 1234; Миксер 1; Наименование 'Чушка мелкая А7Э';...
+2015-10-12 13:39:09,966 [CastLineConnectorImpl] INFO  - Запись карты плавки завершена.
+2015-10-12 13:39:09,968 [CastLineIntegrator] INFO  - Карта плавки записана успешно в ЛК №1.
+2015-10-12 13:39:11,302 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:39:11,427 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:39:16,310 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:39:16,435 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:39:16,534 [CastLineConnectorImpl] INFO  - Появились данные ЕГП.
+2015-10-12 13:39:16,541 [CastLineConnectorImpl] INFO  - Конечный продукт: ЕГП: Идентификатор плавки 45; Номер плавки: 2; Миксер: 98; порядковый номер пакета: 40; Вес 554;
+2015-10-12 13:39:16,545 [CastLineIntegrator] INFO  - Получены данные о новой ЕГП от ЛК № 1. ЕГП: Идентификатор плавки 45; Номер плавки: 2; Миксер: 98; порядковый номер пакета: 40; Вес 554;.
+2015-10-12 13:39:16,548 [CastLineIntegrator] INFO  - Передача данный ЕГП в ИТС...
+2015-10-12 13:39:16,551 [ItsImpl] INFO  - Добавление информации о ЕГП.
+2015-10-12 13:39:16,557 [CastLineIntegrator] INFO  - Данные о ЕГП от ЛК №1 успешно переданы в ИТС.
+2015-10-12 13:39:21,318 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:39:21,443 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:39:22,464 [CastLineConnectorImpl] INFO  - Появились данные ЕГП.
+2015-10-12 13:39:22,472 [CastLineConnectorImpl] INFO  - Конечный продукт: ЕГП: Идентификатор плавки 29; Номер плавки: 78; Миксер: 57; порядковый номер пакета: 26; Вес 944;
+2015-10-12 13:39:22,476 [CastLineIntegrator] INFO  - Получены данные о новой ЕГП от ЛК № 1. ЕГП: Идентификатор плавки 29; Номер плавки: 78; Миксер: 57; порядковый номер пакета: 26; Вес 944;.
+2015-10-12 13:39:22,479 [CastLineIntegrator] INFO  - Передача данный ЕГП в ИТС...
+2015-10-12 13:39:22,481 [ItsImpl] INFO  - Добавление информации о ЕГП.
+2015-10-12 13:39:22,489 [CastLineIntegrator] INFO  - Данные о ЕГП от ЛК №1 успешно переданы в ИТС.
+2015-10-12 13:39:26,328 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:39:26,417 [CastLineIntegrator] INFO  - Получены текущие параметры. Всего значений: 1
+2015-10-12 13:39:26,420 [CastLineIntegrator] INFO  - Подготавливаем данные для передачи в ИТС...
+2015-10-12 13:39:26,422 [CurrentValuesPreparerImpl] INFO  - Подготовка данных...
+2015-10-12 13:39:26,425 [CurrentValuesPreparerImpl] INFO  - Данные подготовлены успешно.
+2015-10-12 13:39:26,427 [CastLineIntegrator] INFO  - Данные подготовлены успешно.
+2015-10-12 13:39:26,430 [CastLineIntegrator] INFO  - Передача данных в ИТС...
+2015-10-12 13:39:26,431 [ItsImpl] INFO  - Добавление информации текущих параметров...
+2015-10-12 13:39:26,439 [ItsImpl] INFO  - Текущие параметры успешно добавлены в ИТС.
+2015-10-12 13:39:26,441 [CastLineIntegrator] INFO  - Данные успешно переданы в ИТС.
+2015-10-12 13:39:26,449 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:39:31,332 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:39:31,457 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:39:55,245 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:39:55,245 [CastLineIntegrator] INFO  - Отключен Oracle
+2015-10-12 13:39:55,364 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:39:55,364 [CastLineIntegrator] INFO  - Отключен OPC
+2015-10-12 13:40:05,260 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:40:05,354 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:40:15,262 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:40:15,369 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:40:25,277 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:40:25,277 [CastLineIntegrator] INFO  - Подключен Oracle
+2015-10-12 13:40:25,371 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:40:25,372 [CastLineIntegrator] INFO  - Подключен OPC
+2015-10-12 13:40:30,286 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:40:30,379 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:40:35,314 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:40:35,390 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:40:38,843 [CastLineConnectorImpl] INFO  - Запрос на новую карту плавки.
+2015-10-12 13:40:38,844 [CastLineConnectorImpl] INFO  - Номер миксера 1
+2015-10-12 13:40:38,845 [CastLineIntegrator] INFO  - Получен запрос от ЛК №1 на карту плавки.
+2015-10-12 13:40:38,845 [CastLineIntegrator] INFO  - Выполняем запрос у ИТС карты плавки для ЛК №1.
+2015-10-12 13:40:38,845 [ItsImpl] INFO  - Запрос карты плавки для для миксера №1
+2015-10-12 13:40:38,849 [CastLineIntegrator] INFO  - Карта плавки получена для ЛК №1.
+2015-10-12 13:40:38,849 [CastLineIntegrator] INFO  - Записываем карту плавки в ЛК №1...
+2015-10-12 13:40:38,850 [CastLineConnectorImpl] INFO  - Запись карты плавки в контроллер ЛК №1: Карта плавки: Идентификатор 123456789; Номер 1234; Миксер 1; Наименование 'Чушка мелкая А7Э';...
+2015-10-12 13:40:38,901 [CastLineConnectorImpl] INFO  - Запись карты плавки завершена.
+2015-10-12 13:40:38,902 [CastLineIntegrator] INFO  - Карта плавки записана успешно в ЛК №1.
+2015-10-12 13:40:40,305 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:40:40,402 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:40:45,309 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:40:45,385 [CastLineIntegrator] INFO  - Получены текущие параметры. Всего значений: 1
+2015-10-12 13:40:45,385 [CastLineIntegrator] INFO  - Подготавливаем данные для передачи в ИТС...
+2015-10-12 13:40:45,385 [CurrentValuesPreparerImpl] INFO  - Подготовка данных...
+2015-10-12 13:40:45,387 [CurrentValuesPreparerImpl] INFO  - Данные подготовлены успешно.
+2015-10-12 13:40:45,390 [CastLineIntegrator] INFO  - Данные подготовлены успешно.
+2015-10-12 13:40:45,392 [CastLineIntegrator] INFO  - Передача данных в ИТС...
+2015-10-12 13:40:45,394 [ItsImpl] INFO  - Добавление информации текущих параметров...
+2015-10-12 13:40:45,402 [ItsImpl] INFO  - Текущие параметры успешно добавлены в ИТС.
+2015-10-12 13:40:45,406 [CastLineIntegrator] INFO  - Данные успешно переданы в ИТС.
+2015-10-12 13:40:45,404 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:40:49,800 [CastLineConnectorImpl] INFO  - Появились данные ЕГП.
+2015-10-12 13:40:49,806 [CastLineConnectorImpl] INFO  - Конечный продукт: ЕГП: Идентификатор плавки 74; Номер плавки: 43; Миксер: 41; порядковый номер пакета: 62; Вес 775;
+2015-10-12 13:40:49,809 [CastLineIntegrator] INFO  - Получены данные о новой ЕГП от ЛК № 1. ЕГП: Идентификатор плавки 74; Номер плавки: 43; Миксер: 41; порядковый номер пакета: 62; Вес 775;.
+2015-10-12 13:40:49,812 [CastLineIntegrator] INFO  - Передача данный ЕГП в ИТС...
+2015-10-12 13:40:49,814 [ItsImpl] INFO  - Добавление информации о ЕГП.
+2015-10-12 13:40:49,821 [CastLineIntegrator] INFO  - Данные о ЕГП от ЛК №1 успешно переданы в ИТС.
+2015-10-12 13:40:50,316 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:40:50,410 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:40:55,324 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:40:55,417 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:41:00,332 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:41:00,426 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:41:05,341 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:41:05,388 [CastLineIntegrator] INFO  - Получены текущие параметры. Всего значений: 1
+2015-10-12 13:41:05,390 [CastLineIntegrator] INFO  - Подготавливаем данные для передачи в ИТС...
+2015-10-12 13:41:05,392 [CurrentValuesPreparerImpl] INFO  - Подготовка данных...
+2015-10-12 13:41:05,395 [CurrentValuesPreparerImpl] INFO  - Данные подготовлены успешно.
+2015-10-12 13:41:05,397 [CastLineIntegrator] INFO  - Данные подготовлены успешно.
+2015-10-12 13:41:05,399 [CastLineIntegrator] INFO  - Передача данных в ИТС...
+2015-10-12 13:41:05,401 [ItsImpl] INFO  - Добавление информации текущих параметров...
+2015-10-12 13:41:05,408 [ItsImpl] INFO  - Текущие параметры успешно добавлены в ИТС.
+2015-10-12 13:41:05,410 [CastLineIntegrator] INFO  - Данные успешно переданы в ИТС.
+2015-10-12 13:41:05,434 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:41:07,112 [CastLineConnectorImpl] INFO  - Запрос на новую карту плавки.
+2015-10-12 13:41:07,116 [CastLineConnectorImpl] INFO  - Номер миксера 1
+2015-10-12 13:41:07,117 [CastLineIntegrator] INFO  - Получен запрос от ЛК №1 на карту плавки.
+2015-10-12 13:41:07,119 [CastLineIntegrator] INFO  - Выполняем запрос у ИТС карты плавки для ЛК №1.
+2015-10-12 13:41:07,121 [ItsImpl] INFO  - Запрос карты плавки для для миксера №1
+2015-10-12 13:41:07,127 [CastLineIntegrator] INFO  - Карта плавки получена для ЛК №1.
+2015-10-12 13:41:07,129 [CastLineIntegrator] INFO  - Записываем карту плавки в ЛК №1...
+2015-10-12 13:41:07,131 [CastLineConnectorImpl] INFO  - Запись карты плавки в контроллер ЛК №1: Карта плавки: Идентификатор 123456789; Номер 1234; Миксер 1; Наименование 'Чушка мелкая А7Э';...
+2015-10-12 13:41:07,187 [CastLineConnectorImpl] INFO  - Запись карты плавки завершена.
+2015-10-12 13:41:07,189 [CastLineIntegrator] INFO  - Карта плавки записана успешно в ЛК №1.
+2015-10-12 13:41:10,349 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:41:10,443 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:41:15,359 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:41:15,452 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:41:20,367 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:41:20,460 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:41:44,271 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:41:44,274 [CastLineIntegrator] INFO  - Отключен Oracle
+2015-10-12 13:41:46,467 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:41:46,471 [CastLineIntegrator] INFO  - Отключен OPC
+2015-10-12 13:42:04,292 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:42:24,306 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:42:44,324 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:43:04,336 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:43:24,367 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:43:44,381 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:44:04,398 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:44:06,578 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:44:24,414 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:44:44,426 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:45:04,441 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 13:45:06,623 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 13:45:14,457 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:45:14,459 [CastLineIntegrator] INFO  - Подключен Oracle
+2015-10-12 13:45:16,640 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:45:16,644 [CastLineIntegrator] INFO  - Подключен OPC
+2015-10-12 13:45:19,464 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:45:21,651 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:45:24,473 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:45:26,659 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:45:29,483 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:45:31,667 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:45:34,492 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:45:36,654 [CastLineIntegrator] INFO  - Получены текущие параметры. Всего значений: 1
+2015-10-12 13:45:36,656 [CastLineIntegrator] INFO  - Подготавливаем данные для передачи в ИТС...
+2015-10-12 13:45:36,659 [CurrentValuesPreparerImpl] INFO  - Подготовка данных...
+2015-10-12 13:45:36,661 [CurrentValuesPreparerImpl] INFO  - Данные подготовлены успешно.
+2015-10-12 13:45:36,663 [CastLineIntegrator] INFO  - Данные подготовлены успешно.
+2015-10-12 13:45:36,666 [CastLineIntegrator] INFO  - Передача данных в ИТС...
+2015-10-12 13:45:36,667 [ItsImpl] INFO  - Добавление информации текущих параметров...
+2015-10-12 13:45:36,673 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:45:36,678 [ItsImpl] INFO  - Текущие параметры успешно добавлены в ИТС.
+2015-10-12 13:45:36,680 [CastLineIntegrator] INFO  - Данные успешно переданы в ИТС.
+2015-10-12 13:45:36,710 [CastLineConnectorImpl] INFO  - Запрос на новую карту плавки.
+2015-10-12 13:45:36,714 [CastLineConnectorImpl] INFO  - Номер миксера 1
+2015-10-12 13:45:36,715 [CastLineIntegrator] INFO  - Получен запрос от ЛК №1 на карту плавки.
+2015-10-12 13:45:36,717 [CastLineIntegrator] INFO  - Выполняем запрос у ИТС карты плавки для ЛК №1.
+2015-10-12 13:45:36,718 [ItsImpl] INFO  - Запрос карты плавки для для миксера №1
+2015-10-12 13:45:36,724 [CastLineIntegrator] INFO  - Карта плавки получена для ЛК №1.
+2015-10-12 13:45:36,726 [CastLineIntegrator] INFO  - Записываем карту плавки в ЛК №1...
+2015-10-12 13:45:36,727 [CastLineConnectorImpl] INFO  - Запись карты плавки в контроллер ЛК №1: Карта плавки: Идентификатор 123456789; Номер 1234; Миксер 1; Наименование 'Чушка мелкая А7Э';...
+2015-10-12 13:45:36,785 [CastLineConnectorImpl] INFO  - Запись карты плавки завершена.
+2015-10-12 13:45:36,787 [CastLineIntegrator] INFO  - Карта плавки записана успешно в ЛК №1.
+2015-10-12 13:45:39,495 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:45:41,680 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:45:44,504 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:45:46,688 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:45:48,187 [CastLineConnectorImpl] INFO  - Запрос на новую карту плавки.
+2015-10-12 13:45:48,190 [CastLineConnectorImpl] INFO  - Номер миксера 1
+2015-10-12 13:45:48,192 [CastLineIntegrator] INFO  - Получен запрос от ЛК №1 на карту плавки.
+2015-10-12 13:45:48,194 [CastLineIntegrator] INFO  - Выполняем запрос у ИТС карты плавки для ЛК №1.
+2015-10-12 13:45:48,196 [ItsImpl] INFO  - Запрос карты плавки для для миксера №1
+2015-10-12 13:45:48,201 [CastLineIntegrator] INFO  - Карта плавки получена для ЛК №1.
+2015-10-12 13:45:48,203 [CastLineIntegrator] INFO  - Записываем карту плавки в ЛК №1...
+2015-10-12 13:45:48,206 [CastLineConnectorImpl] INFO  - Запись карты плавки в контроллер ЛК №1: Карта плавки: Идентификатор 123456789; Номер 1234; Миксер 1; Наименование 'Чушка мелкая А7Э';...
+2015-10-12 13:45:48,261 [CastLineConnectorImpl] INFO  - Запись карты плавки завершена.
+2015-10-12 13:45:48,263 [CastLineIntegrator] INFO  - Карта плавки записана успешно в ЛК №1.
+2015-10-12 13:45:49,513 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:45:51,698 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:45:53,215 [CastLineConnectorImpl] INFO  - Запрос на новую карту плавки.
+2015-10-12 13:45:53,218 [CastLineConnectorImpl] INFO  - Номер миксера 1
+2015-10-12 13:45:53,220 [CastLineIntegrator] INFO  - Получен запрос от ЛК №1 на карту плавки.
+2015-10-12 13:45:53,222 [CastLineIntegrator] INFO  - Выполняем запрос у ИТС карты плавки для ЛК №1.
+2015-10-12 13:45:53,224 [ItsImpl] INFO  - Запрос карты плавки для для миксера №1
+2015-10-12 13:45:53,230 [CastLineIntegrator] INFO  - Карта плавки получена для ЛК №1.
+2015-10-12 13:45:53,232 [CastLineIntegrator] INFO  - Записываем карту плавки в ЛК №1...
+2015-10-12 13:45:53,235 [CastLineConnectorImpl] INFO  - Запись карты плавки в контроллер ЛК №1: Карта плавки: Идентификатор 123456789; Номер 1234; Миксер 1; Наименование 'Чушка мелкая А7Э';...
+2015-10-12 13:45:53,289 [CastLineConnectorImpl] INFO  - Запись карты плавки завершена.
+2015-10-12 13:45:53,291 [CastLineIntegrator] INFO  - Карта плавки записана успешно в ЛК №1.
+2015-10-12 13:45:54,523 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:45:56,669 [CastLineIntegrator] INFO  - Получены текущие параметры. Всего значений: 1
+2015-10-12 13:45:56,671 [CastLineIntegrator] INFO  - Подготавливаем данные для передачи в ИТС...
+2015-10-12 13:45:56,673 [CurrentValuesPreparerImpl] INFO  - Подготовка данных...
+2015-10-12 13:45:56,675 [CurrentValuesPreparerImpl] INFO  - Данные подготовлены успешно.
+2015-10-12 13:45:56,678 [CastLineIntegrator] INFO  - Данные подготовлены успешно.
+2015-10-12 13:45:56,680 [CastLineIntegrator] INFO  - Передача данных в ИТС...
+2015-10-12 13:45:56,681 [ItsImpl] INFO  - Добавление информации текущих параметров...
+2015-10-12 13:45:56,690 [ItsImpl] INFO  - Текущие параметры успешно добавлены в ИТС.
+2015-10-12 13:45:56,692 [CastLineIntegrator] INFO  - Данные успешно переданы в ИТС.
+2015-10-12 13:45:56,700 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:45:59,053 [CastLineConnectorImpl] INFO  - Появились данные ЕГП.
+2015-10-12 13:45:59,060 [CastLineConnectorImpl] INFO  - Конечный продукт: ЕГП: Идентификатор плавки 62; Номер плавки: 4; Миксер: 92; порядковый номер пакета: 8; Вес 227;
+2015-10-12 13:45:59,063 [CastLineIntegrator] INFO  - Получены данные о новой ЕГП от ЛК № 1. ЕГП: Идентификатор плавки 62; Номер плавки: 4; Миксер: 92; порядковый номер пакета: 8; Вес 227;.
+2015-10-12 13:45:59,066 [CastLineIntegrator] INFO  - Передача данный ЕГП в ИТС...
+2015-10-12 13:45:59,068 [ItsImpl] INFO  - Добавление информации о ЕГП.
+2015-10-12 13:45:59,076 [CastLineIntegrator] INFO  - Данные о ЕГП от ЛК №1 успешно переданы в ИТС.
+2015-10-12 13:45:59,525 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:46:00,867 [CastLineConnectorImpl] INFO  - Появились данные ЕГП.
+2015-10-12 13:46:00,873 [CastLineConnectorImpl] INFO  - Конечный продукт: ЕГП: Идентификатор плавки 74; Номер плавки: 64; Миксер: 45; порядковый номер пакета: 9; Вес 536;
+2015-10-12 13:46:00,876 [CastLineIntegrator] INFO  - Получены данные о новой ЕГП от ЛК № 1. ЕГП: Идентификатор плавки 74; Номер плавки: 64; Миксер: 45; порядковый номер пакета: 9; Вес 536;.
+2015-10-12 13:46:00,880 [CastLineIntegrator] INFO  - Передача данный ЕГП в ИТС...
+2015-10-12 13:46:00,882 [ItsImpl] INFO  - Добавление информации о ЕГП.
+2015-10-12 13:46:00,888 [CastLineIntegrator] INFO  - Данные о ЕГП от ЛК №1 успешно переданы в ИТС.
+2015-10-12 13:46:01,709 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:46:04,534 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:46:06,718 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:46:09,543 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:46:11,727 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:46:14,552 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:46:16,684 [CastLineIntegrator] INFO  - Получены текущие параметры. Всего значений: 1
+2015-10-12 13:46:16,686 [CastLineIntegrator] INFO  - Подготавливаем данные для передачи в ИТС...
+2015-10-12 13:46:16,687 [CurrentValuesPreparerImpl] INFO  - Подготовка данных...
+2015-10-12 13:46:16,689 [CurrentValuesPreparerImpl] INFO  - Данные подготовлены успешно.
+2015-10-12 13:46:16,691 [CastLineIntegrator] INFO  - Данные подготовлены успешно.
+2015-10-12 13:46:16,692 [CastLineIntegrator] INFO  - Передача данных в ИТС...
+2015-10-12 13:46:16,693 [ItsImpl] INFO  - Добавление информации текущих параметров...
+2015-10-12 13:46:16,699 [ItsImpl] INFO  - Текущие параметры успешно добавлены в ИТС.
+2015-10-12 13:46:16,701 [CastLineIntegrator] INFO  - Данные успешно переданы в ИТС.
+2015-10-12 13:46:16,730 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:46:19,555 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:46:21,741 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:46:24,565 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:46:25,014 [CastLineConnectorImpl] INFO  - Запрос на новую карту плавки.
+2015-10-12 13:46:25,018 [CastLineConnectorImpl] INFO  - Номер миксера 1
+2015-10-12 13:46:25,019 [CastLineIntegrator] INFO  - Получен запрос от ЛК №1 на карту плавки.
+2015-10-12 13:46:25,021 [CastLineIntegrator] INFO  - Выполняем запрос у ИТС карты плавки для ЛК №1.
+2015-10-12 13:46:25,023 [ItsImpl] INFO  - Запрос карты плавки для для миксера №1
+2015-10-12 13:46:25,066 [CastLineIntegrator] INFO  - Карта плавки получена для ЛК №1.
+2015-10-12 13:46:25,070 [CastLineIntegrator] INFO  - Записываем карту плавки в ЛК №1...
+2015-10-12 13:46:25,072 [CastLineConnectorImpl] INFO  - Запись карты плавки в контроллер ЛК №1: Карта плавки: Идентификатор 123456789; Номер 1234; Миксер 1; Наименование 'Чушка мелкая А7Э';...
+2015-10-12 13:46:25,121 [CastLineConnectorImpl] INFO  - Запись карты плавки завершена.
+2015-10-12 13:46:25,123 [CastLineIntegrator] INFO  - Карта плавки записана успешно в ЛК №1.
+2015-10-12 13:46:26,749 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 13:46:29,573 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 13:46:31,530 [CastLineIntegrator] INFO  - Деинициализация...
+2015-10-12 13:46:31,532 [ConnectionHolderBase] INFO  - OPC - остановка держателя подключения.
+2015-10-12 13:46:31,534 [ConnectionHolderBase] INFO  - Oracle - остановка держателя подключения.
+2015-10-12 13:46:31,536 [ConnectionHolderBase] INFO  - OPC - остановка держателя подключения.
+2015-10-12 13:46:31,544 [CastLineIntegrator] INFO  - Отключен OPC
+2015-10-12 13:46:31,545 [ConnectionHolderBase] INFO  - Oracle - остановка держателя подключения.
+2015-10-12 13:46:31,551 [CastLineIntegrator] INFO  - Отключен Oracle
+2015-10-12 13:46:31,553 [CastLineConnectorImpl] INFO  - Деинициализация...
+2015-10-12 13:46:31,555 [CastLineConnectorImpl] INFO  - Деинициализация завершена.
+2015-10-12 13:46:31,557 [CastLineIntegrator] INFO  - Деинициализация завершена.
+2015-10-12 14:07:29,120 [CastLineIntegrator] INFO  - Инициализация...
+2015-10-12 14:07:29,941 [ConnectionHolderBase] INFO  - OPC - запуск держателя подключения.
+2015-10-12 14:07:29,941 [ConnectionHolderBase] INFO  - Oracle - запуск держателя подключения.
+2015-10-12 14:07:29,941 [CastLineIntegrator] INFO  - Инициализация завершена.
+2015-10-12 14:07:34,947 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:07:34,950 [CastLineIntegrator] INFO  - Подключен OPC
+2015-10-12 14:07:34,953 [CastLineConnectorImpl] INFO  - Инициализация...
+2015-10-12 14:07:34,997 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:07:34,998 [CastLineIntegrator] INFO  - Подключен Oracle
+2015-10-12 14:07:34,999 [CurrentValuesPreparerImpl] INFO  - Инициализация...
+2015-10-12 14:07:35,047 [CurrentValuesPreparerImpl] INFO  - Инициализация завершена.
+2015-10-12 14:07:35,123 [CastLineConnectorImpl] INFO  - Инициализация завершена.
+2015-10-12 14:07:35,123 [CastLineConnectorImpl] INFO  - Появились данные ЕГП.
+2015-10-12 14:07:35,132 [CastLineConnectorImpl] INFO  - Конечный продукт: ЕГП: Идентификатор плавки 50; Номер плавки: 38; Миксер: 46; порядковый номер пакета: 72; Вес 983;
+2015-10-12 14:07:35,133 [CastLineIntegrator] INFO  - Получены данные о новой ЕГП от ЛК № 1. ЕГП: Идентификатор плавки 50; Номер плавки: 38; Миксер: 46; порядковый номер пакета: 72; Вес 983;.
+2015-10-12 14:07:35,133 [CastLineIntegrator] INFO  - Передача данный ЕГП в ИТС...
+2015-10-12 14:07:35,135 [ItsImpl] INFO  - Добавление информации о ЕГП.
+2015-10-12 14:07:35,169 [CastLineIntegrator] INFO  - Данные о ЕГП от ЛК №1 успешно переданы в ИТС.
+2015-10-12 14:07:35,176 [CastLineConnectorImpl] INFO  - Появились данные ЕГП.
+2015-10-12 14:07:35,178 [CastLineConnectorImpl] INFO  - Конечный продукт: ЕГП: Идентификатор плавки 50; Номер плавки: 38; Миксер: 46; порядковый номер пакета: 72; Вес 983;
+2015-10-12 14:07:35,178 [CastLineIntegrator] INFO  - Получены данные о новой ЕГП от ЛК № 1. ЕГП: Идентификатор плавки 50; Номер плавки: 38; Миксер: 46; порядковый номер пакета: 72; Вес 983;.
+2015-10-12 14:07:35,178 [CastLineIntegrator] INFO  - Передача данный ЕГП в ИТС...
+2015-10-12 14:07:35,178 [ItsImpl] INFO  - Добавление информации о ЕГП.
+2015-10-12 14:07:35,182 [CastLineIntegrator] INFO  - Данные о ЕГП от ЛК №1 успешно переданы в ИТС.
+2015-10-12 14:07:39,951 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:07:40,013 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:07:42,153 [CastLineConnectorImpl] INFO  - Запрос на новую карту плавки.
+2015-10-12 14:07:42,156 [CastLineConnectorImpl] INFO  - Номер миксера 1
+2015-10-12 14:07:42,157 [CastLineIntegrator] INFO  - Получен запрос от ЛК №1 на карту плавки.
+2015-10-12 14:07:42,157 [CastLineIntegrator] INFO  - Выполняем запрос у ИТС карты плавки для ЛК №1.
+2015-10-12 14:07:42,159 [ItsImpl] INFO  - Запрос карты плавки для для миксера №1
+2015-10-12 14:07:42,190 [CastLineIntegrator] INFO  - Карта плавки получена для ЛК №1.
+2015-10-12 14:07:42,190 [CastLineIntegrator] INFO  - Записываем карту плавки в ЛК №1...
+2015-10-12 14:07:42,197 [CastLineConnectorImpl] INFO  - Запись карты плавки в контроллер ЛК №1: Карта плавки: Идентификатор 123456789; Номер 1234; Миксер 1; Наименование 'Чушка мелкая А7Э';...
+2015-10-12 14:07:42,250 [CastLineConnectorImpl] INFO  - Запись карты плавки завершена.
+2015-10-12 14:07:42,254 [CastLineIntegrator] INFO  - Карта плавки записана успешно в ЛК №1.
+2015-10-12 14:07:44,960 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:07:45,008 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:07:48,006 [CastLineConnectorImpl] INFO  - Запрос на новую карту плавки.
+2015-10-12 14:07:48,015 [CastLineConnectorImpl] INFO  - Номер миксера 1
+2015-10-12 14:07:48,018 [CastLineIntegrator] INFO  - Получен запрос от ЛК №1 на карту плавки.
+2015-10-12 14:07:48,023 [CastLineIntegrator] INFO  - Выполняем запрос у ИТС карты плавки для ЛК №1.
+2015-10-12 14:07:48,030 [ItsImpl] INFO  - Запрос карты плавки для для миксера №1
+2015-10-12 14:07:48,039 [CastLineIntegrator] INFO  - Карта плавки получена для ЛК №1.
+2015-10-12 14:07:48,044 [CastLineIntegrator] INFO  - Записываем карту плавки в ЛК №1...
+2015-10-12 14:07:48,050 [CastLineConnectorImpl] INFO  - Запись карты плавки в контроллер ЛК №1: Карта плавки: Идентификатор 123456789; Номер 1234; Миксер 1; Наименование 'Чушка мелкая А7Э';...
+2015-10-12 14:07:48,106 [CastLineConnectorImpl] INFO  - Запись карты плавки завершена.
+2015-10-12 14:07:48,112 [CastLineIntegrator] INFO  - Карта плавки записана успешно в ЛК №1.
+2015-10-12 14:07:49,968 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:07:50,015 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:07:53,884 [CastLineConnectorImpl] INFO  - Появились данные ЕГП.
+2015-10-12 14:07:53,892 [CastLineConnectorImpl] INFO  - Конечный продукт: ЕГП: Идентификатор плавки 50; Номер плавки: 38; Миксер: 46; порядковый номер пакета: 72; Вес 983;
+2015-10-12 14:07:53,901 [CastLineIntegrator] INFO  - Получены данные о новой ЕГП от ЛК № 1. ЕГП: Идентификатор плавки 50; Номер плавки: 38; Миксер: 46; порядковый номер пакета: 72; Вес 983;.
+2015-10-12 14:07:53,910 [CastLineIntegrator] INFO  - Передача данный ЕГП в ИТС...
+2015-10-12 14:07:53,915 [ItsImpl] INFO  - Добавление информации о ЕГП.
+2015-10-12 14:07:53,923 [CastLineIntegrator] INFO  - Данные о ЕГП от ЛК №1 успешно переданы в ИТС.
+2015-10-12 14:07:54,976 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:07:55,023 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:07:55,146 [CastLineIntegrator] INFO  - Получены текущие параметры. Всего значений: 1
+2015-10-12 14:07:55,152 [CastLineIntegrator] INFO  - Подготавливаем данные для передачи в ИТС...
+2015-10-12 14:07:55,160 [CurrentValuesPreparerImpl] INFO  - Подготовка данных...
+2015-10-12 14:07:55,167 [CurrentValuesPreparerImpl] INFO  - Данные подготовлены успешно.
+2015-10-12 14:07:55,173 [CastLineIntegrator] INFO  - Данные подготовлены успешно.
+2015-10-12 14:07:55,178 [CastLineIntegrator] INFO  - Передача данных в ИТС...
+2015-10-12 14:07:55,183 [ItsImpl] INFO  - Добавление информации текущих параметров...
+2015-10-12 14:07:55,194 [ItsImpl] INFO  - Текущие параметры успешно добавлены в ИТС.
+2015-10-12 14:07:55,198 [CastLineIntegrator] INFO  - Данные успешно переданы в ИТС.
+2015-10-12 14:08:18,880 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 14:08:18,888 [CastLineIntegrator] INFO  - Отключен OPC
+2015-10-12 14:08:18,892 [CurrentValueReaderImpl] INFO  - Деинициализация...
+2015-10-12 14:08:18,902 [CurrentValueReaderImpl] INFO  - Деинициализация произведена.
+2015-10-12 14:08:18,908 [CastLineConnectorImpl] INFO  - Деинициализация...
+2015-10-12 14:08:18,956 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 14:08:18,966 [CastLineIntegrator] INFO  - Отключен Oracle
+2015-10-12 14:08:18,999 [CastLineConnectorImpl] INFO  - Деинициализация завершена.
+2015-10-12 14:08:28,891 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 14:08:28,976 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 14:08:38,900 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 14:08:38,982 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 14:08:48,917 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:08:48,924 [CastLineIntegrator] INFO  - Подключен OPC
+2015-10-12 14:08:48,928 [CastLineConnectorImpl] INFO  - Инициализация...
+2015-10-12 14:08:48,995 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:08:48,999 [CastLineIntegrator] INFO  - Подключен Oracle
+2015-10-12 14:08:53,928 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:08:54,006 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:08:58,937 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:08:59,016 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:09:03,947 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:09:04,018 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:09:08,948 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:09:09,026 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:09:13,956 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:09:14,034 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:09:18,965 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:09:19,043 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:09:21,830 [CastLineIntegrator] INFO  - Деинициализация...
+2015-10-12 14:09:21,832 [ConnectionHolderBase] INFO  - OPC - остановка держателя подключения.
+2015-10-12 14:09:21,835 [ConnectionHolderBase] INFO  - Oracle - остановка держателя подключения.
+2015-10-12 14:09:21,838 [ConnectionHolderBase] INFO  - OPC - остановка держателя подключения.
+2015-10-12 14:09:21,859 [CastLineIntegrator] INFO  - Отключен OPC
+2015-10-12 14:09:21,863 [ConnectionHolderBase] INFO  - Oracle - остановка держателя подключения.
+2015-10-12 14:09:21,867 [CastLineIntegrator] INFO  - Отключен Oracle
+2015-10-12 14:09:21,868 [CastLineConnectorImpl] INFO  - Деинициализация...
+2015-10-12 14:09:21,875 [CastLineConnectorImpl] INFO  - Деинициализация завершена.
+2015-10-12 14:09:21,877 [CastLineIntegrator] INFO  - Деинициализация завершена.
+2015-10-12 14:12:54,256 [CastLineIntegrator] INFO  - Инициализация...
+2015-10-12 14:12:55,068 [ConnectionHolderBase] INFO  - OPC - запуск держателя подключения.
+2015-10-12 14:12:55,069 [ConnectionHolderBase] INFO  - Oracle - запуск держателя подключения.
+2015-10-12 14:12:55,069 [CastLineIntegrator] INFO  - Инициализация завершена.
+2015-10-12 14:13:00,085 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:13:00,088 [CastLineIntegrator] INFO  - Подключен OPC
+2015-10-12 14:13:00,093 [CastLineConnectorImpl] INFO  - Инициализация...
+2015-10-12 14:13:00,130 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:13:00,131 [CastLineIntegrator] INFO  - Подключен Oracle
+2015-10-12 14:13:00,133 [CurrentValuesPreparerImpl] INFO  - Инициализация...
+2015-10-12 14:13:00,179 [CurrentValuesPreparerImpl] INFO  - Инициализация завершена.
+2015-10-12 14:13:00,282 [CastLineConnectorImpl] INFO  - Инициализация завершена.
+2015-10-12 14:13:05,086 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:13:05,136 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:13:10,094 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:13:10,142 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:13:15,103 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:13:15,150 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:13:20,112 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:13:20,159 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:13:20,290 [CastLineIntegrator] INFO  - Получены текущие параметры. Всего значений: 1
+2015-10-12 14:13:20,290 [CastLineIntegrator] INFO  - Подготавливаем данные для передачи в ИТС...
+2015-10-12 14:13:20,292 [CurrentValuesPreparerImpl] INFO  - Подготовка данных...
+2015-10-12 14:13:20,293 [CurrentValuesPreparerImpl] INFO  - Данные подготовлены успешно.
+2015-10-12 14:13:20,293 [CastLineIntegrator] INFO  - Данные подготовлены успешно.
+2015-10-12 14:13:20,293 [CastLineIntegrator] INFO  - Передача данных в ИТС...
+2015-10-12 14:13:20,296 [ItsImpl] INFO  - Добавление информации текущих параметров...
+2015-10-12 14:13:20,345 [ItsImpl] INFO  - Текущие параметры успешно добавлены в ИТС.
+2015-10-12 14:13:20,345 [CastLineIntegrator] INFO  - Данные успешно переданы в ИТС.
+2015-10-12 14:13:25,120 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:13:25,167 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:13:25,206 [CastLineConnectorImpl] INFO  - Запрос на новую карту плавки.
+2015-10-12 14:13:25,208 [CastLineConnectorImpl] INFO  - Номер миксера 1
+2015-10-12 14:13:25,210 [CastLineIntegrator] INFO  - Получен запрос от ЛК №1 на карту плавки.
+2015-10-12 14:13:25,210 [CastLineIntegrator] INFO  - Выполняем запрос у ИТС карты плавки для ЛК №1.
+2015-10-12 14:13:25,211 [ItsImpl] INFO  - Запрос карты плавки для для миксера №1
+2015-10-12 14:13:25,242 [CastLineIntegrator] INFO  - Карта плавки получена для ЛК №1.
+2015-10-12 14:13:25,242 [CastLineIntegrator] INFO  - Записываем карту плавки в ЛК №1...
+2015-10-12 14:13:25,244 [CastLineConnectorImpl] INFO  - Запись карты плавки в контроллер ЛК №1: Карта плавки: Идентификатор 123456789; Номер 1234; Миксер 1; Наименование 'Чушка мелкая А7Э';...
+2015-10-12 14:13:25,297 [CastLineConnectorImpl] INFO  - Запись карты плавки завершена.
+2015-10-12 14:13:25,297 [CastLineIntegrator] INFO  - Карта плавки записана успешно в ЛК №1.
+2015-10-12 14:13:49,032 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 14:13:49,033 [CastLineIntegrator] INFO  - Отключен OPC
+2015-10-12 14:13:49,103 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 14:13:49,103 [CastLineIntegrator] INFO  - Отключен Oracle
+2015-10-12 14:13:59,045 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 14:13:59,093 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 14:14:09,045 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 14:14:09,108 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 14:14:19,060 [ConnectionHolderBase] INFO  - OPC - проверка подключения: НЕ успешно.
+2015-10-12 14:14:19,108 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: НЕ успешно.
+2015-10-12 14:14:29,062 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:14:29,065 [CastLineIntegrator] INFO  - Подключен OPC
+2015-10-12 14:14:29,123 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:14:29,125 [CastLineIntegrator] INFO  - Подключен Oracle
+2015-10-12 14:14:34,069 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:14:34,133 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:14:39,078 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:14:39,141 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:14:44,087 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:14:44,149 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:14:49,077 [CastLineIntegrator] INFO  - Получены текущие параметры. Всего значений: 1
+2015-10-12 14:14:49,077 [CastLineIntegrator] INFO  - Подготавливаем данные для передачи в ИТС...
+2015-10-12 14:14:49,077 [CurrentValuesPreparerImpl] INFO  - Подготовка данных...
+2015-10-12 14:14:49,078 [CurrentValuesPreparerImpl] INFO  - Данные подготовлены успешно.
+2015-10-12 14:14:49,078 [CastLineIntegrator] INFO  - Данные подготовлены успешно.
+2015-10-12 14:14:49,078 [CastLineIntegrator] INFO  - Передача данных в ИТС...
+2015-10-12 14:14:49,078 [ItsImpl] INFO  - Добавление информации текущих параметров...
+2015-10-12 14:14:49,083 [ItsImpl] INFO  - Текущие параметры успешно добавлены в ИТС.
+2015-10-12 14:14:49,084 [CastLineIntegrator] INFO  - Данные успешно переданы в ИТС.
+2015-10-12 14:14:49,092 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:14:49,155 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:14:54,100 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:14:54,163 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:14:59,109 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:14:59,172 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:15:04,117 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:15:04,180 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:15:09,091 [CastLineIntegrator] INFO  - Получены текущие параметры. Всего значений: 1
+2015-10-12 14:15:09,091 [CastLineIntegrator] INFO  - Подготавливаем данные для передачи в ИТС...
+2015-10-12 14:15:09,091 [CurrentValuesPreparerImpl] INFO  - Подготовка данных...
+2015-10-12 14:15:09,092 [CurrentValuesPreparerImpl] INFO  - Данные подготовлены успешно.
+2015-10-12 14:15:09,092 [CastLineIntegrator] INFO  - Данные подготовлены успешно.
+2015-10-12 14:15:09,092 [CastLineIntegrator] INFO  - Передача данных в ИТС...
+2015-10-12 14:15:09,092 [ItsImpl] INFO  - Добавление информации текущих параметров...
+2015-10-12 14:15:09,097 [ItsImpl] INFO  - Текущие параметры успешно добавлены в ИТС.
+2015-10-12 14:15:09,097 [CastLineIntegrator] INFO  - Данные успешно переданы в ИТС.
+2015-10-12 14:15:09,123 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:15:09,185 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:15:14,131 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:15:14,194 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:15:19,139 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:15:19,202 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:15:24,148 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:15:24,213 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:15:29,093 [CastLineIntegrator] INFO  - Получены текущие параметры. Всего значений: 1
+2015-10-12 14:15:29,095 [CastLineIntegrator] INFO  - Подготавливаем данные для передачи в ИТС...
+2015-10-12 14:15:29,098 [CurrentValuesPreparerImpl] INFO  - Подготовка данных...
+2015-10-12 14:15:29,100 [CurrentValuesPreparerImpl] INFO  - Данные подготовлены успешно.
+2015-10-12 14:15:29,103 [CastLineIntegrator] INFO  - Данные подготовлены успешно.
+2015-10-12 14:15:29,105 [CastLineIntegrator] INFO  - Передача данных в ИТС...
+2015-10-12 14:15:29,107 [ItsImpl] INFO  - Добавление информации текущих параметров...
+2015-10-12 14:15:29,115 [ItsImpl] INFO  - Текущие параметры успешно добавлены в ИТС.
+2015-10-12 14:15:29,118 [CastLineIntegrator] INFO  - Данные успешно переданы в ИТС.
+2015-10-12 14:15:29,156 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:15:29,219 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:15:34,164 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:15:34,227 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:15:39,173 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:15:39,236 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:15:41,363 [CastLineConnectorImpl] INFO  - Появились данные ЕГП.
+2015-10-12 14:15:41,371 [CastLineConnectorImpl] INFO  - Конечный продукт: ЕГП: Идентификатор плавки 64; Номер плавки: 69; Миксер: 12; порядковый номер пакета: 11; Вес 716;
+2015-10-12 14:15:41,376 [CastLineIntegrator] INFO  - Получены данные о новой ЕГП от ЛК № 1. ЕГП: Идентификатор плавки 64; Номер плавки: 69; Миксер: 12; порядковый номер пакета: 11; Вес 716;.
+2015-10-12 14:15:41,379 [CastLineIntegrator] INFO  - Передача данный ЕГП в ИТС...
+2015-10-12 14:15:41,384 [ItsImpl] INFO  - Добавление информации о ЕГП.
+2015-10-12 14:15:41,390 [CastLineIntegrator] INFO  - Данные о ЕГП от ЛК №1 успешно переданы в ИТС.
+2015-10-12 14:15:44,180 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:15:44,244 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:15:45,090 [CastLineConnectorImpl] INFO  - Запрос на новую карту плавки.
+2015-10-12 14:15:45,094 [CastLineConnectorImpl] INFO  - Номер миксера 1
+2015-10-12 14:15:45,095 [CastLineIntegrator] INFO  - Получен запрос от ЛК №1 на карту плавки.
+2015-10-12 14:15:45,097 [CastLineIntegrator] INFO  - Выполняем запрос у ИТС карты плавки для ЛК №1.
+2015-10-12 14:15:45,101 [ItsImpl] INFO  - Запрос карты плавки для для миксера №1
+2015-10-12 14:15:45,106 [CastLineIntegrator] INFO  - Карта плавки получена для ЛК №1.
+2015-10-12 14:15:45,108 [CastLineIntegrator] INFO  - Записываем карту плавки в ЛК №1...
+2015-10-12 14:15:45,111 [CastLineConnectorImpl] INFO  - Запись карты плавки в контроллер ЛК №1: Карта плавки: Идентификатор 123456789; Номер 1234; Миксер 1; Наименование 'Чушка мелкая А7Э';...
+2015-10-12 14:15:45,164 [CastLineConnectorImpl] INFO  - Запись карты плавки завершена.
+2015-10-12 14:15:45,166 [CastLineIntegrator] INFO  - Карта плавки записана успешно в ЛК №1.
+2015-10-12 14:15:49,106 [CastLineIntegrator] INFO  - Получены текущие параметры. Всего значений: 1
+2015-10-12 14:15:49,108 [CastLineIntegrator] INFO  - Подготавливаем данные для передачи в ИТС...
+2015-10-12 14:15:49,110 [CurrentValuesPreparerImpl] INFO  - Подготовка данных...
+2015-10-12 14:15:49,113 [CurrentValuesPreparerImpl] INFO  - Данные подготовлены успешно.
+2015-10-12 14:15:49,115 [CastLineIntegrator] INFO  - Данные подготовлены успешно.
+2015-10-12 14:15:49,118 [CastLineIntegrator] INFO  - Передача данных в ИТС...
+2015-10-12 14:15:49,119 [ItsImpl] INFO  - Добавление информации текущих параметров...
+2015-10-12 14:15:49,127 [ItsImpl] INFO  - Текущие параметры успешно добавлены в ИТС.
+2015-10-12 14:15:49,129 [CastLineIntegrator] INFO  - Данные успешно переданы в ИТС.
+2015-10-12 14:15:49,183 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:15:49,247 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:15:54,193 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:15:54,256 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:15:59,203 [ConnectionHolderBase] INFO  - OPC - проверка подключения: успешно.
+2015-10-12 14:15:59,267 [ConnectionHolderBase] INFO  - Oracle - проверка подключения: успешно.
+2015-10-12 14:16:01,682 [CastLineIntegrator] INFO  - Деинициализация...
+2015-10-12 14:16:01,684 [ConnectionHolderBase] INFO  - OPC - остановка держателя подключения.
+2015-10-12 14:16:01,686 [ConnectionHolderBase] INFO  - Oracle - остановка держателя подключения.
+2015-10-12 14:16:01,689 [ConnectionHolderBase] INFO  - OPC - остановка держателя подключения.
+2015-10-12 14:16:01,697 [CastLineIntegrator] INFO  - Отключен OPC
+2015-10-12 14:16:01,698 [ConnectionHolderBase] INFO  - Oracle - остановка держателя подключения.
+2015-10-12 14:16:01,704 [CastLineIntegrator] INFO  - Отключен Oracle
+2015-10-12 14:16:01,706 [CastLineConnectorImpl] INFO  - Деинициализация...
+2015-10-12 14:16:01,708 [CastLineConnectorImpl] INFO  - Деинициализация завершена.
+2015-10-12 14:16:01,710 [CastLineIntegrator] INFO  - Деинициализация завершена.

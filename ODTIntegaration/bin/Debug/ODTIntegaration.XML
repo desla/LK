@@ -4,57 +4,149 @@
         <name>ODTIntegaration</name>
     </assembly>
     <members>
-        <member name="T:Alvasoft.ODTIntegration.Structures.CurrentValue">
+        <member name="T:Alvasoft.ODTIntegration.Buffer.IDataBuffer">
             <summary>
-            Значение, получаемое из ОРС-сервера.
+            Интерфейс буфера для временного хранения данных при возникновении обрывов связи.
             </summary>
         </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.CurrentValue.Info">
+        <member name="M:Alvasoft.ODTIntegration.Buffer.IDataBuffer.AddFinishedProduct(Alvasoft.ODTIntegration.Structures.FinishedProduct)">
             <summary>
-            Ссылка на описание.
+            Сохраняет информацию о конечном продукте, которая пришла с контроллера.
+            </summary>
+            <param name="aPocket">Информация о конечном продукте.</param>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.Buffer.IDataBuffer.GetStoredProductsOrDefault">
+            <summary>
+            Возвращает все сохраненные данные или null.
+            </summary>
+            <returns>Сохраненные данные или null.</returns>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.Buffer.IDataBuffer.ClearFinishedProducts">
+            <summary>
+            Очищает буфер от данных ЕГП.
             </summary>
         </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.CurrentValue.Ids">
+        <member name="M:Alvasoft.ODTIntegration.Buffer.IDataBuffer.IsEmpty">
             <summary>
-            Идентификаторы.
+            Возвращает результат проверки на отсутствие данных.
+            </summary>
+            <returns>True - если данных нет, false - иначе.</returns>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.Buffer.IDataBuffer.AddCurrentValues(Alvasoft.ODTIntegration.Structures.CurrentValue[])">
+            <summary>
+            Добавляет текущие значения в буфер.
+            </summary>
+            <param name="aCurrentValues">Текущие значения.</param>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.Buffer.IDataBuffer.GetStoredCurrentValuesOrDefault">
+            <summary>
+            Возвращает сохраненные текущие параметры.
+            </summary>
+            <returns>Текущие параметры в буфере.</returns>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.Buffer.IDataBuffer.ClearCurrentValues">
+            <summary>
+            Очищает буфер от текущих значений.
             </summary>
         </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.CurrentValue.ValueTime">
+        <member name="T:Alvasoft.ODTIntegration.Buffer.MemoryBufferImpl">
             <summary>
-            Время считывания.
+            Буфер в оперативной памяти.
             </summary>
         </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.CurrentValue.Value">
+        <member name="F:Alvasoft.ODTIntegration.Buffer.MemoryBufferImpl.MAX_SIZE">
             <summary>
-            Значение.
+            Ограничение на количество записей.
             </summary>
         </member>
-        <member name="T:Alvasoft.ODTIntegration.Configuration.CurrentValuesConfiguration">
+        <member name="F:Alvasoft.ODTIntegration.Buffer.MemoryBufferImpl.products">
             <summary>
-            Конфигурация параметров, передаваемых постоянно.
+            Набор для хранения данных.
             </summary>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.Configuration.CurrentValuesConfiguration.GetCurrentValues">
+        <member name="T:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl">
             <summary>
-            Возвращает список всех описаний текущих значений.
+            Реализация конектора к ЛК.
             </summary>
-            <returns>Список описаний.</returns>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.Configuration.CurrentValuesConfiguration.GetCurrentValuesCount">
+        <member name="F:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.callback">
             <summary>
-            Возвращает количество описаний данных.
+            Обратная связь для оповещения о новых данных.
             </summary>
-            <returns>Количество описаний.</returns>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.Configuration.CurrentValuesConfiguration.LoadConfiguration(System.String)">
+        <member name="F:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.opcTagsList">
             <summary>
-            Загружает конфигурацию в память.
+            Список OPC-тегов.
             </summary>
-            <param name="aFileName">Имя файла конфигурации.</param>
         </member>
-        <member name="P:Alvasoft.ODTIntegration.Configuration.CurrentValuesConfiguration.ReadInterval">
+        <member name="F:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.connectionHolder">
             <summary>
-            Интервал времени для чтения данных и передачи в ИТС.
+            Держатель соединения ОРС.
+            </summary>
+        </member>
+        <member name="F:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.castLineNumber">
+            <summary>
+            Номер ЛК.
+            </summary>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.CheckNewPacket(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            Проверяет появление новых данных о ЕГП.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.IsNewPacketAvailable">
+            <summary>
+            Проверяет записаны ли данные о новой ЕГП.
+            </summary>
+            <returns>True - если данные обновлены, false - иначе.</returns>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.OnValueChanged(OpcTagAccessProvider.IOpcValue,OpcTagAccessProvider.OpcValueChangedEventArgs)">
+            <summary>
+            Срабатывает при изменении значения тега.
+            </summary>
+            <param name="aOpcValue">Тег ОРС.</param>
+            <param name="aValueChangedEventArgs">Параметры.</param>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.TryResetFinishedProduct">
+            <summary>
+            Обнуляет информацию о ЕГП.
+            </summary>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.FinishedProductIsReady">
+            <summary>
+            Отправляет в callbcak информацию о ЕГП.
+            </summary>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.TryGetFinishedProduct(Alvasoft.ODTIntegration.Structures.FinishedProduct@)">
+            <summary>
+            Пытается получить информацию о ЕГП.
+            </summary>
+            <param name="aPocket">ЕГП.</param>
+            <returns>True - если получение успешно, false - иначе.</returns>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.TryResetCastPlanRequest">
+            <summary>
+            Обнуляет запрос новой карты плавки.
+            </summary>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.CastPlanRequest">
+            <summary>
+            Выполняет запрос новой карты плавки.
+            Передает данные в Callback.
+            </summary>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.TryGetFurnaceNumber(System.Int32@)">
+            <summary>
+            Пытается получить номер миксера.
+            </summary>
+            <param name="aFurnaceNumber">Номер миксера.</param>
+            <returns>True, если получить удалось, fakse - иначе.</returns>
+        </member>
+        <member name="T:Alvasoft.ODTIntegration.CastLineConnector.CurrentValueReaderImpl">
+            <summary>
+            Реализация читателя текущих значений.
             </summary>
         </member>
         <member name="T:Alvasoft.ODTIntegration.CastLineConnector.ICastLineCallback">
@@ -76,142 +168,47 @@
             <param name="aConnector">Текущий коннектор к ЛК.</param>
             <param name="aPocket">Информация о пакете готовой продукции.</param>
         </member>
-        <member name="T:Alvasoft.ODTIntegration.CastLineConnector.ICurrentValueReaderCallback">
+        <member name="T:Alvasoft.ODTIntegration.CastLineConnector.ICastLineConnector">
             <summary>
-            Интерфейс обратной связи для читателя текущих параметров из ОРС.
+            Интерфейс обмена данными с литейным конвейером.
             </summary>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.ICurrentValueReaderCallback.OnCurrentValueReceived(Alvasoft.ODTIntegration.CastLineConnector.ICurrentValueReader,Alvasoft.ODTIntegration.Structures.CurrentValue[])">
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.ICastLineConnector.SetCastLineCallback(Alvasoft.ODTIntegration.CastLineConnector.ICastLineCallback)">
             <summary>
-            Возникает, когда появились новые данные о текущих параметрах системы.
+            Устанавливает интерфейс обратной связи.
             </summary>
-            <param name="aReader">Теукщий читатель.</param>
-            <param name="aCurrentValues">Даанные о параметрах.</param>
+            <param name="aCallback">Callback.</param>
         </member>
-        <member name="T:Alvasoft.ODTIntegration.ITS.CurrentValuesPreparerImpl">
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.ICastLineConnector.SetOpcTagsList(System.Collections.Generic.Dictionary{System.String,System.String})">
             <summary>
-            Реализация подготовителя данных.
-            </summary>
+            Устанавливает конфигурацию opc-тегов.
+            </summary>        
+            <param name="aOpcTagsList">Список opc-тегов.</param>
         </member>
-        <member name="T:Alvasoft.Utils.Activity.InitializableImpl">
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.ICastLineConnector.SetOpcConnectionHolder(ConnectionHolders.OpcConnectionHolder)">
             <summary>
-            Реализация инициализируемого (инициализация/деинициализация).
-            </summary>
-            <remarks>
-            Базовый класс для реализации инициализируемого.
-            </remarks>
-        </member>
-        <member name="T:Alvasoft.Utils.Activity.IInitializable">
-            <summary>
-            Инициализируемое (инициализация/деинициализация).
-            <para>Базовый интерфейс.</para>
-            </summary>
-        </member>
-        <member name="M:Alvasoft.Utils.Activity.IInitializable.IsInitialized">
-            <summary>
-            Состоянии инициализации.
-            </summary>
-            <returns><code>true</code>, если инициализован.</returns>
-        </member>
-        <member name="M:Alvasoft.Utils.Activity.IInitializable.Initialize">
-            <summary>
-            Инициализация.
-            </summary>
-            <exception cref="T:Alvasoft.Utils.Activity.InitializedException">Если уже инициализован.</exception>
-        </member>
-        <member name="M:Alvasoft.Utils.Activity.IInitializable.Uninitialize">
-            <summary>
-            Деинициализация.
-            </summary>
-            <exception cref="T:Alvasoft.Utils.Activity.NotInitializedException">Если не инициализован.</exception>
-        </member>
-        <member name="M:Alvasoft.Utils.Activity.InitializableImpl.#ctor">
-            <summary>
-            Конструктор по умолчанию.
-            </summary>
-        </member>
-        <member name="M:Alvasoft.Utils.Activity.InitializableImpl.IsInitialized">
-            <inheritdoc />
-        </member>
-        <member name="M:Alvasoft.Utils.Activity.InitializableImpl.Initialize">
-            <inheritdoc />
-        </member>
-        <member name="M:Alvasoft.Utils.Activity.InitializableImpl.Uninitialize">
-            <inheritdoc />
-        </member>
-        <!-- Некорректный XML-комментарий для члена "M:Alvasoft.Utils.Activity.InitializableImpl.DoInitialize" проигнорирован -->
-        <!-- Некорректный XML-комментарий для члена "M:Alvasoft.Utils.Activity.InitializableImpl.DoUninitialize" проигнорирован -->
-        <member name="M:Alvasoft.Utils.Activity.InitializableImpl.CheckInitialized">
-            <summary>
-            Выполняет проверку инициализации.
-            </summary>
-            <exception cref="T:Alvasoft.Utils.Activity.NotInitializedException">Если не инициализован.</exception>      
-        </member>
-        <member name="M:Alvasoft.Utils.Activity.InitializableImpl.CheckNotInitialized">
-            <summary>
-            Выполняет проверку не инициализации.
-            </summary>
-            <exception cref="T:Alvasoft.Utils.Activity.InitializedException">Если инициализован.</exception>
-        </member>
-        <member name="T:Alvasoft.ODTIntegration.ITS.ICurrentValuesPreparer">
-            <summary>
-            Подготавливает текущие данные для сохранения в ИТС.    
-            </summary>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.ITS.ICurrentValuesPreparer.SetConnectionHoder(ConnectionHolders.OracleConnectionHolder)">
-            <summary>
-            Устанавливает держатель соединения.
+            Устанавливает держатель соединенния.
             </summary>
             <param name="aConnectionHolder">Держатель соединения.</param>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.ITS.ICurrentValuesPreparer.SetCurrentValues(Alvasoft.ODTIntegration.Structures.CurrentValueInfo[])">
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.ICastLineConnector.GetCastLineNumber">
             <summary>
-            Устанавливает список текущих значений, для которых необходимо 
-            производить подготовку.
+            Возвращает номер ЛК.
             </summary>
-            <param name="aCurrentValueInfos">Текущие значения.</param>
+            <returns>Номер ЛК.</returns>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.ITS.ICurrentValuesPreparer.TryPrepareValues(Alvasoft.ODTIntegration.Structures.CurrentValue[])">
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.ICastLineConnector.SetCastLineNumber(System.Int32)">
             <summary>
-            Подготавливает данные для отправления в ИТС.
-            Устанавливает идентификаторы.
+            Устанавливает номер ЛК.
             </summary>
-            <param name="aCurrentValues">Текущеи данные.</param>
+            <param name="aCastLineNumber">Номер ЛК.</param>
         </member>
-        <member name="T:Alvasoft.Utils.Activity.InitializedException">
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.ICastLineConnector.TryWriteCastPlan(Alvasoft.ODTIntegration.Structures.CastPlan)">
             <summary>
-            Инициализован.
+            Записывает карту плавки в контроллер.
             </summary>
-        </member>
-        <member name="M:Alvasoft.Utils.Activity.InitializedException.#ctor">
-            <summary>
-            Конструктор по умолчанию.
-            </summary>
-        </member>
-        <member name="T:Alvasoft.ODTIntegration.Structures.CastPlan">
-            <summary>
-            Карта плавки, пересылаемая из ИТС в ЛК.
-            </summary>
-        </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.CastPlan.FurnaceNumber">
-            <summary>
-            Номер миксера.
-            </summary>
-        </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.CastPlan.CastNumber">
-            <summary>
-            Номер плавки.
-            </summary>
-        </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.CastPlan.MeltId">
-            <summary>
-            Уникальный номерк карты плавки.
-            </summary>
-        </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.CastPlan.ProductName">
-            <summary>
-            Наименование продукции.
-            </summary>
+            <param name="aCastPlan">Карта плавки.</param>
+            <returns>True - в случае успешной записи, false - иначе.</returns>
         </member>
         <member name="T:Alvasoft.ODTIntegration.CastLineConnector.ICurrentValueReader">
             <summary>
@@ -245,6 +242,18 @@
             <summary>
             Останавливает работу.
             </summary>
+        </member>
+        <member name="T:Alvasoft.ODTIntegration.CastLineConnector.ICurrentValueReaderCallback">
+            <summary>
+            Интерфейс обратной связи для читателя текущих параметров из ОРС.
+            </summary>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.ICurrentValueReaderCallback.OnCurrentValueReceived(Alvasoft.ODTIntegration.CastLineConnector.ICurrentValueReader,Alvasoft.ODTIntegration.Structures.CurrentValue[])">
+            <summary>
+            Возникает, когда появились новые данные о текущих параметрах системы.
+            </summary>
+            <param name="aReader">Теукщий читатель.</param>
+            <param name="aCurrentValues">Даанные о параметрах.</param>
         </member>
         <member name="T:Alvasoft.ODTIntegration.CastLineIntegration.CastLineIntegrator">
             <summary>
@@ -323,147 +332,111 @@
             </summary>
             <param name="aConnectionHolder"></param>
         </member>
-        <member name="T:Alvasoft.ODTIntegration.CastLineConnector.ICastLineConnector">
+        <member name="T:Alvasoft.ODTIntegration.Configuration.CastLinesConfiguration">
             <summary>
-            Интерфейс обмена данными с литейным конвейером.
+            Конфигурация литейных конвейеров.
             </summary>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.ICastLineConnector.SetCastLineCallback(Alvasoft.ODTIntegration.CastLineConnector.ICastLineCallback)">
+        <member name="M:Alvasoft.ODTIntegration.Configuration.CastLinesConfiguration.GetCastLineNumbers">
             <summary>
-            Устанавливает интерфейс обратной связи.
+            Возвращает все загруженные номеров ЛК.
             </summary>
-            <param name="aCallback">Callback.</param>
+            <returns>Массив номеров ЛК.</returns>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.ICastLineConnector.SetOpcTagsList(System.Collections.Generic.Dictionary{System.String,System.String})">
+        <member name="M:Alvasoft.ODTIntegration.Configuration.CastLinesConfiguration.GetOpcItems(System.Int32)">
             <summary>
-            Устанавливает конфигурацию opc-тегов.
-            </summary>        
-            <param name="aOpcTagsList">Список opc-тегов.</param>
+            Возвращает все OPC-теги для указанного номера ЛК.
+            </summary>
+            <param name="aCastLineNumber">Номер ЛК.</param>
+            <returns>Описание тегов.</returns>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.ICastLineConnector.SetOpcConnectionHolder(ConnectionHolders.OpcConnectionHolder)">
+        <member name="M:Alvasoft.ODTIntegration.Configuration.CastLinesConfiguration.LoadConfiguration(System.String)">
             <summary>
-            Устанавливает держатель соединенния.
+            Загружает конфигурацию из XML-файла.
+            </summary>
+            <param name="aFileName">Имя файла.</param>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.Configuration.CastLinesConfiguration.LoadCastLine(System.Xml.XmlNode)">
+            <summary>
+            Загружает описание ОРС тегов для конкретного ЛК.
+            </summary>
+            <param name="aXmlNode">Нод в XML.</param>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.Configuration.CastLinesConfiguration.CreateCastLine(System.Int32)">
+            <summary>
+            Подготавливает место для описание ОРС тегов конкретного ЛК.
+            </summary>
+            <param name="aCastLineNumber">Номер ЛК.</param>
+            <returns>Словарь с описанием.</returns>
+        </member>
+        <member name="T:Alvasoft.ODTIntegration.Configuration.ConnectionConfiguration">
+            <summary>
+            Сетевая конфигурация. Общая.
+            </summary>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.Configuration.ConnectionConfiguration.LoadFromXmlNode(System.Xml.XmlNode)">
+            <summary>
+            Загрузить из XmlNode'а.
+            </summary>
+            <param name="aNode">XmlNode.</param>
+        </member>
+        <member name="T:Alvasoft.ODTIntegration.Configuration.CurrentValuesConfiguration">
+            <summary>
+            Конфигурация параметров, передаваемых постоянно.
+            </summary>
+        </member>
+        <member name="P:Alvasoft.ODTIntegration.Configuration.CurrentValuesConfiguration.ReadInterval">
+            <summary>
+            Интервал времени для чтения данных и передачи в ИТС.
+            </summary>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.Configuration.CurrentValuesConfiguration.GetCurrentValues">
+            <summary>
+            Возвращает список всех описаний текущих значений.
+            </summary>
+            <returns>Список описаний.</returns>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.Configuration.CurrentValuesConfiguration.GetCurrentValuesCount">
+            <summary>
+            Возвращает количество описаний данных.
+            </summary>
+            <returns>Количество описаний.</returns>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.Configuration.CurrentValuesConfiguration.LoadConfiguration(System.String)">
+            <summary>
+            Загружает конфигурацию в память.
+            </summary>
+            <param name="aFileName">Имя файла конфигурации.</param>
+        </member>
+        <member name="T:Alvasoft.ODTIntegration.ITS.CurrentValuesPreparerImpl">
+            <summary>
+            Реализация подготовителя данных.
+            </summary>
+        </member>
+        <member name="T:Alvasoft.ODTIntegration.ITS.ICurrentValuesPreparer">
+            <summary>
+            Подготавливает текущие данные для сохранения в ИТС.    
+            </summary>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.ITS.ICurrentValuesPreparer.SetConnectionHoder(ConnectionHolders.OracleConnectionHolder)">
+            <summary>
+            Устанавливает держатель соединения.
             </summary>
             <param name="aConnectionHolder">Держатель соединения.</param>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.ICastLineConnector.GetCastLineNumber">
+        <member name="M:Alvasoft.ODTIntegration.ITS.ICurrentValuesPreparer.SetCurrentValues(Alvasoft.ODTIntegration.Structures.CurrentValueInfo[])">
             <summary>
-            Возвращает номер ЛК.
+            Устанавливает список текущих значений, для которых необходимо 
+            производить подготовку.
             </summary>
-            <returns>Номер ЛК.</returns>
+            <param name="aCurrentValueInfos">Текущие значения.</param>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.ICastLineConnector.SetCastLineNumber(System.Int32)">
+        <member name="M:Alvasoft.ODTIntegration.ITS.ICurrentValuesPreparer.TryPrepareValues(Alvasoft.ODTIntegration.Structures.CurrentValue[])">
             <summary>
-            Устанавливает номер ЛК.
+            Подготавливает данные для отправления в ИТС.
+            Устанавливает идентификаторы.
             </summary>
-            <param name="aCastLineNumber">Номер ЛК.</param>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.ICastLineConnector.TryWriteCastPlan(Alvasoft.ODTIntegration.Structures.CastPlan)">
-            <summary>
-            Записывает карту плавки в контроллер.
-            </summary>
-            <param name="aCastPlan">Карта плавки.</param>
-            <returns>True - в случае успешной записи, false - иначе.</returns>
-        </member>
-        <member name="T:Alvasoft.ODTIntegration.Structures.FinishedProduct">
-            <summary>
-            Единица готовой продукции, пересылаемая из ЛК в ИТС.
-            </summary>
-        </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.FinishedProduct.MeltId">
-            <summary>
-            Уникальный номер карты плавки.
-            </summary>
-        </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.FinishedProduct.FurnaceNumber">
-            <summary>
-            Номер миксера.
-            </summary>
-        </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.FinishedProduct.CastNumber">
-            <summary>
-            Номер плавки.
-            </summary>
-        </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.FinishedProduct.StackNumber">
-            <summary>
-            Порядковый номер пакета.
-            </summary>
-        </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.FinishedProduct.Weight">
-            <summary>
-            Вес пакета (кг).
-            </summary>
-        </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.FinishedProduct.ReceiveTime">
-            <summary>
-            Дата получения информации пакета.
-            </summary>
-        </member>
-        <member name="T:Alvasoft.ODTIntegration.Buffer.MemoryBufferImpl">
-            <summary>
-            Буфер в оперативной памяти.
-            </summary>
-        </member>
-        <member name="T:Alvasoft.ODTIntegration.Buffer.IDataBuffer">
-            <summary>
-            Интерфейс буфера для временного хранения данных при возникновении обрывов связи.
-            </summary>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.Buffer.IDataBuffer.AddFinishedProduct(Alvasoft.ODTIntegration.Structures.FinishedProduct)">
-            <summary>
-            Сохраняет информацию о конечном продукте, которая пришла с контроллера.
-            </summary>
-            <param name="aPocket">Информация о конечном продукте.</param>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.Buffer.IDataBuffer.GetStoredProductsOrDefault">
-            <summary>
-            Возвращает все сохраненные данные или null.
-            </summary>
-            <returns>Сохраненные данные или null.</returns>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.Buffer.IDataBuffer.ClearFinishedProducts">
-            <summary>
-            Очищает буфер от данных ЕГП.
-            </summary>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.Buffer.IDataBuffer.IsEmpty">
-            <summary>
-            Возвращает результат проверки на отсутствие данных.
-            </summary>
-            <returns>True - если данных нет, false - иначе.</returns>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.Buffer.IDataBuffer.AddCurrentValues(Alvasoft.ODTIntegration.Structures.CurrentValue[])">
-            <summary>
-            Добавляет текущие значения в буфер.
-            </summary>
-            <param name="aCurrentValues">Текущие значения.</param>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.Buffer.IDataBuffer.GetStoredCurrentValuesOrDefault">
-            <summary>
-            Возвращает сохраненные текущие параметры.
-            </summary>
-            <returns>Текущие параметры в буфере.</returns>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.Buffer.IDataBuffer.ClearCurrentValues">
-            <summary>
-            Очищает буфер от текущих значений.
-            </summary>
-        </member>
-        <member name="F:Alvasoft.ODTIntegration.Buffer.MemoryBufferImpl.MAX_SIZE">
-            <summary>
-            Ограничение на количество записей.
-            </summary>
-        </member>
-        <member name="F:Alvasoft.ODTIntegration.Buffer.MemoryBufferImpl.products">
-            <summary>
-            Набор для хранения данных.
-            </summary>
-        </member>
-        <member name="T:Alvasoft.ODTIntegration.ITS.ItsImpl">
-            <summary>
-            Реализация ИТС через БД Oracle.
-            </summary>
+            <param name="aCurrentValues">Текущеи данные.</param>
         </member>
         <member name="T:Alvasoft.ODTIntegration.ITS.IIts">
             <summary>
@@ -511,27 +484,15 @@
             <param name="aCurrentValues">Текущее значение.</param>
             <returns>True - если все прошло успешно, false - иначе.</returns>
         </member>
+        <member name="T:Alvasoft.ODTIntegration.ITS.ItsImpl">
+            <summary>
+            Реализация ИТС через БД Oracle.
+            </summary>
+        </member>
         <member name="F:Alvasoft.ODTIntegration.ITS.ItsImpl.connectionHolder">
             <summary>
             Держатель соединения с ИТС.
             </summary>
-        </member>
-        <member name="T:Alvasoft.ODTIntegration.Utils.Extensions.ArialCyrilicExtension">
-            <summary>
-            Расширение для перевода из обычной строки в символы, 
-            которые понимает австралийский принтер на производстве.
-            Константы менять нельзя. У австралийцев в контроллере зашита именно такая таблица.
-            </summary>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.Utils.Extensions.ArialCyrilicExtension.ToArialCyrilic(System.String)">
-            <summary>
-            Конвертирует обычную строку в такую, которую понимает принтер на производстве.
-            Первые два байта - служебные:
-            Первый - максимальная длина строки. Должна всегда быть 40.
-            Второй - фактическая длина строки.
-            </summary>
-            <param name="aSource">Исходная строка.</param>
-            <returns>Результирующая строка.</returns>
         </member>
         <member name="F:Alvasoft.ODTIntegration.ProjectInstaller.components">
             <summary>
@@ -550,98 +511,81 @@
             содержимое данного метода при помощи редактора кода.
             </summary>
         </member>
-        <member name="T:Alvasoft.ODTIntegration.CastLineConnector.CurrentValueReaderImpl">
+        <member name="T:Alvasoft.ODTIntegration.Structures.CastPlan">
             <summary>
-            Реализация читателя текущих значений.
+            Карта плавки, пересылаемая из ИТС в ЛК.
             </summary>
         </member>
-        <member name="T:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl">
+        <member name="P:Alvasoft.ODTIntegration.Structures.CastPlan.FurnaceNumber">
             <summary>
-            Реализация конектора к ЛК.
+            Номер миксера.
             </summary>
         </member>
-        <member name="F:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.callback">
+        <member name="P:Alvasoft.ODTIntegration.Structures.CastPlan.CastNumber">
             <summary>
-            Обратная связь для оповещения о новых данных.
+            Номер плавки.
             </summary>
         </member>
-        <member name="F:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.opcTagsList">
+        <member name="P:Alvasoft.ODTIntegration.Structures.CastPlan.MeltId">
             <summary>
-            Список OPC-тегов.
+            Уникальный номерк карты плавки.
             </summary>
         </member>
-        <member name="F:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.connectionHolder">
+        <member name="P:Alvasoft.ODTIntegration.Structures.CastPlan.ProductName">
             <summary>
-            Держатель соединения ОРС.
+            Наименование продукции.
             </summary>
         </member>
-        <member name="F:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.castLineNumber">
+        <member name="T:Alvasoft.ODTIntegration.Structures.CurrentValue">
             <summary>
-            Номер ЛК.
+            Значение, получаемое из ОРС-сервера.
             </summary>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.OnValueChanged(OpcTagAccessProvider.IOpcValue,OpcTagAccessProvider.OpcValueChangedEventArgs)">
+        <member name="P:Alvasoft.ODTIntegration.Structures.CurrentValue.Info">
             <summary>
-            Срабатывает при изменении значения тега.
-            </summary>
-            <param name="aOpcValue">Тег ОРС.</param>
-            <param name="aValueChangedEventArgs">Параметры.</param>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.TryResetFinishedProduct">
-            <summary>
-            Обнуляет информацию о ЕГП.
+            Ссылка на описание.
             </summary>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.FinishedProductIsReady">
+        <member name="P:Alvasoft.ODTIntegration.Structures.CurrentValue.Ids">
             <summary>
-            Отправляет в callbcak информацию о ЕГП.
+            Идентификаторы.
             </summary>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.TryGetFinishedProduct(Alvasoft.ODTIntegration.Structures.FinishedProduct@)">
+        <member name="P:Alvasoft.ODTIntegration.Structures.CurrentValue.ValueTime">
             <summary>
-            Пытается получить информацию о ЕГП.
-            </summary>
-            <param name="aPocket">ЕГП.</param>
-            <returns>True - если получение успешно, false - иначе.</returns>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.TryResetCastPlanRequest">
-            <summary>
-            Обнуляет запрос новой карты плавки.
+            Время считывания.
             </summary>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.CastPlanRequest">
+        <member name="P:Alvasoft.ODTIntegration.Structures.CurrentValue.Value">
             <summary>
-            Выполняет запрос новой карты плавки.
-            Передает данные в Callback.
+            Значение.
             </summary>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.CastLineConnector.CastLineConnectorImpl.TryGetFurnaceNumber(System.Int32@)">
+        <member name="T:Alvasoft.ODTIntegration.Structures.CurrentValueIdentifiers">
             <summary>
-            Пытается получить номер миксера.
-            </summary>
-            <param name="aFurnaceNumber">Номер миксера.</param>
-            <returns>True, если получить удалось, fakse - иначе.</returns>
-        </member>
-        <member name="T:Alvasoft.Utils.Activity.NotInitializedException">
-            <summary>
-            Не инициализован.
+            Идентификаторы для текущего значения.
             </summary>
         </member>
-        <member name="M:Alvasoft.Utils.Activity.NotInitializedException.#ctor">
+        <member name="P:Alvasoft.ODTIntegration.Structures.CurrentValueIdentifiers.TypeId">
             <summary>
-            Конструктор по умолчанию.
+            Идентификатор типа в ИТС. 
             </summary>
         </member>
-        <member name="T:Alvasoft.ODTIntegration.Configuration.ConnectionConfiguration">
+        <member name="P:Alvasoft.ODTIntegration.Structures.CurrentValueIdentifiers.ObjectId">
             <summary>
-            Сетевая конфигурация. Общая.
+            Идентификатор объекта в ИТС.
             </summary>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.Configuration.ConnectionConfiguration.LoadFromXmlNode(System.Xml.XmlNode)">
+        <member name="P:Alvasoft.ODTIntegration.Structures.CurrentValueIdentifiers.DataId">
             <summary>
-            Загрузить из XmlNode'а.
+            Идентификатор значения в ИТС.
             </summary>
-            <param name="aNode">XmlNode.</param>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.Structures.CurrentValueIdentifiers.GetCopy">
+            <summary>
+            Возвращает копию.
+            </summary>
+            <returns>Копия.</returns>
         </member>
         <member name="T:Alvasoft.ODTIntegration.Structures.CurrentValueInfo">
             <summary>
@@ -668,67 +612,136 @@
             Имя значения в ИТС.
             </summary>
         </member>
-        <member name="T:Alvasoft.ODTIntegration.Configuration.CastLinesConfiguration">
+        <member name="T:Alvasoft.ODTIntegration.Structures.FinishedProduct">
             <summary>
-            Конфигурация литейных конвейеров.
+            Единица готовой продукции, пересылаемая из ЛК в ИТС.
             </summary>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.Configuration.CastLinesConfiguration.GetCastLineNumbers">
+        <member name="P:Alvasoft.ODTIntegration.Structures.FinishedProduct.MeltId">
             <summary>
-            Возвращает все загруженные номеров ЛК.
-            </summary>
-            <returns>Массив номеров ЛК.</returns>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.Configuration.CastLinesConfiguration.GetOpcItems(System.Int32)">
-            <summary>
-            Возвращает все OPC-теги для указанного номера ЛК.
-            </summary>
-            <param name="aCastLineNumber">Номер ЛК.</param>
-            <returns>Описание тегов.</returns>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.Configuration.CastLinesConfiguration.LoadConfiguration(System.String)">
-            <summary>
-            Загружает конфигурацию из XML-файла.
-            </summary>
-            <param name="aFileName">Имя файла.</param>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.Configuration.CastLinesConfiguration.LoadCastLine(System.Xml.XmlNode)">
-            <summary>
-            Загружает описание ОРС тегов для конкретного ЛК.
-            </summary>
-            <param name="aXmlNode">Нод в XML.</param>
-        </member>
-        <member name="M:Alvasoft.ODTIntegration.Configuration.CastLinesConfiguration.CreateCastLine(System.Int32)">
-            <summary>
-            Подготавливает место для описание ОРС тегов конкретного ЛК.
-            </summary>
-            <param name="aCastLineNumber">Номер ЛК.</param>
-            <returns>Словарь с описанием.</returns>
-        </member>
-        <member name="T:Alvasoft.ODTIntegration.Structures.CurrentValueIdentifiers">
-            <summary>
-            Идентификаторы для текущего значения.
+            Уникальный номер карты плавки.
             </summary>
         </member>
-        <member name="M:Alvasoft.ODTIntegration.Structures.CurrentValueIdentifiers.GetCopy">
+        <member name="P:Alvasoft.ODTIntegration.Structures.FinishedProduct.FurnaceNumber">
             <summary>
-            Возвращает копию.
-            </summary>
-            <returns>Копия.</returns>
-        </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.CurrentValueIdentifiers.TypeId">
-            <summary>
-            Идентификатор типа в ИТС. 
+            Номер миксера.
             </summary>
         </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.CurrentValueIdentifiers.ObjectId">
+        <member name="P:Alvasoft.ODTIntegration.Structures.FinishedProduct.CastNumber">
             <summary>
-            Идентификатор объекта в ИТС.
+            Номер плавки.
             </summary>
         </member>
-        <member name="P:Alvasoft.ODTIntegration.Structures.CurrentValueIdentifiers.DataId">
+        <member name="P:Alvasoft.ODTIntegration.Structures.FinishedProduct.StackNumber">
             <summary>
-            Идентификатор значения в ИТС.
+            Порядковый номер пакета.
+            </summary>
+        </member>
+        <member name="P:Alvasoft.ODTIntegration.Structures.FinishedProduct.Weight">
+            <summary>
+            Вес пакета (кг).
+            </summary>
+        </member>
+        <member name="P:Alvasoft.ODTIntegration.Structures.FinishedProduct.ReceiveTime">
+            <summary>
+            Дата получения информации пакета.
+            </summary>
+        </member>
+        <member name="T:Alvasoft.ODTIntegration.Utils.Extensions.ArialCyrilicExtension">
+            <summary>
+            Расширение для перевода из обычной строки в символы, 
+            которые понимает австралийский принтер на производстве.
+            Константы менять нельзя. У австралийцев в контроллере зашита именно такая таблица.
+            </summary>
+        </member>
+        <member name="M:Alvasoft.ODTIntegration.Utils.Extensions.ArialCyrilicExtension.ToArialCyrilic(System.String)">
+            <summary>
+            Конвертирует обычную строку в такую, которую понимает принтер на производстве.
+            Первые два байта - служебные:
+            Первый - максимальная длина строки. Должна всегда быть 40.
+            Второй - фактическая длина строки.
+            </summary>
+            <param name="aSource">Исходная строка.</param>
+            <returns>Результирующая строка.</returns>
+        </member>
+        <member name="T:Alvasoft.Utils.Activity.IInitializable">
+            <summary>
+            Инициализируемое (инициализация/деинициализация).
+            <para>Базовый интерфейс.</para>
+            </summary>
+        </member>
+        <member name="M:Alvasoft.Utils.Activity.IInitializable.IsInitialized">
+            <summary>
+            Состоянии инициализации.
+            </summary>
+            <returns><code>true</code>, если инициализован.</returns>
+        </member>
+        <member name="M:Alvasoft.Utils.Activity.IInitializable.Initialize">
+            <summary>
+            Инициализация.
+            </summary>
+            <exception cref="T:Alvasoft.Utils.Activity.InitializedException">Если уже инициализован.</exception>
+        </member>
+        <member name="M:Alvasoft.Utils.Activity.IInitializable.Uninitialize">
+            <summary>
+            Деинициализация.
+            </summary>
+            <exception cref="T:Alvasoft.Utils.Activity.NotInitializedException">Если не инициализован.</exception>
+        </member>
+        <member name="T:Alvasoft.Utils.Activity.InitializableImpl">
+            <summary>
+            Реализация инициализируемого (инициализация/деинициализация).
+            </summary>
+            <remarks>
+            Базовый класс для реализации инициализируемого.
+            </remarks>
+        </member>
+        <member name="M:Alvasoft.Utils.Activity.InitializableImpl.#ctor">
+            <summary>
+            Конструктор по умолчанию.
+            </summary>
+        </member>
+        <member name="M:Alvasoft.Utils.Activity.InitializableImpl.IsInitialized">
+            <inheritdoc />
+        </member>
+        <member name="M:Alvasoft.Utils.Activity.InitializableImpl.Initialize">
+            <inheritdoc />
+        </member>
+        <member name="M:Alvasoft.Utils.Activity.InitializableImpl.Uninitialize">
+            <inheritdoc />
+        </member>
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:Alvasoft.Utils.Activity.InitializableImpl.DoInitialize" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:Alvasoft.Utils.Activity.InitializableImpl.DoUninitialize" -->
+        <member name="M:Alvasoft.Utils.Activity.InitializableImpl.CheckInitialized">
+            <summary>
+            Выполняет проверку инициализации.
+            </summary>
+            <exception cref="T:Alvasoft.Utils.Activity.NotInitializedException">Если не инициализован.</exception>      
+        </member>
+        <member name="M:Alvasoft.Utils.Activity.InitializableImpl.CheckNotInitialized">
+            <summary>
+            Выполняет проверку не инициализации.
+            </summary>
+            <exception cref="T:Alvasoft.Utils.Activity.InitializedException">Если инициализован.</exception>
+        </member>
+        <member name="T:Alvasoft.Utils.Activity.InitializedException">
+            <summary>
+            Инициализован.
+            </summary>
+        </member>
+        <member name="M:Alvasoft.Utils.Activity.InitializedException.#ctor">
+            <summary>
+            Конструктор по умолчанию.
+            </summary>
+        </member>
+        <member name="T:Alvasoft.Utils.Activity.NotInitializedException">
+            <summary>
+            Не инициализован.
+            </summary>
+        </member>
+        <member name="M:Alvasoft.Utils.Activity.NotInitializedException.#ctor">
+            <summary>
+            Конструктор по умолчанию.
             </summary>
         </member>
     </members>

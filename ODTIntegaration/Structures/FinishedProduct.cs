@@ -50,5 +50,22 @@
                                  StackNumber,
                                  Weight);
         }
+
+        public override bool Equals(object obj) {
+            var packet = obj as FinishedProduct;
+            if (packet == null) {
+                return false;
+            }
+
+            if (packet.CastNumber == this.CastNumber &&
+                packet.FurnaceNumber == this.FurnaceNumber &&
+                packet.MeltId == this.MeltId &&
+                packet.StackNumber == this.StackNumber &&
+                packet.Weight == this.Weight) {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

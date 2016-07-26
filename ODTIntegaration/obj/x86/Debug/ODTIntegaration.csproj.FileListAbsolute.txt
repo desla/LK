@@ -16,4 +16,3 @@ D:\repositories\Литейный конвейер\ODTIntegaration\bin\Debug\Sett
 D:\repositories\Литейный конвейер\ODTIntegaration\bin\Debug\ConnectionHolders.dll
 D:\repositories\Литейный конвейер\ODTIntegaration\bin\Debug\Interop.OPCAutomation.dll
 D:\repositories\Литейный конвейер\ODTIntegaration\bin\Debug\ConnectionHolders.pdb
-D:\repositories\Литейный конвейер\ODTIntegaration\obj\x86\Debug\ODTIntegaration.csprojResolveAssemblyReference.cache
