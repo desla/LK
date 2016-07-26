@@ -189,9 +189,13 @@
             var timer = (Timer)sender;
             timer.Enabled = false;
 
-            if (IsNewPacketAvailable()) {
-                FinishedProductIsReady();
-                TryResetFinishedProduct();
+            try {
+                if (IsNewPacketAvailable()) {
+                    FinishedProductIsReady();
+                    TryResetFinishedProduct();
+                }
+            } catch (Exception ex) {
+                logger.Error("Ошибка: " + ex.Message);
             }
 
             timer.Enabled = true;
